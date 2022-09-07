@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard Copy 16</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Artboard-Copy-16" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M138.909045,129.5 L151.118235,419.032215 C151.671396,432.150047 162.466992,442.5 175.596481,442.5 L335.50146,442.5 C348.60244,442.5 359.385184,432.193429 359.976493,419.1058 L373.061092,129.5 L138.909045,129.5 Z"
+              id="Rectangle" stroke="#DC606D" stroke-width="19" fill-rule="nonzero"></path>
+        <path d="M188,186.5 C187.975177,186.5 187.950361,186.500771 187.925586,186.502312 C187.264862,186.54341 186.762556,187.112348 186.803654,187.773072 L199.213885,387.291397 C199.256137,387.970695 199.819389,388.5 200.5,388.5 C200.514321,388.5 200.528639,388.499589 200.542936,388.498768 C200.955938,388.475055 201.27152,388.121028 201.247806,387.708026 L189.77638,187.914017 C189.730808,187.120298 189.073873,186.5 188.278847,186.5 L188,186.5 Z"
+              id="Rectangle" stroke="#DC606D" stroke-width="7" fill="#9B9B9B" fill-rule="nonzero"></path>
+        <rect id="Rectangle-Copy" stroke="#DC606D" stroke-width="7" fill="#9B9B9B" fill-rule="nonzero" x="256.5"
+              y="186.5" width="3" height="202" rx="1.5"></rect>
+        <rect id="Rectangle" stroke="#979797" fill="#DC606D" fill-rule="nonzero" x="217.5" y="70.5" width="79"
+              height="23" rx="11.5"></rect>
+        <path d="M326.766486,186.5 C325.965929,186.5 325.30646,187.128669 325.2682,187.928312 L315.711066,387.672415 C315.710464,387.684989 315.710163,387.697575 315.710163,387.710163 C315.710163,388.146378 316.063785,388.5 316.5,388.5 C317.161139,388.5 317.706604,387.982489 317.741352,387.322264 L328.242043,187.809133 C328.243189,187.787362 328.243763,187.765564 328.243763,187.743763 C328.243763,187.056851 327.686911,186.5 327,186.5 L326.766486,186.5 Z"
+              id="Rectangle-Copy-2" stroke="#DC606D" stroke-width="7" fill="#9B9B9B" fill-rule="nonzero"></path>
+        <rect id="Rectangle" stroke="#DC606D" fill="#DC606D" fill-rule="nonzero" x="121.5" y="84.5" width="268"
+              height="23" rx="11"></rect>
+    </g>
+</svg>

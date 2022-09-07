@@ -1,0 +1,11 @@
+.idea/
+.gradle/
+build/
+out/
+backups/
+currentMigrationVersion
+currentPid
+lastFailedAppVersion
+temp_err.log
+/web/
+remoteClinicsBackups/

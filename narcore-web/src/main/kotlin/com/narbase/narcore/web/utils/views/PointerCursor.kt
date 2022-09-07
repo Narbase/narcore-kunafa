@@ -1,0 +1,43 @@
+@file:Suppress("NOTHING_TO_INLINE")
+
+package com.narbase.narcore.web.utils.views
+
+import com.narbase.kunafa.core.css.*
+
+/**
+ * NARBASE TECHNOLOGIES CONFIDENTIAL
+ * ______________________________
+ * [2017] -[2019] Narbase Technologies
+ * All Rights Reserved.
+ * Created by islam
+ * On: 2019/05/12.
+ */
+
+inline fun RuleSet.pointerCursor() {
+    cursor = "pointer"
+}
+
+
+inline fun RuleSet.unSelectable() {
+    /*
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none;
+     */
+
+    try {
+        this["-webkit-user-select"] = "none"
+        this["-moz-user-select"] = "none"
+        this["-ms-user-select"] = "none"
+        this["user-select"] = "none"
+    } catch (e: dynamic) {
+        console.log(e)
+    }
+}
+
+inline fun RuleSet.singleLine() {
+    whiteSpace = "nowrap"
+    textOverflow = "ellipsis"
+    overflow = "hidden"
+}
