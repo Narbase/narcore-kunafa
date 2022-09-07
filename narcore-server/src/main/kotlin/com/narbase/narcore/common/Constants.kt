@@ -10,9 +10,6 @@ package com.narbase.narcore.common
  * On: 5/19/17.
  */
 object Constants {
-    val JWT_SECRET: String = TODO()
-    val SUBSCRIPTION_TOKEN_SECRET: String = TODO()
-
     const val BASIC_AUTH_CLIENT = "BasicAuthClient"
     const val JWT_HEADER_AUTH_CLIENT = "JwtHeaderAuthClient"
 }
