@@ -17,13 +17,8 @@ import com.narbase.narcore.web.utils.eventbus.LifecycleSubscriber
 import com.narbase.narcore.web.utils.views.customViews.showPopupMessage
 import kotlinx.browser.window
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2018] Narbase Technologies
- * All Rights Reserved.
- * Created by ${user}
- * On: ${Date}.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 class PageSlide private constructor(
     _backgroundWidth: Dimension,

@@ -31,13 +31,8 @@ import java.io.File
 import java.text.DateFormat
 import java.time.Duration
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2018] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 4/11/18.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 object Server {

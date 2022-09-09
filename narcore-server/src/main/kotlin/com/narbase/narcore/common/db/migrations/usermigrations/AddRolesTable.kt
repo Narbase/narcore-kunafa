@@ -5,12 +5,7 @@ import com.narbase.narcore.common.db.migrations.version
 import org.jetbrains.exposed.sql.transactions.transaction
 
 /*
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2022/09/07.
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 object AddRolesTable : Migration("AddRolesTable", version(2022, 9, 6, 10, 30)) {
     override fun up() {

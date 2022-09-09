@@ -5,13 +5,8 @@ import com.google.gson.annotations.SerializedName
 import com.narbase.narcore.common.CommonCodes.BASIC_SUCCESS
 import com.narbase.narcore.common.CommonCodes.INVALID_REQUEST
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2018] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 5/19/17.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 open class BasicResponse(

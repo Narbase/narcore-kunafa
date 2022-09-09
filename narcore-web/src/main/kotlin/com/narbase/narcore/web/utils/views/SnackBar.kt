@@ -13,13 +13,8 @@ import com.narbase.narcore.web.common.AppColors
 import com.narbase.narcore.web.utils.PopupZIndex
 import kotlinx.browser.window
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] - [2020] Narbase Technologies
- * All Rights Reserved.
- * Created by Mohammad Abbas
- * On: 1/25/20.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 object SnackBar {
     private var snackbars = mutableListOf<LinearLayout>()

@@ -9,13 +9,8 @@ import com.narbase.narcore.web.network.makeNotVisible
 import com.narbase.narcore.web.network.makeVisible
 import com.narbase.narcore.web.utils.BasicUiState
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2019/05/13.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 @Suppress("unused")
 open class ViewLoadingErrorComponent(
@@ -109,6 +104,7 @@ open class ViewLoadingErrorComponent(
             }
 
             BasicUiState.Error -> showError()
+            null -> {}
         }
     }
 

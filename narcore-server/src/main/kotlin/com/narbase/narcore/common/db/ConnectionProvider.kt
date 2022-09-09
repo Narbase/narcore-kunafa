@@ -6,13 +6,8 @@ import com.narbase.narcore.deployment.appConf
 import com.zaxxer.hikari.HikariDataSource
 import javax.sql.DataSource
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2018] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 5/20/17.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 @Suppress("EXPERIMENTAL_API_USAGE")

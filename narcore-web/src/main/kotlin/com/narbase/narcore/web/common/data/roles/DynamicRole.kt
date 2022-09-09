@@ -4,12 +4,7 @@ import com.narbase.narcore.dto.models.roles.Privilege
 import kotlin.js.Date
 
 /*
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2022/07/02.
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 data class DynamicRole(
     val id: String,

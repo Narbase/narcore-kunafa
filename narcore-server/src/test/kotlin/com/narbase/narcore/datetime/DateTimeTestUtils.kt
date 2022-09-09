@@ -8,12 +8,7 @@ import org.jetbrains.exposed.sql.deleteAll
 import org.jetbrains.exposed.sql.transactions.transaction
 
 /*
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] - [2022] Narbase Technologies
- * All Rights Reserved.
- * Created by nezuma
- * On: 5/10/21.
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 object DateTimeTestUtils {
     fun connectToDb() {

@@ -14,13 +14,8 @@ import com.narbase.narcore.web.utils.PopupZIndex
 import com.narbase.narcore.web.utils.eventbus.EventBus
 import com.narbase.narcore.web.utils.eventbus.Unsubscriber
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2018] Narbase Technologies
- * All Rights Reserved.
- * Created by ${user}
- * On: ${Date}.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 class PopUpDialog(private val onDismissed: (() -> Unit)? = null) {
 

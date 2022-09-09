@@ -5,12 +5,7 @@ import kotlinx.browser.window
 import org.w3c.dom.url.URLSearchParams
 
 /*
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2020/09/25.
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 object AppConfig {
     private var storedIsDev by StoredBooleanValue("IS_DEV", defaultValue = false)

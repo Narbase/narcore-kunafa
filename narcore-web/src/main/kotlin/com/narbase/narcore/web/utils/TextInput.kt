@@ -9,13 +9,8 @@ import com.narbase.narcore.web.common.AppColors
 import com.narbase.narcore.web.utils.Styles.disabledTextInput
 import com.narbase.narcore.web.utils.Styles.enabledTextInput
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] - [2020] Narbase Technologies
- * All Rights Reserved.
- * Created by Mohammad Abbas
- * On: 2/3/20.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 fun TextInput.setEnabled(customRuleSet: RuleSet? = null) {

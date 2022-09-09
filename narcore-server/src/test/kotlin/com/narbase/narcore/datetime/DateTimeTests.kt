@@ -15,12 +15,7 @@ import org.junit.jupiter.api.*
 import kotlin.test.assertEquals
 
 /*
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] - [2022] Narbase Technologies
- * All Rights Reserved.
- * Created by nezuma
- * On: 5/10/21.
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)

@@ -6,12 +6,7 @@ import com.narbase.kunafa.core.components.TextView
 import com.narbase.kunafa.core.lifecycle.Observable
 
 /*
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2022/02/17.
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 fun TextView.bind(state: Observable<String>) {

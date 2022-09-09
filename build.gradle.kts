@@ -1,23 +1,18 @@
-buildscript {
-
-    repositories {
-        jcenter()
-        maven { url = uri("https://plugins.gradle.org/m2/") }
-    }
-
-    dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.32")
-    }
-}
 allprojects {
     version = "1.0.0"
+
+    repositories {
+        maven(url = "https://dl.bintray.com/kotlin/kotlin-dev/")
+        maven(url = "https://dl.bintray.com/kotlin/kotlinx/")
+        maven(url = "https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven/")
+        mavenCentral()
+    }
 }
 
 plugins {
-    kotlin("jvm") version "1.4.32" apply false
-    kotlin("js") version "1.4.32" apply false
-    kotlin("plugin.serialization") version "1.4.32" apply false
-    id("org.jetbrains.kotlin.multiplatform") version "1.4.32" apply false
+    kotlin("jvm") version "1.7.10" apply false
+    kotlin("js") version "1.7.10" apply false
+    kotlin("multiplatform") version "1.7.10" apply false
 }
 
 tasks.register("buildRelease") {

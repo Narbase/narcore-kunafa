@@ -7,13 +7,8 @@ import io.ktor.application.*
 import io.ktor.auth.*
 import io.ktor.routing.*
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2018] Narbase Technologies
- * All Rights Reserved.
- * Created by ${user}
- * On: ${date}.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 fun Route.addPrivilegeVerificationInterceptor(privilege: Privilege) {

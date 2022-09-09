@@ -69,7 +69,7 @@ class AppComponent(
                     }))
                 }
 
-                false -> {
+                null, false -> {
                     val shouldDirect = window.location.pathname.trim().trim('/').isNotBlank()
                     if (shouldDirect) {
                         Router.navigateTo("/")

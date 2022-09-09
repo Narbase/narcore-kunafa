@@ -14,12 +14,7 @@ import java.io.File
 import javax.imageio.ImageIO
 
 /*
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2021/04/08.
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 private const val pathParameterName = "static-content-path-parameter"

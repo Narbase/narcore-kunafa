@@ -12,12 +12,7 @@ import org.postgresql.util.PGobject
 import java.lang.reflect.Type
 
 /*
- * AVATAR APPS CONFIDENTIAL
- * ______________________________
- * [2013] - [2017] Avatar Apps
- * All Rights Reserved.
- * Created by nezuma
- * on 10/1/18.
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 
@@ -45,7 +40,7 @@ class JsonColumn<T : Any>(val type: Type) : ColumnType() {
     override fun valueFromDB(value: Any): T {
         val json: String = when (value) {
             is String -> value
-            is PGobject -> value.value
+            is PGobject -> value.value ?: "{}"
             else -> error("Unexpected value for json: $value of ${value::class.qualifiedName}")
         }
 

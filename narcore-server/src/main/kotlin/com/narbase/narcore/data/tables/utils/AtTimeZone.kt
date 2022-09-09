@@ -6,12 +6,7 @@ import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormat
 
 /*
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] - [2022] Narbase Technologies
- * All Rights Reserved.
- * Created by nezuma
- * On: 5/12/21.
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 class AtTimeZone(

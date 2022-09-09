@@ -14,13 +14,8 @@ import io.ktor.request.*
 import io.ktor.routing.*
 import io.ktor.websocket.*
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2018] Narbase Technologies
- * All Rights Reserved.
- * Created by ${user}
- * On: ${date}.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 const val myWsCustomAuthHeader = "ws_custom_auth"
 

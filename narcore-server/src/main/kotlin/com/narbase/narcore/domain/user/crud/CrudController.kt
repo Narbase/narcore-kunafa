@@ -15,13 +15,8 @@ import io.ktor.routing.*
 import java.util.*
 import kotlin.reflect.KClass
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2018] Narbase Technologies
- * All Rights Reserved.
- * Created by ${Islam}
- * On: ${date}.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 abstract class CrudController<DtoType : Any, ListRequestDtoType : Any>(

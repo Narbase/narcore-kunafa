@@ -5,12 +5,7 @@ import io.ktor.config.*
 import java.io.File
 
 /*
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2020/05/11.
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 object LaunchConfig {
@@ -37,9 +32,11 @@ object JwtConf {
 
 val appConf: HoconApplicationConfig by lazy {
     println("Getting narcore.conf")
-    val file = File("narcore.conf")
+    var file = File("narcore.conf")
     if (file.exists().not()) {
-        println("Config file does not exist")
+        System.err.println("Config file does not exist")
+        println("Checking dev path")
+        file = File("../narcore.conf")
     }
     val conf = ConfigFactory.parseFile(file)
     HoconApplicationConfig(

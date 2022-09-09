@@ -4,13 +4,8 @@ import com.narbase.kunafa.core.lifecycle.LifecycleObserver
 import com.narbase.kunafa.core.lifecycle.LifecycleOwner
 import kotlin.reflect.KClass
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2019/10/11.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 inline fun <reified P : Any> LifecycleSubscriber(noinline onEvent: (P) -> Unit) = LifecycleSubscriber(onEvent, P::class)

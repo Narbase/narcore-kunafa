@@ -8,13 +8,8 @@ import io.ktor.features.*
 import io.ktor.http.*
 import io.ktor.response.*
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2018] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 5/21/17.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 fun Application.handleExceptions() {

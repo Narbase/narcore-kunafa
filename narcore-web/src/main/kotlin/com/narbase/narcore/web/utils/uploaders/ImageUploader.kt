@@ -25,13 +25,8 @@ import org.w3c.files.File
 import org.w3c.files.get
 import org.w3c.xhr.FormData
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2018] Narbase Technologies
- * All Rights Reserved.
- * Created by ${user}
- * On: ${date}.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 class ImageUploader(val defaultImageUrl: String? = null, private val imageStyle: (RuleSet.() -> Unit)?) : Component() {
 

@@ -1,21 +1,10 @@
-buildscript {
 
-    repositories {
-        jcenter()
-        maven { url = uri("https://plugins.gradle.org/m2/") }
-    }
-
-    dependencies {
-//        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.32")
-        classpath(kotlin("gradle-plugin", version = "1.4.32"))
-    }
-}
 
 group = "com.narbase"
 version = "1.0.0"
 
-val kotlinVersion = "1.4.32"
-val coroutinesVersion = "1.4.3"
+val kotlinVersion = "1.7.10"
+val coroutinesVersion = "1.6.4"
 
 plugins {
     id("org.jetbrains.kotlin.js")
@@ -31,7 +20,7 @@ dependencies {
 //    implementation("org.jetbrains.kotlin:kotlin-stdlib-js:$kotlinVersion")
     implementation(project(":dto-web"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:$coroutinesVersion")
-    implementation("com.narbase:kunafa:0.2.26")
+    implementation("com.narbase.kunafa:core:0.3.0")
     implementation(npm("material-design-icons-iconfont", "5.0.1"))
     implementation(npm("css-loader", "3.4.2"))
     implementation(npm("style-loader", "1.1.3"))

@@ -9,13 +9,8 @@ import com.narbase.kunafa.core.dimensions.dependent.wrapContent
 import com.narbase.kunafa.core.dimensions.px
 
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2020/02/10.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 fun LinearLayout.searchTextInput(placeholderText: String, onKeyPress: (searchTerm: String) -> Unit) {

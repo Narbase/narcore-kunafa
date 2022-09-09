@@ -4,12 +4,7 @@ import com.narbase.narcore.dto.models.roles.Privilege
 import com.narbase.narcore.web.utils.string.splitCamelCase
 
 /*
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2022/09/07.
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 val Privilege.displayName: String

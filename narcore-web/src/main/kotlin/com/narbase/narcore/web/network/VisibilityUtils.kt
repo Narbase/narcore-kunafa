@@ -2,13 +2,8 @@ package com.narbase.narcore.web.network
 
 import com.narbase.kunafa.core.components.View
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2018] Narbase Technologies
- * All Rights Reserved.
- * Created by ${user}
- * On: ${Date}.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 fun makeVisible(vararg views: View?) {

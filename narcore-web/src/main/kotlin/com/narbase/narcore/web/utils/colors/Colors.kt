@@ -2,13 +2,8 @@ package com.narbase.narcore.web.utils.colors
 
 import com.narbase.kunafa.core.drawable.Color
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2019/11/10.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 private val blackToWhiteStep = 25.5
