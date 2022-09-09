@@ -3,13 +3,8 @@ package com.narbase.narcore.web.utils.datetime
 import com.narbase.narcore.web.utils.roundToTwoDigits
 import kotlin.js.Date
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2020/03/13.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 fun Date.dto(): DateTimeDto = DateTimeDto(this.getTime().roundToTwoDigits())

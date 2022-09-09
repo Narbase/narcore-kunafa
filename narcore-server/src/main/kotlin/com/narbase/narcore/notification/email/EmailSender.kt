@@ -14,13 +14,8 @@ import javax.mail.Transport
 import javax.mail.internet.InternetAddress
 import javax.mail.internet.MimeMessage
 
-/**
- * AVATAR APPS CONFIDENTIAL
- * ______________________________
- * [2013] - [2017] Avatar Apps
- * All Rights Reserved.
- * Created by abulmaali
- * On: 6/7/17.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 object EmailSender {
 

@@ -8,7 +8,7 @@ import org.jetbrains.exposed.sql.vendors.currentDialect
 
 @Suppress("UNREACHABLE_CODE")
 class Union(vararg val queries: Query) : Query(queries[0].set, null) {
-    var count: Boolean = false
+    var count_: Boolean = false
     override fun arguments(): List<ArrayList<Pair<IColumnType, Any?>>> {
         val allArgs = queries.map { it.arguments() }
         var answer: List<ArrayList<Pair<IColumnType, Any?>>> = listOf()
@@ -21,7 +21,7 @@ class Union(vararg val queries: Query) : Query(queries[0].set, null) {
     }
 
     override fun count(): Long {
-        count = true
+        count_ = true
         return super.count()
     }
 
@@ -31,13 +31,13 @@ class Union(vararg val queries: Query) : Query(queries[0].set, null) {
             it.prepareSQL(QueryBuilder(true))
         }
 
-        if (count) {
-            count = false
+        if (count_) {
+            count_ = false
             return "SELECT COUNT(*) FROM (${joinedQueriesWithUnion}) x"
         }
 
         if (limit != null) {
-            count = false
+            count_ = false
             return "$joinedQueriesWithUnion ${
                 currentDialect.functionProvider.queryLimit(
                     limit!!,

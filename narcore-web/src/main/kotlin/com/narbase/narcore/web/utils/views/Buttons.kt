@@ -11,13 +11,8 @@ import com.narbase.kunafa.core.drawable.Color
 import com.narbase.narcore.web.common.AppColors
 
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] - [2020] Narbase Technologies
- * All Rights Reserved.
- * Created by Mohammad Abbas
- * On: 3/17/20.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 fun View.deleteButton(

@@ -10,13 +10,8 @@ import com.narbase.kunafa.core.dimensions.dependent.matchParent
 import com.narbase.kunafa.core.lifecycle.LifecycleOwner
 import kotlinx.browser.window
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2019/11/10.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 class CollapsibleView(val expand: Boolean, val block: View?.() -> Unit) : Component() {
     var animationDuration = 0.2

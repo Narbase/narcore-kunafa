@@ -3,13 +3,8 @@ package com.narbase.narcore.web.views.admin
 import com.narbase.narcore.web.translations.localized
 import com.narbase.narcore.web.views.basePage.BasePageViewModel
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2020/01/19.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 enum class AdminTabs(val routeDetails: BasePageViewModel.RouteDetails) {
     Staff(BasePageViewModel.RouteDetails("/users", "Current Staff".localized())),

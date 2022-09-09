@@ -20,13 +20,8 @@ import com.narbase.narcore.web.translations.localized
 import com.narbase.narcore.web.utils.BasicUiState
 import com.narbase.narcore.web.utils.DataResponse.Companion.BASIC_SUCCESS
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2018] Narbase Technologies
- * All Rights Reserved.
- * Created by ${user}
- * On: ${Date}.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 class RemoteCheckBoxList<T>(
     private val name: String,

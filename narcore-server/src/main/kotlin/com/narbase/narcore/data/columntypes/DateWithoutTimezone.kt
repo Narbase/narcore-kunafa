@@ -6,13 +6,8 @@ import org.jetbrains.exposed.sql.Table
 import org.joda.time.LocalDate
 import org.joda.time.format.DateTimeFormat
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2020/03/13.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 class DateWithoutTimezoneColumn : ColumnType() {
     private val formatter = DateTimeFormat.forPattern("YYYY-MM-dd")

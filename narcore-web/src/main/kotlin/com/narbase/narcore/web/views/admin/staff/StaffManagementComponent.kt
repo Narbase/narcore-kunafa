@@ -20,13 +20,8 @@ import com.narbase.narcore.web.utils.table.tableRow
 import com.narbase.narcore.web.utils.verticalSeparator
 import com.narbase.narcore.web.utils.views.*
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2020/01/19.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 class StaffManagementComponent(private val showCurrent: Boolean) : Component() {
 

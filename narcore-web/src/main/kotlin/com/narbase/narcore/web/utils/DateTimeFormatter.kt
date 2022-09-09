@@ -3,13 +3,8 @@ package com.narbase.narcore.web.utils
 import com.narbase.narcore.web.storage.StorageManager
 import kotlin.js.Date
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] - [2020] Narbase Technologies
- * All Rights Reserved.
- * Created by Mohammad Abbas
- * On: 3/25/20.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 fun Date.toHoursAndMinutes(): String { //10:30

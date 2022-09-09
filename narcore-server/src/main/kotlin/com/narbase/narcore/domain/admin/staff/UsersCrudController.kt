@@ -13,13 +13,8 @@ import com.narbase.narcore.dto.domain.usersmanagement.UsersCrudDto
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.util.*
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2020/02/18.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 class UsersCrudController : CrudController<UsersCrudDto.User, UsersCrudDto.Filters>(
     UsersCrudDto.User::class, UsersCrudDto.Filters::class

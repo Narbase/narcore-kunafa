@@ -19,12 +19,7 @@ import com.narbase.narcore.web.utils.dialog.labeledTextInput
 import com.narbase.narcore.web.utils.views.pointerCursor
 
 /*
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] - [2022] Narbase Technologies
- * All Rights Reserved.
- * Created by nezuma
- * On: 3/29/21.
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 class PasswordUpdateComponent(private val onUpdated: () -> Unit) : Component() {
     val viewModel = PasswordUpdateViewModel()
@@ -102,6 +97,7 @@ class PasswordUpdateComponent(private val onUpdated: () -> Unit) : Component() {
                     messageView?.text = viewModel.errorMessage
                     messageView?.addRuleSet(errorStyle)
                 }
+                null -> {}
             }
         }
 

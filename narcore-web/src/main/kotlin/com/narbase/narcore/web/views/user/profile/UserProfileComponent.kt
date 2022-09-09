@@ -25,13 +25,8 @@ import com.narbase.narcore.web.utils.views.pointerCursor
 import com.narbase.narcore.web.utils.views.withLoadingAndError
 import com.narbase.narcore.web.views.basePage.BasePageViewModel
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2020/01/28.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 class UserProfileComponent : Component() {
 

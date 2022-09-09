@@ -8,13 +8,8 @@ import kotlinx.browser.document
 import kotlinx.dom.addClass
 import org.w3c.dom.HTMLElement
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2018] Narbase Technologies
- * All Rights Reserved.
- * Created by ${user}
- * On: ${Date}.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 open class MaterialIcon(parent: View? = null, iconName: String) : View(parent) {

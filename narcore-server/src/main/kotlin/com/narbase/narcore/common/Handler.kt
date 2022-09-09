@@ -11,13 +11,8 @@ import io.ktor.request.ContentTransformationException
 import io.ktor.response.*
 import kotlin.reflect.KClass
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2018] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 5/19/17.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 abstract class Handler<V : Any, out D : Any>(

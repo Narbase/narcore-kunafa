@@ -3,12 +3,7 @@ package com.narbase.narcore.dto.models.roles
 import com.narbase.narcore.dto.common.EnumDtoName
 
 /*
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2022/09/07.
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 enum class Privilege(override val dtoName: String) : EnumDtoName {

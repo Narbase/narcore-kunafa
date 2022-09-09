@@ -6,13 +6,8 @@ import org.jetbrains.exposed.sql.VarCharColumnType
 import kotlin.reflect.KClass
 import kotlin.reflect.full.safeCast
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] - [2019] Narbase Technologies
- * All Rights Reserved.
- * Created by Mohammad Abbas
- * On: 5/1/19.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 class EnumColumnType<E>(
     colLength: Int = 32,

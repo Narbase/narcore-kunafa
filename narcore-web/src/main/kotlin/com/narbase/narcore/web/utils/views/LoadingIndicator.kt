@@ -6,13 +6,8 @@ import com.narbase.kunafa.core.components.imageView
 import com.narbase.kunafa.core.css.*
 import com.narbase.kunafa.core.dimensions.px
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2018] Narbase Technologies
- * All Rights Reserved.
- * Created by ${user}
- * On: ${Date}.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 fun View?.loadingIndicator(): ImageView {

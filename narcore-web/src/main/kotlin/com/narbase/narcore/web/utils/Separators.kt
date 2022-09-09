@@ -8,13 +8,8 @@ import com.narbase.kunafa.core.dimensions.px
 import com.narbase.kunafa.core.drawable.Color
 import com.narbase.narcore.web.common.AppColors
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] - [2019] Narbase Technologies
- * All Rights Reserved.
- * Created by Mohammad Abbas
- * On: 12/8/19.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 

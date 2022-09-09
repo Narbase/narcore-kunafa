@@ -4,13 +4,8 @@ import com.narbase.narcore.web.network.ServerCaller
 import com.narbase.narcore.web.storage.StorageManager
 import com.narbase.narcore.web.utils.DataResponse
 
-/**
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] -[2019] Narbase Technologies
- * All Rights Reserved.
- * Created by islam
- * On: 2020/02/04.
+/*
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 @Suppress("unused")
