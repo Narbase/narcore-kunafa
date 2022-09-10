@@ -91,7 +91,7 @@ object Migrations {
                 currentlyAppliedMigrations.removeAll { existingMigration.version == it.version }
             }
         }
-        return currentlyAppliedMigrations.minBy { it.version }?.version
+        return currentlyAppliedMigrations.minBy { it.version }.version
     }
 
     fun migrate(targetVersion: String? = null) {

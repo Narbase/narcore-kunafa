@@ -122,7 +122,7 @@ fun Query.searchMultipleColumns(columns: List<ExpressionWithColumnType<out Strin
         val searchWords = searchTerm.split(" ")
         val expr =
             searchWords.map { word ->
-                columns.map { Op.build { it.lowerCase() like "%${word.toLowerCase()}%" } }
+                columns.map { Op.build { it.lowerCase() like "%${word.lowercase(Locale.getDefault())}%" } }
                     .reduce { acc, op -> acc or op }
             }.reduce { acc, op -> acc and op }
         if (this == null) expr

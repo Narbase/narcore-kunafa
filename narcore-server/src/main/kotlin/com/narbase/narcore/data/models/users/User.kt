@@ -18,4 +18,5 @@ data class User(
     val isDeleted: Boolean,
 )
 
-inline class UserId(val value: UUID)
+@JvmInline
+value class UserId(val value: UUID)

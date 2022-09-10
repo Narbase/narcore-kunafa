@@ -6,6 +6,7 @@ import org.jetbrains.exposed.sql.transactions.TransactionManager
 import org.joda.time.DateTime
 import java.math.BigDecimal
 import java.sql.ResultSet
+import java.util.*
 
 fun <T : Any> String.execAndMap(transform: (ResultSet) -> T): List<T> {
     val result = arrayListOf<T>()
@@ -26,7 +27,7 @@ private fun <T : Any> Transaction.preparedExecAndMap(
     val result = arrayListOf<T>()
     val rs = connection.prepareStatement(sql, true)
         .apply { fillParameters(args) }.run {
-            if (sql.toLowerCase().startsWith("select "))
+            if (sql.lowercase(Locale.getDefault()).startsWith("select "))
                 executeQuery()
             else {
                 executeUpdate()

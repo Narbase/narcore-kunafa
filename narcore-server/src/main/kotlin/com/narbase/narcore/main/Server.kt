@@ -41,6 +41,8 @@ import io.ktor.server.plugins.callid.*
 import io.ktor.server.plugins.forwardedheaders.*
 import io.ktor.server.request.*
 import io.ktor.server.plugins.compression.*
+import io.ktor.server.plugins.cors.routing.CORS
+import io.ktor.server.plugins.cors.routing.*
 import io.ktor.server.plugins.partialcontent.*
 
 /*
