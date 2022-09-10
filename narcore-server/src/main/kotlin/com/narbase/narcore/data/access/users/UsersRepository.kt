@@ -86,9 +86,9 @@ object UsersRepository {
             }
             if (searchTerm?.isNotBlank() == true) {
                 query.andWhere {
-                    (UsersTable.fullName.lowerCase() like "%${searchTerm.toLowerCase()}%") or
-                            (UsersTable.localPhone.lowerCase() like "%${searchTerm.toLowerCase()}%") or
-                            (UsersTable.callingCode.lowerCase() like "%${searchTerm.toLowerCase()}%")
+                    (UsersTable.fullName.lowerCase() like "%${searchTerm.lowercase(Locale.getDefault())}%") or
+                            (UsersTable.localPhone.lowerCase() like "%${searchTerm.lowercase(Locale.getDefault())}%") or
+                            (UsersTable.callingCode.lowerCase() like "%${searchTerm.lowercase(Locale.getDefault())}%")
                 }
             }
             val count = query.count()

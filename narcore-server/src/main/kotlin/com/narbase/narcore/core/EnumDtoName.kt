@@ -13,7 +13,8 @@ fun <E> E.dto(): DtoName<E> where E : EnumDtoName, E : Enum<E> {
 }
 
 //DtoName does not work in Lists
-inline class DtoName<E>(val name: String) where E : EnumDtoName, E : Enum<E> {
+@JvmInline
+value class DtoName<E>(val name: String) where E : EnumDtoName, E : Enum<E> {
     constructor(enumDto: EnumDtoName) : this(enumDto.dtoName)
 }
 

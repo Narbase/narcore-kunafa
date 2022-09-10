@@ -19,16 +19,33 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-jodatime:0.39.2")
     implementation("org.postgresql:postgresql:42.5.0")
     implementation("com.zaxxer:HikariCP:5.0.1")
-    implementation("io.ktor:ktor-auth:$ktor_version")
-    implementation("io.ktor:ktor-auth-jwt:$ktor_version")
-    implementation("io.ktor:ktor-gson:$ktor_version")
-    implementation("io.ktor:ktor-network:$ktor_version")
-    implementation("io.ktor:ktor-websockets:$ktor_version")
+
+    implementation("io.ktor:ktor-server-auth:$ktor_version")
+    implementation("io.ktor:ktor-server-auth-jwt:$ktor_version")
+
+
+    implementation("io.ktor:ktor-server-content-negotiation:$ktor_version")
+    implementation("io.ktor:ktor-serialization-gson:$ktor_version")
+
+
+//    implementation("io.ktor:ktor-network:$ktor_version")
+    implementation("io.ktor:ktor-server-websockets:$ktor_version")
+
+    implementation("io.ktor:ktor-server-status-pages:$ktor_version")
+    implementation("io.ktor:ktor-server-cors:$ktor_version")
+    implementation("io.ktor:ktor-server-forwarded-header:$ktor_version")
+    implementation("io.ktor:ktor-server-call-id:$ktor_version")
+    implementation("io.ktor:ktor-server-call-logging:$ktor_version")
+    implementation("io.ktor:ktor-server-partial-content:$ktor_version")
+    implementation("io.ktor:ktor-server-compression:$ktor_version")
+
+
     implementation("io.ktor:ktor-server-jetty:$ktor_version")
     implementation("io.ktor:ktor-client-apache:$ktor_version")
     implementation("io.ktor:ktor-client-gson:$ktor_version")
     implementation("io.ktor:ktor-serialization:$ktor_version")
-    implementation("ch.qos.logback:logback-classic:1.2.11")
+    implementation("io.ktor:ktor-server-double-receive:$ktor_version")
+    implementation("ch.qos.logback:logback-classic:1.4.0")
 
     implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.8.0")
     implementation("com.sun.mail:javax.mail:1.5.5")

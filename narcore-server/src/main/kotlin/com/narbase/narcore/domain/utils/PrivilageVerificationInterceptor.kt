@@ -3,9 +3,9 @@ package com.narbase.narcore.domain.utils
 import com.narbase.narcore.common.auth.loggedin.AuthorizedClientData
 import com.narbase.narcore.common.exceptions.UnauthenticatedException
 import com.narbase.narcore.dto.models.roles.Privilege
-import io.ktor.application.*
-import io.ktor.auth.*
-import io.ktor.routing.*
+import io.ktor.server.application.*
+import io.ktor.server.auth.*
+import io.ktor.server.routing.*
 
 /*
  * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.

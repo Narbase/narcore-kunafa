@@ -5,7 +5,6 @@ import com.narbase.narcore.data.tables.SmsRecordTable
 import io.ktor.client.*
 import io.ktor.client.engine.apache.*
 import io.ktor.client.request.*
-import io.ktor.client.statement.*
 import io.ktor.http.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -55,7 +54,7 @@ object SmsSender {
         logger.info("Sending sms. retriesCounter is $retriesCounter")
         return runBlocking {
             try {
-                val response = senderClient.request<HttpResponse> {
+                val response = senderClient.request {
                     url(URL(url))
                     method = HttpMethod.Get
                 }

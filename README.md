@@ -4,7 +4,7 @@ To run the project, you need to run the server and the frontend.
 
 ### Running the server
 
-Simply click on the green arrow next to the `main` function
+In the terminal, run `./gradlew narcore-server:run`
 
 ### Running the frontend
 

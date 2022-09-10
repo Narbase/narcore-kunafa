@@ -3,9 +3,9 @@ package com.narbase.narcore.domain.utils
 import com.narbase.narcore.common.auth.loggedin.AuthorizedClientData
 import com.narbase.narcore.common.exceptions.DisabledUserException
 import com.narbase.narcore.data.tables.UsersTable
-import io.ktor.application.*
-import io.ktor.auth.*
-import io.ktor.routing.*
+import io.ktor.server.application.*
+import io.ktor.server.auth.*
+import io.ktor.server.routing.*
 import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.util.*

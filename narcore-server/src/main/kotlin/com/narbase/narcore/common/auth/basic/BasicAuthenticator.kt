@@ -4,7 +4,7 @@ import com.narbase.narcore.common.auth.loggedin.AuthorizedClientData
 import com.narbase.narcore.data.access.clients.ClientsDao
 import com.narbase.narcore.data.access.roles.ClientRolesDao
 import com.narbase.narcore.data.models.clients.Client
-import io.ktor.auth.*
+import io.ktor.server.auth.*
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.util.*
 
