@@ -13,23 +13,35 @@ import com.narbase.narcore.domain.user.setupUserRoutes
 import com.narbase.narcore.main.files.filesWithThumbnailsGenerator
 import com.narbase.narcore.main.properties.VersionProperties
 import com.narbase.narcore.main.provisioning.registerFirstAdmin
-import io.ktor.application.*
-import io.ktor.config.*
-import io.ktor.features.*
-import io.ktor.gson.*
 import io.ktor.http.*
 import io.ktor.http.content.*
-import io.ktor.response.*
-import io.ktor.routing.*
+import io.ktor.serialization.gson.*
+import io.ktor.server.application.*
+import io.ktor.server.config.*
 import io.ktor.server.engine.*
+import io.ktor.server.http.content.*
 import io.ktor.server.jetty.*
+import io.ktor.server.plugins.*
+import io.ktor.server.plugins.contentnegotiation.*
+import io.ktor.server.plugins.doublereceive.*
+import io.ktor.server.response.*
+import io.ktor.server.routing.*
+import io.ktor.server.websocket.*
 import io.ktor.websocket.*
+import kotlinx.coroutines.runBlocking
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.slf4j.event.Level
 import java.io.File
 import java.text.DateFormat
 import java.time.Duration
+import io.ktor.server.plugins.cors.*
+import io.ktor.server.plugins.callloging.*
+import io.ktor.server.plugins.callid.*
+import io.ktor.server.plugins.forwardedheaders.*
+import io.ktor.server.request.*
+import io.ktor.server.plugins.compression.*
+import io.ktor.server.plugins.partialcontent.*
 
 /*
  * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
@@ -85,9 +97,32 @@ object Server {
         install(PartialContent) {
             maxRangeCount = 10
         }
+        install(DoubleReceive)
+        install(CallId)
         install(CallLogging) {
-            level = Level.INFO
+            level = Level.TRACE
+            format { call ->
+                val userAgent = call.request.headers["User-Agent"]
+                val status = call.response.status()
+                val httpMethod = call.request.httpMethod.value
+                val uri = call.request.uri
+                val ip = call.request.origin.remoteHost
+                call.application.log.info("$status: $httpMethod - $uri")
+                runBlocking {
+                    var body = call.receiveNullable<String>()
+                    if (body?.contains("password") == true || body?.contains("token") == true) {
+                        body = "***"
+                    }
+
+                    "$status: $httpMethod - $uri - IP: $ip - User agent: $userAgent ${
+                        if (body.isNullOrBlank().not()) "- Body: $body" else ""
+                    }"
+                }
+            }
+            filter { call -> call.request.path().startsWith("/") }
+            callIdMdc("call-id")
         }
+
         install(ContentNegotiation) {
             gson {
                 setDateFormat(DateFormat.LONG)
@@ -95,7 +130,8 @@ object Server {
             }
         }
         install(WebSockets)
-        install(XForwardedHeaderSupport)
+        install(ForwardedHeaders)
+        install(XForwardedHeaders)
 
         setupAuthenticators(jwtRealm, jwtIssuer, jwtAudience)
 
@@ -142,22 +178,22 @@ object Server {
 
     private fun Application.enableCors() {
         install(CORS) {
-            method(HttpMethod.Options)
-            method(HttpMethod.Put)
+            allowMethod(HttpMethod.Options)
+            allowMethod(HttpMethod.Put)
             anyHost()
-            header("Authorization")
-            header("DNT")
-            header("X-CustomHeader")
-            header("Keep-Alive")
-            header("User-Agent")
-            header("X-Requested-With")
-            header("If-Modified-Since")
-            header("Cache-Control")
-            header("Content-Type")
-            header("Content-Range")
-            header("Accept-Ranges")
-            header("Range")
-            header("Client-Language")
+            allowHeader("Authorization")
+            allowHeader("DNT")
+            allowHeader("X-CustomHeader")
+            allowHeader("Keep-Alive")
+            allowHeader("User-Agent")
+            allowHeader("X-Requested-With")
+            allowHeader("If-Modified-Since")
+            allowHeader("Cache-Control")
+            allowHeader("Content-Type")
+            allowHeader("Content-Range")
+            allowHeader("Accept-Ranges")
+            allowHeader("Range")
+            allowHeader("Client-Language")
 
             allowCredentials = true
             maxAgeInSeconds = Duration.ofDays(1).seconds

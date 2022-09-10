@@ -3,10 +3,10 @@
 package com.narbase.narcore.main.files
 
 import com.narbase.narcore.domain.user.files.CreateFileController
-import io.ktor.application.*
-import io.ktor.http.content.*
-import io.ktor.response.*
-import io.ktor.routing.*
+import io.ktor.server.application.*
+import io.ktor.server.http.content.*
+import io.ktor.server.response.*
+import io.ktor.server.routing.*
 import io.ktor.util.*
 import io.ktor.util.pipeline.*
 import java.awt.image.BufferedImage

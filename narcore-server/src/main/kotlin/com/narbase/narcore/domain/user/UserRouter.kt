@@ -8,11 +8,11 @@ import com.narbase.narcore.domain.user.profile.UpdateProfileController
 import com.narbase.narcore.domain.user.profile.UserPasswordController
 import com.narbase.narcore.domain.user.websocket.WebSocketController
 import com.narbase.narcore.domain.utils.addInactiveUserInterceptor
-import io.ktor.application.*
-import io.ktor.auth.*
-import io.ktor.request.*
-import io.ktor.routing.*
-import io.ktor.websocket.*
+import io.ktor.server.application.*
+import io.ktor.server.auth.*
+import io.ktor.server.request.*
+import io.ktor.server.routing.*
+import io.ktor.server.websocket.*
 
 /*
  * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.

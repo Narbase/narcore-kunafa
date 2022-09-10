@@ -7,9 +7,9 @@ import com.narbase.narcore.common.auth.basic.BasicAuthenticator
 import com.narbase.narcore.common.auth.loggedin.AuthorizedClientData
 import com.narbase.narcore.data.access.roles.ClientRolesDao
 import com.narbase.narcore.deployment.JwtConf
-import io.ktor.application.*
-import io.ktor.auth.*
-import io.ktor.auth.jwt.*
+import io.ktor.server.application.*
+import io.ktor.server.auth.*
+import io.ktor.server.auth.jwt.*
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.util.*
 

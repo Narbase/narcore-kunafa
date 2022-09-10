@@ -3,10 +3,11 @@ package com.narbase.narcore.common.exceptions
 import com.narbase.narcore.common.BasicResponse
 import com.narbase.narcore.common.CommonCodes
 import com.narbase.narcore.data.columntypes.DbEnumCorruptedException
-import io.ktor.application.*
-import io.ktor.features.*
+import io.ktor.server.application.*
+import io.ktor.server.plugins.*
 import io.ktor.http.*
-import io.ktor.response.*
+import io.ktor.server.plugins.statuspages.*
+import io.ktor.server.response.*
 
 /*
  * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
@@ -14,20 +15,30 @@ import io.ktor.response.*
 
 fun Application.handleExceptions() {
     install(StatusPages) {
-        exception<UnauthenticatedException> { cause ->
+        exception<UnauthenticatedException> { call, cause ->
             call.respond(HttpStatusCode.Unauthorized, UnauthenticatedResponse(
                 cause.message.takeUnless { it.isNullOrEmpty() } ?: "Unauthenticated"))
         }
 
-        exception<OutdatedAppException> { call.respond(HttpStatusCode.BadRequest, OutdatedAppResponse()) }
-        exception<DisabledUserException> { call.respond(HttpStatusCode.Unauthorized, DisabledUserResponse()) }
-        exception<DbEnumCorruptedException> {
+        exception<OutdatedAppException> { call, _ ->
             call.respond(
                 HttpStatusCode.BadRequest,
-                DbEnumCorruptedResponse(it.message)
+                OutdatedAppResponse()
             )
         }
-        exception<InvalidRequestException> { cause ->
+        exception<DisabledUserException> { call, _ ->
+            call.respond(
+                HttpStatusCode.Unauthorized,
+                DisabledUserResponse()
+            )
+        }
+        exception<DbEnumCorruptedException> { call, cause ->
+            call.respond(
+                HttpStatusCode.BadRequest,
+                DbEnumCorruptedResponse(cause.message)
+            )
+        }
+        exception<InvalidRequestException> { call, cause ->
             cause.printStackTrace()
             call.respond(
                 HttpStatusCode.BadRequest,
@@ -35,15 +46,15 @@ fun Application.handleExceptions() {
             )
         }
 
-        status(HttpStatusCode.Unauthorized) {
+        status(HttpStatusCode.Unauthorized) { call, _ ->
             call.respond(HttpStatusCode.Unauthorized, UnauthenticatedResponse("Unauthenticated"))
         }
 
-        status(HttpStatusCode.NotFound) {
+        status(HttpStatusCode.NotFound) { call, _ ->
             call.respond(HttpStatusCode.NotFound, NotFoundRequestResponse("Resource not found"))
         }
 
-        exception<Throwable> { cause ->
+        exception<Throwable> { call, cause ->
             cause.printStackTrace()
             call.respond(HttpStatusCode.InternalServerError, InvalidRequestResponse(cause.message ?: "Invalid request"))
         }

@@ -7,9 +7,9 @@ import com.narbase.narcore.domain.admin.staff.roles.RolesCurdController
 import com.narbase.narcore.domain.user.crud.crud
 import com.narbase.narcore.domain.utils.addInactiveUserInterceptor
 import com.narbase.narcore.dto.models.roles.Privilege
-import io.ktor.application.*
-import io.ktor.auth.*
-import io.ktor.routing.*
+import io.ktor.server.application.*
+import io.ktor.server.auth.*
+import io.ktor.server.routing.*
 
 /*
  * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.

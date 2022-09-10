@@ -9,9 +9,9 @@ import com.narbase.narcore.common.exceptions.InvalidRequestException
 import com.narbase.narcore.data.models.utils.ListAndTotal
 import com.narbase.narcore.domain.utils.addPrivilegeVerificationInterceptor
 import com.narbase.narcore.dto.models.roles.Privilege
-import io.ktor.application.*
-import io.ktor.features.*
-import io.ktor.routing.*
+import io.ktor.server.application.*
+import io.ktor.server.plugins.*
+import io.ktor.server.routing.*
 import java.util.*
 import kotlin.reflect.KClass
 

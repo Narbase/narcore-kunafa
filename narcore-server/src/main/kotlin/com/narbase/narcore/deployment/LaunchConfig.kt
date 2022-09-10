@@ -1,7 +1,7 @@
 package com.narbase.narcore.deployment
 
 import com.typesafe.config.ConfigFactory
-import io.ktor.config.*
+import io.ktor.server.config.*
 import java.io.File
 
 /*

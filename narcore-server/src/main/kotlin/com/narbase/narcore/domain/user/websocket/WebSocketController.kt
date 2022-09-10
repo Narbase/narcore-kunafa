@@ -6,8 +6,8 @@ import com.narbase.narcore.common.auth.myJwtVerifier
 import com.narbase.narcore.common.exceptions.UnauthenticatedException
 import com.narbase.narcore.domain.user.myWsCustomAuthHeader
 import com.narbase.narcore.dto.models.roles.Privilege
-import io.ktor.http.cio.websocket.*
-import io.ktor.request.*
+import io.ktor.server.request.*
+import io.ktor.server.websocket.*
 import io.ktor.websocket.*
 import kotlinx.coroutines.channels.ClosedReceiveChannelException
 import kotlinx.coroutines.runBlocking
