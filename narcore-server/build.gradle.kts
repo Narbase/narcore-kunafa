@@ -1,3 +1,13 @@
+import org.gradle.internal.IoActions
+import org.gradle.internal.util.PropertiesUtils
+import org.jetbrains.kotlin.com.intellij.util.SystemProperties.getLineSeparator
+import java.io.BufferedOutputStream
+import java.io.FileOutputStream
+import java.io.OutputStream
+import java.nio.charset.Charset
+import java.util.*
+
+
 val kotlin_version: String by project
 val ktor_version: String by project
 val mokk_version: String by project
@@ -90,29 +100,21 @@ tasks.jar {
     }
     from(configurations.compileClasspath.map { config -> config.map { if (it.isDirectory) it else zipTree(it) } })
 }
-
-tasks {
-    val createProperties by registering(WriteProperties::class) {
-        description = "Write project properties in a file."
-
-        outputFile = file("$buildDir/resources/main/version.properties")
-        encoding = "UTF-8"
-        comment = "Version and name of project"
-
-        properties(
-            mapOf(
-                "versionName" to project.version.toString(),
-                "versionNumber" to versionNumber.toString()
-            )
-        )
-
-        writeProperties()
+tasks.register("createProperties") {
+    dependsOn("processResources")
+    doLast {
+        val charset = Charset.forName("UTF-8")
+        val out: OutputStream = BufferedOutputStream(FileOutputStream("$buildDir/resources/main/version.properties"))
+        try {
+            val propertiesToWrite: Properties = Properties()
+            propertiesToWrite["versionName"] = project.version.toString()
+            propertiesToWrite["versionNumber"] = versionNumber.toString()
+            PropertiesUtils.store(propertiesToWrite, out, "Version and name of project", charset, getLineSeparator())
+        } finally {
+            IoActions.closeQuietly(out)
+        }
     }
-    processResources {
-        from(createProperties)
-        dependsOn(createProperties)
-    }
-    classes{
-        dependsOn(createProperties)
-    }
+}
+tasks.classes {
+    dependsOn("createProperties")
 }
