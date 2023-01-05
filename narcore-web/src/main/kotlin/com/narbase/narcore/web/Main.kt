@@ -10,16 +10,21 @@ import com.narbase.kunafa.core.css.width
 import com.narbase.kunafa.core.dimensions.px
 import com.narbase.kunafa.core.dimensions.vh
 import com.narbase.kunafa.core.dimensions.vw
+import com.narbase.narcore.dto.domain.hello_world.HelloWorldEndPoint
+import com.narbase.narcore.router.Routing
 import com.narbase.narcore.web.common.models.Direction
 import com.narbase.narcore.web.events.EscapeClickedEvent
 import com.narbase.narcore.web.login.LoginPageContent
 import com.narbase.narcore.web.login.LoginViewController
+import com.narbase.narcore.web.network.remoteProcess
 import com.narbase.narcore.web.storage.StorageManager
 import com.narbase.narcore.web.utils.eventbus.EventBus
 import com.narbase.narcore.web.utils.views.PopUpDialog
 import com.narbase.narcore.web.utils.views.SnackBar
 import com.narbase.narcore.web.utils.views.customViews.initWarningPopupDialog
 import kotlinx.browser.document
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.w3c.dom.events.KeyboardEvent
 
 /*
@@ -28,9 +33,17 @@ import org.w3c.dom.events.KeyboardEvent
 
 
 fun main() {
+    Routing.init()
     console.log("Hello world")
     requireAssetsForWebpack()
     Main().setup()
+    //Test Routing
+    GlobalScope.launch {
+        val response = HelloWorldEndPoint.remoteProcess(HelloWorldEndPoint.Request(data = "Hi!"))
+        println(response.data)
+        console.log(response.data)
+        //output: "You sent: Hi!"
+    }
 
 }
 
@@ -81,6 +94,7 @@ class Main {
         val loginPage = LoginPageContent(LoginViewController(appViewController))
 
         mount(AppComponent(appViewController, loginPage))
+
     }
 }
 
