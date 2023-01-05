@@ -6,6 +6,7 @@ import com.narbase.narcore.common.db.DatabaseConnector
 import com.narbase.narcore.common.db.migrations.Migrations
 import com.narbase.narcore.common.db.migrations.initializeUserMigrations
 import com.narbase.narcore.common.exceptions.handleExceptions
+import com.narbase.narcore.common.setupCommonRoutes
 import com.narbase.narcore.deployment.appConf
 import com.narbase.narcore.domain.admin.setupAdminRoutes
 import com.narbase.narcore.domain.client.setupClientRoutes
@@ -142,6 +143,7 @@ object Server {
             setupClientRoutes(jwtIssuer, jwtAudience)
             setupAdminRoutes()
             setupUserRoutes()
+            setupCommonRoutes()
             createDirectoriesIfMissing("files", "web")
             static("files") {
                 filesWithThumbnailsGenerator("files")
