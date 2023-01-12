@@ -16,6 +16,7 @@ import com.narbase.narcore.web.common.models.Direction
 import com.narbase.narcore.web.events.EscapeClickedEvent
 import com.narbase.narcore.web.login.LoginPageContent
 import com.narbase.narcore.web.login.LoginViewController
+import com.narbase.narcore.web.network.networkCall
 import com.narbase.narcore.web.network.remoteProcess
 import com.narbase.narcore.web.storage.StorageManager
 import com.narbase.narcore.web.utils.eventbus.EventBus
@@ -34,18 +35,12 @@ import org.w3c.dom.events.KeyboardEvent
 
 fun main() {
     Routing.init()
-    console.log("Hello world")
     requireAssetsForWebpack()
     Main().setup()
-    //Test Routing
-    GlobalScope.launch {
-        val response = HelloWorldEndPoint.remoteProcess(HelloWorldEndPoint.Request(data = "Hi!"))
-        println(response.data)
-        console.log(response.data)
-        //output: "You sent: Hi!"
-    }
 
 }
+
+
 
 class Main {
 
@@ -97,6 +92,8 @@ class Main {
 
     }
 }
+
+
 
 private fun requireAssetsForWebpack() {
     js("require('material-design-icons-iconfont/dist/material-design-icons.css')")
