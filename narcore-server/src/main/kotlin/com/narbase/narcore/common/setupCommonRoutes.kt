@@ -17,9 +17,7 @@ import org.jetbrains.exposed.sql.transactions.transaction
 import org.reflections.Reflections
 import com.narbase.narcore.common.auth.loggedin.AuthorizedClientData
 import com.narbase.narcore.common.exceptions.DisabledUserException
-//import com.narbase.narcore.data.tables.RepresentativeTable
-//import com.narbase.narcore.data.tables.StaffTable
-//import com.narbase.narcore.data.tables.TalentsBasicInfoTable
+import com.narbase.narcore.data.tables.UsersTable
 import com.narbase.narcore.deployment.Environment
 import com.narbase.narcore.deployment.LaunchConfig
 import com.narbase.narcore.domain.user.crud.*
@@ -155,41 +153,33 @@ private fun KtorRoute.registerRouteWithoutAuth(
 
 
 private fun KtorRoute.addDisableAccountInterceptor(privileges: List<Privilege>) {
-//    intercept(ApplicationCallPipeline.Call) {
-//        val authorizedClientData = call.principal<AuthorizedClientData>()
-//        val isInactive = transaction {
-//            authorizedClientData?.id?.let { clientId ->
-//                privileges.map {
-//                    when (it) {
-//                        Privilege.Talent -> {
-//                            TalentsBasicInfoTable.select { TalentsBasicInfoTable.clientId eq UUID.fromString(clientId) }
-//                                .firstOrNull()
-//                                ?.let { it[TalentsBasicInfoTable.isInactive] || it[TalentsBasicInfoTable.isDeleted] }
-//                                ?: true
-//                        }
-//
-//                        Privilege.Company -> {
-//                            RepresentativeTable.select { RepresentativeTable.clientId eq UUID.fromString(clientId) }
-//                                .firstOrNull()
-//                                ?.let { it[RepresentativeTable.isDeleted] }
-//                                ?: true
-//
-//                        }
-//
-//                        Privilege.UsersManagement -> {
-//                            StaffTable.select { StaffTable.clientId eq UUID.fromString(clientId) }
-//                                .firstOrNull()
-//                                ?.let { it[StaffTable.isInactive] || it[StaffTable.isDeleted] }
-//                                ?: true
-//                        }
-//                    }
-//                }.reduce { acc, isInactive -> acc || isInactive }
-//
-//            }
-//        }
-//        if (isInactive == true)
-//            throw DisabledUserException()
-//    }
+    intercept(ApplicationCallPipeline.Call) {
+        val authorizedClientData = call.principal<AuthorizedClientData>()
+        val isInactive = transaction {
+            authorizedClientData?.id?.let { clientId ->
+                privileges.map {
+                    when (it) {
+                        Privilege.BasicUser -> {
+                            UsersTable.select { UsersTable.clientId eq UUID.fromString(clientId) }
+                                .firstOrNull()
+                                ?.let { it[UsersTable.isInactive] || it[UsersTable.isDeleted] }
+                                ?: true
+                        }
+
+                        Privilege.UsersManagement -> {
+                            UsersTable.select { UsersTable.clientId eq UUID.fromString(clientId) }
+                                .firstOrNull()
+                                ?.let { it[UsersTable.isInactive] || it[UsersTable.isDeleted] }
+                                ?: true
+                        }
+                    }
+                }.reduce { acc, isInactive -> acc || isInactive }
+
+            }
+        }
+        if (isInactive == true)
+            throw DisabledUserException()
+    }
 }
 
 fun KtorRouting.printRoutes() {
