@@ -1,12 +1,6 @@
 /*
- * NARBASE TECHNOLOGIES CONFIDENTIAL
- * ______________________________
- * [2017] - [2022] Narbase Technologies
- * All Rights Reserved.
- * Created by shalaga44
- * On: 20/Dec/2022.
+ * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
-
 package com.narbase.narcore.dto.domain.hello_world
 
 import com.narbase.narcore.dto.models.RequestType
