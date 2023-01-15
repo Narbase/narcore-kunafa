@@ -328,9 +328,8 @@ class BasePageComponent(
         routeComponent(UserProfileComponent.routeDetails.href, isExact = false) { userProfileComponent }
     }
 
-    fun testRouting(){
+    private fun testRouting(){
         console.log("Testing Routing")
-        //Test Routing
         networkCall {
             val response = HelloWorldEndPoint.remoteProcess(HelloWorldEndPoint.Request(data = "Hi!"))
             console.log(response.data.data)
