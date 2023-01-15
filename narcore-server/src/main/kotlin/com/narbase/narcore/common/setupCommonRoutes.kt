@@ -153,24 +153,10 @@ private fun KtorRoute.addDisableAccountInterceptor(privileges: List<Privilege>) 
         val authorizedClientData = call.principal<AuthorizedClientData>()
         val isInactive = transaction {
             authorizedClientData?.id?.let { clientId ->
-                privileges.map {
-                    when (it) {
-                        Privilege.BasicUser -> {
                             UsersTable.select { UsersTable.clientId eq UUID.fromString(clientId) }
                                 .firstOrNull()
                                 ?.let { it[UsersTable.isInactive] || it[UsersTable.isDeleted] }
                                 ?: true
-                        }
-
-                        Privilege.UsersManagement -> {
-                            UsersTable.select { UsersTable.clientId eq UUID.fromString(clientId) }
-                                .firstOrNull()
-                                ?.let { it[UsersTable.isInactive] || it[UsersTable.isDeleted] }
-                                ?: true
-                        }
-                    }
-                }.reduce { acc, isInactive -> acc || isInactive }
-
             }
         }
         if (isInactive == true)
