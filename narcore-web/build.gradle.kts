@@ -8,6 +8,7 @@ val coroutinesVersion = "1.6.4"
 
 plugins {
     id("org.jetbrains.kotlin.js")
+    id("io.gitlab.arturbosch.detekt").version("1.22.0")
 }
 
 repositories {

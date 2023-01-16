@@ -7,12 +7,14 @@ allprojects {
         maven(url = "https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven/")
         mavenCentral()
     }
+
 }
 
 plugins {
     kotlin("jvm") version "1.7.10" apply false
     kotlin("js") version "1.7.10" apply false
     kotlin("multiplatform") version "1.7.10" apply false
+    id("io.gitlab.arturbosch.detekt").version("1.22.0")
 }
 
 tasks.register("buildRelease") {
@@ -34,4 +36,9 @@ tasks.register("buildRelease") {
             overwrite = true
         )
     }
+}
+
+
+repositories {
+    mavenCentral()
 }

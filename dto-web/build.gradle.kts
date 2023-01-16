@@ -1,6 +1,7 @@
 
 plugins {
     kotlin("multiplatform")
+    id("io.gitlab.arturbosch.detekt").version("1.22.0")
 }
 kotlin {
     jvm {
