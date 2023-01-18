@@ -15,7 +15,6 @@ val mokk_version: String by project
 plugins {
     kotlin("jvm")
     application
-    id("io.gitlab.arturbosch.detekt").version("1.22.0")
 }
 
 val versionNumber = 1

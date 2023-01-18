@@ -7,6 +7,7 @@ allprojects {
         maven(url = "https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven/")
         mavenCentral()
     }
+    apply(plugin = "io.gitlab.arturbosch.detekt")
 
 }
 
