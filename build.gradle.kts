@@ -43,3 +43,15 @@ tasks.register("buildRelease") {
 repositories {
     mavenCentral()
 }
+
+tasks.register("copyHook") {
+    File("./scripts/pre-commit").copyTo(
+        File("./.git/hooks/pre-commit"),
+        overwrite = true
+    )
+    mustRunAfter("build")
+}
+
+
+
+
