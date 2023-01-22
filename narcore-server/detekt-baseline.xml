@@ -1,0 +1,267 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>ClassNaming:Utils.kt$existsString : Op</ID>
+    <ID>ConstructorParameterNaming:CrudController.kt$CrudController$val ListRequestDtoClass: KClass&lt;ListRequestDtoType&gt;</ID>
+    <ID>ConstructorParameterNaming:CrudController.kt$GetListController$private val ListRequestDtoClass: KClass&lt;ListRequestDtoType&gt;?</ID>
+    <ID>ConstructorParameterNaming:EndpointCrudController.kt$EndpointCrudController$ListRequestDtoClass: KClass&lt;ListRequestDtoType&gt;</ID>
+    <ID>CyclomaticComplexMethod:Migrations.kt$Migrations$fun migrate(targetVersion: String? = null)</ID>
+    <ID>EmptyDefaultConstructor:EnableStaffController.kt$EnableStaffController.ResponseDto$()</ID>
+    <ID>EmptyDefaultConstructor:Handler.kt$BasicHandler$( )</ID>
+    <ID>EmptyDefaultConstructor:UpdateProfileController.kt$UpdateProfileController.ResponseDto$()</ID>
+    <ID>ForbiddenComment:CrudController.kt$CrudController$// todo: Why update returns D?</ID>
+    <ID>FunctionNaming:JsonColumn.kt$inline fun &lt;reified T : Any&gt; JsonColumn()</ID>
+    <ID>ImplicitDefaultLocale:PasswordEncoder.kt$PasswordEncoder$String.format("pbkdf2_sha256$%d$%s$%s", iterations, salt, hash)</ID>
+    <ID>LongMethod:Migrations.kt$Migrations$fun migrate(targetVersion: String? = null)</ID>
+    <ID>LongMethod:Server.kt$Server$private fun Application.appModule()</ID>
+    <ID>LongMethod:setupCommonRoutes.kt$fun KtorRouting.setupCommonRoutes()</ID>
+    <ID>LongParameterList:CrudController.kt$CrudController$( pageNo: Long, pageSize: Int, searchTerm: String, filters: Map&lt;String, String&gt;, data: ListRequestDtoType?, clientData: AuthorizedClientData? )</ID>
+    <ID>LongParameterList:UsersRepository.kt$UsersRepository$( clientId: UUID, username: String?, password: String?, fullName: String?, callingCode: String?, localPhone: String?, rolesIds: List&lt;UUID&gt;?, )</ID>
+    <ID>LongParameterList:UsersRepository.kt$UsersRepository$( username: String, password: String, fullName: String, callingCode: String, localPhone: String, rolesIds: List&lt;UUID&gt; )</ID>
+    <ID>MagicNumber:AddRolesTable.kt$AddRolesTable$10</ID>
+    <ID>MagicNumber:AddRolesTable.kt$AddRolesTable$2022</ID>
+    <ID>MagicNumber:AddRolesTable.kt$AddRolesTable$30</ID>
+    <ID>MagicNumber:AddRolesTable.kt$AddRolesTable$6</ID>
+    <ID>MagicNumber:AddRolesTable.kt$AddRolesTable$9</ID>
+    <ID>MagicNumber:ConnectionProvider.kt$ConnectionProvider$20</ID>
+    <ID>MagicNumber:ConnectionProvider.kt$ConnectionProvider$28_740_000</ID>
+    <ID>MagicNumber:ConnectionProvider.kt$ConnectionProvider$3000</ID>
+    <ID>MagicNumber:ConnectionProvider.kt$ConnectionProvider$34_000</ID>
+    <ID>MagicNumber:CreateFileController.kt$CreateFileController.FileType.Image$1170</ID>
+    <ID>MagicNumber:CreateFileController.kt$CreateFileController.FileType.Image$1920</ID>
+    <ID>MagicNumber:CreateFileController.kt$CreateFileController.FileType.Image$500</ID>
+    <ID>MagicNumber:CreateFileController.kt$CreateFileController.FileType.Image$820</ID>
+    <ID>MagicNumber:CrudController.kt$CrudController$10</ID>
+    <ID>MagicNumber:EmailSender.kt$EmailSender$100</ID>
+    <ID>MagicNumber:EnumCloumnType.kt$32</ID>
+    <ID>MagicNumber:FilesController.kt$1024</ID>
+    <ID>MagicNumber:FilesController.kt$1920</ID>
+    <ID>MagicNumber:FilesController.kt$240</ID>
+    <ID>MagicNumber:FilesController.kt$3</ID>
+    <ID>MagicNumber:FilesController.kt$460</ID>
+    <ID>MagicNumber:FilesController.kt$680</ID>
+    <ID>MagicNumber:FilesController.kt$80</ID>
+    <ID>MagicNumber:InitialMigration.kt$InitialMigration$2022</ID>
+    <ID>MagicNumber:InitialMigration.kt$InitialMigration$5</ID>
+    <ID>MagicNumber:InitialMigration.kt$InitialMigration$9</ID>
+    <ID>MagicNumber:PasswordEncoder.kt$PasswordEncoder$256</ID>
+    <ID>MagicNumber:PasswordEncoder.kt$PasswordEncoder$4</ID>
+    <ID>MagicNumber:Server.kt$Server$10</ID>
+    <ID>MagicNumber:Union.kt$10</ID>
+    <ID>MagicNumber:WebSocketController.kt$WebSocketController$10_000_000</ID>
+    <ID>MagicNumber:WebSocketController.kt$WebSocketController$20</ID>
+    <ID>MagicNumber:WebSocketController.kt$WebSocketController$5</ID>
+    <ID>MatchingDeclarationName:ApiStatusCode.kt$CommonCodes</ID>
+    <ID>MatchingDeclarationName:DateTimeWithoutTimezone.kt$DateTimeWithoutTimezoneColumn : ColumnType</ID>
+    <ID>MatchingDeclarationName:DateWithoutTimezone.kt$DateWithoutTimezoneColumn : ColumnType</ID>
+    <ID>MatchingDeclarationName:DefaultCrudControllers.kt$DefaultCrudController&lt;D : DefaultCrudController.UUIDItem&gt; : CrudController</ID>
+    <ID>MatchingDeclarationName:UserPasswordApi.kt$UserPasswordController : Handler</ID>
+    <ID>MaxLineLength:CrudController.kt$CrudController$// abstract fun getItemsCount(pageNo: Long, pageSize: Int, searchTerm: String?, data: String?, queryParameters: Parameters): Int</ID>
+    <ID>MaxLineLength:CrudController.kt$GetListController$)</ID>
+    <ID>MaxLineLength:CrudController.kt$GetListController$private val getItemsList: (pageNo: Long, pageSize: Int, searchTerm: String, filters: Map&lt;String, String&gt;, data: ListRequestDtoType?, clientData: AuthorizedClientData?) -&gt; ListAndTotal&lt;DtoType&gt;</ID>
+    <ID>MaxLineLength:DateTimeDtoUtils.kt$The clinic sends the datetime according to its time zone (e.g. gmt+2). The server converts the dto from the clinic timezone</ID>
+    <ID>MaxLineLength:DefaultCrudControllers.kt$DefaultCrudController$if (updatedRows == 0) throw InvalidRequestException("No rows match the id sent by the request, nothing was deleted")</ID>
+    <ID>MaxLineLength:DefaultCrudControllers.kt$DefaultCrudController$if (updatedRows == 0) throw InvalidRequestException("No rows match the id sent by the request, nothing was updated")</ID>
+    <ID>MaxLineLength:Migrations.kt$Migrations$"INSERT INTO $MIGRATIONS_TABLE(name, version, direction) values(\'${it.name}\', \'${it.version}\',\'${MigrationDirection.Down.persistenceName}\');"</ID>
+    <ID>MaxLineLength:Migrations.kt$Migrations$"INSERT INTO $MIGRATIONS_TABLE(name, version, direction) values(\'${it.name}\', \'${it.version}\',\'${MigrationDirection.Up.persistenceName}\');"</ID>
+    <ID>MaxLineLength:Migrations.kt$Migrations$?:</ID>
+    <ID>MaxLineLength:PropertiesReader.kt$PropertiesReader$if (inputStream == null) throw FileNotFoundException("property file '$propertiesFileName' not found in the classpath")</ID>
+    <ID>MaxLineLength:Server.kt$Server$logger.info("Launching server. App version: ${VersionProperties.versionName}, ${VersionProperties.versionNumber}")</ID>
+    <ID>MaxLineLength:SmsSender.kt$SmsSender$// "https://www.airtel.sd/bulksms/webacc.aspx?user=$SMS_USER&amp;pwd=$SMS_PASSWORD&amp;smstext=MessageBody&amp;Sender=$SMS_SENDER&amp;Nums={ReceiversNumbers}"</ID>
+    <ID>MaxLineLength:Validator.kt$// "${classField.name} length should be in range: ${annotation.min} to ${annotation.max}")</ID>
+    <ID>MaxLineLength:Validator.kt$//// throw InvalidRequestException("Field: ${classField.name}: $value not of type: ${classField.class}")</ID>
+    <ID>MaxLineLength:WebSocketController.kt$WebSocketController$(client.privileges.any { it in privileges } or (client.clientId == clientId)) &amp;&amp; client.clientId !in excludedId</ID>
+    <ID>MaxLineLength:WebSocketController.kt$WebSocketController$/* fun startPeriodically() { // return scheduleRepeated(1L, TimeUnit.MILLISECONDS.toMillis(1)) { // println("Sessions ${clientSessions.size}") send(DataResponse(BillUpdatedMessage( UpdatedBillDetailsDto("", UUID.randomUUID(), UUID.randomUUID(), "patientName", null, BillStatusDto.NotPaid, listOf())))) } } */</ID>
+    <ID>NestedBlockDepth:Migrations.kt$Migrations$fun migrate(targetVersion: String? = null)</ID>
+    <ID>NewLineAtEndOfFile:AddTokenController.kt$com.narbase.narcore.domain.client.token.AddTokenController.kt</ID>
+    <ID>NewLineAtEndOfFile:AdminRegisterer.kt$com.narbase.narcore.main.provisioning.AdminRegisterer.kt</ID>
+    <ID>NewLineAtEndOfFile:AdminRouter.kt$com.narbase.narcore.domain.admin.AdminRouter.kt</ID>
+    <ID>NewLineAtEndOfFile:AuthenticationConstants.kt$com.narbase.narcore.common.auth.AuthenticationConstants.kt</ID>
+    <ID>NewLineAtEndOfFile:AuthorizedClientData.kt$com.narbase.narcore.common.auth.loggedin.AuthorizedClientData.kt</ID>
+    <ID>NewLineAtEndOfFile:Client.kt$com.narbase.narcore.data.models.clients.Client.kt</ID>
+    <ID>NewLineAtEndOfFile:ClientRolesDao.kt$com.narbase.narcore.data.access.roles.ClientRolesDao.kt</ID>
+    <ID>NewLineAtEndOfFile:ClientRouter.kt$com.narbase.narcore.domain.client.ClientRouter.kt</ID>
+    <ID>NewLineAtEndOfFile:ClientsDao.kt$com.narbase.narcore.data.access.clients.ClientsDao.kt</ID>
+    <ID>NewLineAtEndOfFile:ConnectionProvider.kt$com.narbase.narcore.common.db.ConnectionProvider.kt</ID>
+    <ID>NewLineAtEndOfFile:CreateFileController.kt$com.narbase.narcore.domain.user.files.CreateFileController.kt</ID>
+    <ID>NewLineAtEndOfFile:DateTimeDtoUtils.kt$com.narbase.narcore.domain.utils.DateTimeDtoUtils.kt</ID>
+    <ID>NewLineAtEndOfFile:DateTimeTestUtils.kt$com.narbase.narcore.datetime.DateTimeTestUtils.kt</ID>
+    <ID>NewLineAtEndOfFile:DateTimeTests.kt$com.narbase.narcore.datetime.DateTimeTests.kt</ID>
+    <ID>NewLineAtEndOfFile:Deferred.kt$com.narbase.narcore.util.Deferred.kt</ID>
+    <ID>NewLineAtEndOfFile:EmailSender.kt$com.narbase.narcore.notification.email.EmailSender.kt</ID>
+    <ID>NewLineAtEndOfFile:EnableStaffController.kt$com.narbase.narcore.domain.admin.staff.EnableStaffController.kt</ID>
+    <ID>NewLineAtEndOfFile:EndpointHandler.kt$com.narbase.narcore.common.EndpointHandler.kt</ID>
+    <ID>NewLineAtEndOfFile:Gender.kt$com.narbase.narcore.data.enums.Gender.kt</ID>
+    <ID>NewLineAtEndOfFile:GenreateSqlForTables.kt$com.narbase.narcore.main.utils.GenreateSqlForTables.kt</ID>
+    <ID>NewLineAtEndOfFile:GetProfileController.kt$com.narbase.narcore.domain.user.profile.GetProfileController.kt</ID>
+    <ID>NewLineAtEndOfFile:Id.kt$com.narbase.narcore.data.conversions.id.Id.kt</ID>
+    <ID>NewLineAtEndOfFile:InactiveUserInterceptor.kt$com.narbase.narcore.domain.utils.InactiveUserInterceptor.kt</ID>
+    <ID>NewLineAtEndOfFile:InitialMigration.kt$com.narbase.narcore.common.db.migrations.usermigrations.InitialMigration.kt</ID>
+    <ID>NewLineAtEndOfFile:JsonSum.kt$com.narbase.narcore.data.columntypes.JsonSum.kt</ID>
+    <ID>NewLineAtEndOfFile:JwtTokenDto.kt$com.narbase.narcore.common.auth.jwt.JwtTokenDto.kt</ID>
+    <ID>NewLineAtEndOfFile:LaunchConfig.kt$com.narbase.narcore.deployment.LaunchConfig.kt</ID>
+    <ID>NewLineAtEndOfFile:ListAndTotal.kt$com.narbase.narcore.data.conversions.common.ListAndTotal.kt</ID>
+    <ID>NewLineAtEndOfFile:ListFilter.kt$com.narbase.narcore.data.access.common.ListFilter.kt</ID>
+    <ID>NewLineAtEndOfFile:LoginController.kt$com.narbase.narcore.domain.user.login.LoginController.kt</ID>
+    <ID>NewLineAtEndOfFile:Migration.kt$com.narbase.narcore.common.db.migrations.Migration.kt</ID>
+    <ID>NewLineAtEndOfFile:PasswordEncoder.kt$com.narbase.narcore.common.auth.basic.PasswordEncoder.kt</ID>
+    <ID>NewLineAtEndOfFile:PrivilageVerificationInterceptor.kt$com.narbase.narcore.domain.utils.PrivilageVerificationInterceptor.kt</ID>
+    <ID>NewLineAtEndOfFile:PropertiesReader.kt$com.narbase.narcore.main.properties.PropertiesReader.kt</ID>
+    <ID>NewLineAtEndOfFile:RemoveTokenController.kt$com.narbase.narcore.domain.client.token.RemoveTokenController.kt</ID>
+    <ID>NewLineAtEndOfFile:Role.kt$com.narbase.narcore.data.models.roles.Role.kt</ID>
+    <ID>NewLineAtEndOfFile:RolePrivilegesColumn.kt$com.narbase.narcore.data.columntypes.RolePrivilegesColumn.kt</ID>
+    <ID>NewLineAtEndOfFile:RolesCurdController.kt$com.narbase.narcore.domain.admin.staff.roles.RolesCurdController.kt</ID>
+    <ID>NewLineAtEndOfFile:RolesDao.kt$com.narbase.narcore.data.access.roles.RolesDao.kt</ID>
+    <ID>NewLineAtEndOfFile:SmsMessageStatus.kt$com.narbase.narcore.data.enums.SmsMessageStatus.kt</ID>
+    <ID>NewLineAtEndOfFile:SmsSender.kt$com.narbase.narcore.main.sms.SmsSender.kt</ID>
+    <ID>NewLineAtEndOfFile:SoftDeleteTable.kt$com.narbase.narcore.domain.user.crud.SoftDeleteTable.kt</ID>
+    <ID>NewLineAtEndOfFile:Union.kt$com.narbase.narcore.data.tables.utils.Union.kt</ID>
+    <ID>NewLineAtEndOfFile:UpdateProfileController.kt$com.narbase.narcore.domain.user.profile.UpdateProfileController.kt</ID>
+    <ID>NewLineAtEndOfFile:UserMigrations.kt$com.narbase.narcore.common.db.migrations.UserMigrations.kt</ID>
+    <ID>NewLineAtEndOfFile:UserPasswordApi.kt$com.narbase.narcore.domain.user.profile.UserPasswordApi.kt</ID>
+    <ID>NewLineAtEndOfFile:Users.kt$com.narbase.narcore.data.conversions.users.Users.kt</ID>
+    <ID>NewLineAtEndOfFile:UsersCrudController.kt$com.narbase.narcore.domain.admin.staff.UsersCrudController.kt</ID>
+    <ID>NewLineAtEndOfFile:VersionProperties.kt$com.narbase.narcore.main.properties.VersionProperties.kt</ID>
+    <ID>NewLineAtEndOfFile:WebSocketController.kt$com.narbase.narcore.domain.user.websocket.WebSocketController.kt</ID>
+    <ID>NewLineAtEndOfFile:setupCommonRoutes.kt$com.narbase.narcore.common.setupCommonRoutes.kt</ID>
+    <ID>PrintStackTrace:CreateFileController.kt$CreateFileController$e</ID>
+    <ID>PrintStackTrace:EmailSender.kt$EmailSender$e</ID>
+    <ID>PrintStackTrace:WebSocketController.kt$WebSocketController$e</ID>
+    <ID>PrintStackTrace:WebSocketController.kt$WebSocketController$t</ID>
+    <ID>ReturnCount:BasicAuthenticator.kt$BasicAuthenticator$fun validate(credentials: UserPasswordCredential): AuthorizedClientData?</ID>
+    <ID>ReturnCount:BasicAuthenticator.kt$BasicAuthenticator$private fun sanitizeInputs(credentials: UserPasswordCredential?): Boolean?</ID>
+    <ID>ReturnCount:CreateFileController.kt$CreateFileController$private fun writeFile( part: PartData.FileItem, directoryName: String, fileType: FileType, originalFileName: String? ): String</ID>
+    <ID>ReturnCount:FilesController.kt$@Suppress("BlockingMethodInNonBlockingContext") private suspend fun PipelineContext&lt;Unit, ApplicationCall&gt;.getFile(dir: File)</ID>
+    <ID>ReturnCount:FilesController.kt$private fun getThumbnailInfo(file: String?): ThumbnailInfo?</ID>
+    <ID>ReturnCount:Union.kt$Union$override fun prepareSQL(transaction: Transaction): String</ID>
+    <ID>SwallowedException:CrudController.kt$GetListController$e: ContentTransformationException</ID>
+    <ID>SwallowedException:CrudController.kt$GetListController$e: UnsupportedMediaTypeException</ID>
+    <ID>SwallowedException:Handler.kt$Handler$e: ContentTransformationException</ID>
+    <ID>SwallowedException:Handler.kt$Handler$e: UnsupportedMediaTypeException</ID>
+    <ID>SwallowedException:WebSocketController.kt$WebSocketController$e: ClosedReceiveChannelException</ID>
+    <ID>ThrowsCount:Migrations.kt$Migrations$fun migrate(targetVersion: String? = null)</ID>
+    <ID>TooGenericExceptionCaught:CreateFileController.kt$CreateFileController$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:EmailSender.kt$EmailSender$e: Throwable</ID>
+    <ID>TooGenericExceptionCaught:MyScheduler.kt$MyCoroutineScheduler$e: Throwable</ID>
+    <ID>TooGenericExceptionCaught:MyScheduler.kt$MyJavaScheduler$e: Throwable</ID>
+    <ID>TooGenericExceptionCaught:SmsSender.kt$SmsSender$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:WebSocketController.kt$WebSocketController$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:WebSocketController.kt$WebSocketController$e: Throwable</ID>
+    <ID>TooGenericExceptionCaught:WebSocketController.kt$WebSocketController$t: Throwable</ID>
+    <ID>TooGenericExceptionThrown:LaunchConfig.kt$JwtConf$throw RuntimeException("Missing JWT secret in conf")</ID>
+    <ID>TooGenericExceptionThrown:Migrations.kt$Migrations$throw RuntimeException( "Duplicate migrations error: ${ duplicatedVersions.map { it.key }.joinToString() } has duplicated migrations" )</ID>
+    <ID>TooGenericExceptionThrown:Migrations.kt$Migrations$throw RuntimeException("Version ${it.version} is duplicated")</ID>
+    <ID>TooGenericExceptionThrown:PropertiesReader.kt$PropertiesReader$throw Exception("Unknown property $value in $propertiesFileName")</ID>
+    <ID>TooGenericExceptionThrown:Server.kt$Server$throw RuntimeException("Port not found")</ID>
+    <ID>TooGenericExceptionThrown:UsersCrudController.kt$UsersCrudController$throw RuntimeException("Client ID cannot be null")</ID>
+    <ID>TopLevelPropertyNaming:FilesController.kt$private const val pathParameterName = "static-content-path-parameter"</ID>
+    <ID>TopLevelPropertyNaming:InitialMigration.kt$private const val initialSchema: String = """ CREATE TABLE IF NOT EXISTS clients (id uuid PRIMARY KEY, username TEXT NOT NULL, password_hash TEXT NOT NULL, last_login TIMESTAMP NULL, created_on TIMESTAMP DEFAULT (CURRENT_TIMESTAMP at time zone 'UTC') NOT NULL) ; CREATE TABLE IF NOT EXISTS staff (id uuid PRIMARY KEY, client_id uuid NOT NULL, full_name TEXT NOT NULL, calling_code TEXT NOT NULL, local_phone TEXT NOT NULL, is_inactive BOOLEAN DEFAULT false NOT NULL, is_deleted BOOLEAN DEFAULT false NOT NULL, created_on TIMESTAMP DEFAULT (CURRENT_TIMESTAMP at time zone 'UTC') NOT NULL, CONSTRAINT fk_staff_client_id_id FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE RESTRICT ON UPDATE RESTRICT) ; CREATE TABLE IF NOT EXISTS device_tokens (id uuid PRIMARY KEY, token TEXT NOT NULL, client_id uuid NOT NULL, created_on TIMESTAMP DEFAULT (CURRENT_TIMESTAMP at time zone 'UTC') NOT NULL, CONSTRAINT fk_device_tokens_client_id_id FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE RESTRICT ON UPDATE RESTRICT) ; CREATE TABLE IF NOT EXISTS app_config (id uuid PRIMARY KEY, permissive_user_code INT NOT NULL, minimum_user_code INT NOT NULL) ; CREATE TABLE IF NOT EXISTS sms_record (id uuid PRIMARY KEY, message TEXT NOT NULL, phones jsonb NOT NULL, status VARCHAR(32) NOT NULL, created_on TIMESTAMP DEFAULT (CURRENT_TIMESTAMP at time zone 'UTC') NOT NULL) ; """</ID>
+    <ID>TopLevelPropertyNaming:UserRouter.kt$/* * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License. */ const val myWsCustomAuthHeader = "ws_custom_auth"</ID>
+    <ID>UnnecessaryAbstractClass:MyScheduler.kt$MyScheduler$MyScheduler</ID>
+    <ID>UnusedPrivateMember:BasicEmailTemplate.kt$body: DIV.() -&gt; Unit</ID>
+    <ID>UnusedPrivateMember:BasicEmailTemplate.kt$title: String</ID>
+    <ID>UnusedPrivateMember:NewAccountTemplate.kt$name: String</ID>
+    <ID>UnusedPrivateMember:NewAccountTemplate.kt$url: String</ID>
+    <ID>UnusedPrivateMember:WebSocketController.kt$WebSocketController$clientId: UUID?</ID>
+    <ID>UnusedPrivateMember:WebSocketController.kt$WebSocketController$val text = frame.readText()</ID>
+    <ID>UnusedPrivateMember:setupCommonRoutes.kt$privileges: List&lt;Privilege&gt;</ID>
+    <ID>UseCheckOrError:setupCommonRoutes.kt$throw IllegalStateException("Some endpoints are unregistered!")</ID>
+    <ID>VariableNaming:DateTimeWithoutTimezone.kt$DateTimeWithoutTimezoneColumn$private val DEFAULT_DATE_STRING_FORMATTER = DateTimeFormat.forPattern("YYYY-MM-dd")</ID>
+    <ID>VariableNaming:DateTimeWithoutTimezone.kt$DateTimeWithoutTimezoneColumn$private val DEFAULT_DATE_TIME_STRING_FORMATTER = DateTimeFormat.forPattern("YYYY-MM-dd HH:mm:ss.SSSSSS")</ID>
+    <ID>VariableNaming:Union.kt$Union$var count_: Boolean = false</ID>
+    <ID>WildcardImport:AdminRouter.kt$import io.ktor.server.application.*</ID>
+    <ID>WildcardImport:AdminRouter.kt$import io.ktor.server.auth.*</ID>
+    <ID>WildcardImport:AdminRouter.kt$import io.ktor.server.routing.*</ID>
+    <ID>WildcardImport:Authenticators.kt$import io.ktor.server.application.*</ID>
+    <ID>WildcardImport:Authenticators.kt$import io.ktor.server.auth.*</ID>
+    <ID>WildcardImport:Authenticators.kt$import io.ktor.server.auth.jwt.*</ID>
+    <ID>WildcardImport:AuthorizedClientData.kt$import io.ktor.server.auth.*</ID>
+    <ID>WildcardImport:BasicAuthenticator.kt$import io.ktor.server.auth.*</ID>
+    <ID>WildcardImport:ClientRouter.kt$import io.ktor.server.application.*</ID>
+    <ID>WildcardImport:ClientRouter.kt$import io.ktor.server.auth.*</ID>
+    <ID>WildcardImport:ClientRouter.kt$import io.ktor.server.response.*</ID>
+    <ID>WildcardImport:ClientRouter.kt$import io.ktor.server.routing.*</ID>
+    <ID>WildcardImport:ClientsDao.kt$import org.jetbrains.exposed.sql.*</ID>
+    <ID>WildcardImport:CreateFileController.kt$import io.ktor.http.content.*</ID>
+    <ID>WildcardImport:CreateFileController.kt$import io.ktor.server.application.*</ID>
+    <ID>WildcardImport:CreateFileController.kt$import io.ktor.server.auth.*</ID>
+    <ID>WildcardImport:CreateFileController.kt$import io.ktor.server.request.*</ID>
+    <ID>WildcardImport:CreateFileController.kt$import io.ktor.server.response.*</ID>
+    <ID>WildcardImport:CrudController.kt$import io.ktor.server.application.*</ID>
+    <ID>WildcardImport:CrudController.kt$import io.ktor.server.plugins.*</ID>
+    <ID>WildcardImport:CrudController.kt$import io.ktor.server.routing.*</ID>
+    <ID>WildcardImport:DateTimeTests.kt$import org.junit.jupiter.api.*</ID>
+    <ID>WildcardImport:DateTimeTests.kt$import org.junit.jupiter.api.Assertions.*</ID>
+    <ID>WildcardImport:DefaultCrudControllers.kt$import org.jetbrains.exposed.sql.*</ID>
+    <ID>WildcardImport:ExceptionHandler.kt$import io.ktor.http.*</ID>
+    <ID>WildcardImport:ExceptionHandler.kt$import io.ktor.server.application.*</ID>
+    <ID>WildcardImport:ExceptionHandler.kt$import io.ktor.server.plugins.*</ID>
+    <ID>WildcardImport:ExceptionHandler.kt$import io.ktor.server.plugins.statuspages.*</ID>
+    <ID>WildcardImport:ExceptionHandler.kt$import io.ktor.server.response.*</ID>
+    <ID>WildcardImport:FilesController.kt$import io.ktor.server.application.*</ID>
+    <ID>WildcardImport:FilesController.kt$import io.ktor.server.http.content.*</ID>
+    <ID>WildcardImport:FilesController.kt$import io.ktor.server.response.*</ID>
+    <ID>WildcardImport:FilesController.kt$import io.ktor.server.routing.*</ID>
+    <ID>WildcardImport:FilesController.kt$import io.ktor.util.*</ID>
+    <ID>WildcardImport:FilesController.kt$import io.ktor.util.pipeline.*</ID>
+    <ID>WildcardImport:Handler.kt$import io.ktor.server.application.*</ID>
+    <ID>WildcardImport:Handler.kt$import io.ktor.server.auth.*</ID>
+    <ID>WildcardImport:Handler.kt$import io.ktor.server.plugins.*</ID>
+    <ID>WildcardImport:Handler.kt$import io.ktor.server.response.*</ID>
+    <ID>WildcardImport:InactiveUserInterceptor.kt$import io.ktor.server.application.*</ID>
+    <ID>WildcardImport:InactiveUserInterceptor.kt$import io.ktor.server.auth.*</ID>
+    <ID>WildcardImport:InactiveUserInterceptor.kt$import io.ktor.server.routing.*</ID>
+    <ID>WildcardImport:JsonSum.kt$import org.jetbrains.exposed.sql.*</ID>
+    <ID>WildcardImport:LaunchConfig.kt$import io.ktor.server.config.*</ID>
+    <ID>WildcardImport:PrivilageVerificationInterceptor.kt$import io.ktor.server.application.*</ID>
+    <ID>WildcardImport:PrivilageVerificationInterceptor.kt$import io.ktor.server.auth.*</ID>
+    <ID>WildcardImport:PrivilageVerificationInterceptor.kt$import io.ktor.server.routing.*</ID>
+    <ID>WildcardImport:RolesDao.kt$import org.jetbrains.exposed.sql.*</ID>
+    <ID>WildcardImport:RolesTables.kt$import com.narbase.narcore.data.tables.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.http.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.http.content.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.serialization.gson.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.application.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.config.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.engine.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.http.content.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.jetty.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.plugins.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.plugins.callid.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.plugins.callloging.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.plugins.compression.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.plugins.contentnegotiation.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.plugins.cors.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.plugins.cors.routing.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.plugins.doublereceive.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.plugins.forwardedheaders.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.plugins.partialcontent.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.request.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.response.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.routing.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.server.websocket.*</ID>
+    <ID>WildcardImport:Server.kt$import io.ktor.websocket.*</ID>
+    <ID>WildcardImport:SmsSender.kt$import io.ktor.client.*</ID>
+    <ID>WildcardImport:SmsSender.kt$import io.ktor.client.engine.apache.*</ID>
+    <ID>WildcardImport:SmsSender.kt$import io.ktor.client.request.*</ID>
+    <ID>WildcardImport:SmsSender.kt$import io.ktor.http.*</ID>
+    <ID>WildcardImport:UserRouter.kt$import io.ktor.server.application.*</ID>
+    <ID>WildcardImport:UserRouter.kt$import io.ktor.server.auth.*</ID>
+    <ID>WildcardImport:UserRouter.kt$import io.ktor.server.request.*</ID>
+    <ID>WildcardImport:UserRouter.kt$import io.ktor.server.routing.*</ID>
+    <ID>WildcardImport:UserRouter.kt$import io.ktor.server.websocket.*</ID>
+    <ID>WildcardImport:UsersRepository.kt$import org.jetbrains.exposed.sql.*</ID>
+    <ID>WildcardImport:Utils.kt$import org.jetbrains.exposed.sql.*</ID>
+    <ID>WildcardImport:WebSocketController.kt$import io.ktor.server.request.*</ID>
+    <ID>WildcardImport:WebSocketController.kt$import io.ktor.server.websocket.*</ID>
+    <ID>WildcardImport:WebSocketController.kt$import io.ktor.websocket.*</ID>
+    <ID>WildcardImport:receiveTextWithCorrectEncoding.kt$import io.ktor.http.*</ID>
+    <ID>WildcardImport:receiveTextWithCorrectEncoding.kt$import io.ktor.server.application.*</ID>
+    <ID>WildcardImport:receiveTextWithCorrectEncoding.kt$import io.ktor.server.request.*</ID>
+    <ID>WildcardImport:setupCommonRoutes.kt$import com.narbase.narcore.domain.user.crud.*</ID>
+    <ID>WildcardImport:setupCommonRoutes.kt$import io.ktor.server.application.*</ID>
+    <ID>WildcardImport:setupCommonRoutes.kt$import io.ktor.server.auth.*</ID>
+    <ID>WildcardImport:setupCommonRoutes.kt$import io.ktor.server.routing.*</ID>
+  </CurrentIssues>
+</SmellBaseline>
