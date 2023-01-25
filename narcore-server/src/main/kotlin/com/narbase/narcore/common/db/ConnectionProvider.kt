@@ -42,6 +42,7 @@ object ConnectionProvider {
             Environment.Dev -> "dataSource.dev"
             Environment.Prod -> "dataSource"
             Environment.Staging -> "dataSource.staging"
+            Environment.Testing -> "dataSource.testing"
         }
         val jdbcUrl: String
             get() = configs.property("$confPath.jdbcUrl").getString()

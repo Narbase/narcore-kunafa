@@ -6,4 +6,4 @@ package com.narbase.narcore.deployment
  */
 
 @Suppress("unused")
-enum class Environment { Dev, Prod, Staging }
+enum class Environment { Dev, Prod, Staging, Testing }
