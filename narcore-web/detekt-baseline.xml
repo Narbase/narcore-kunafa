@@ -1,0 +1,340 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>ClassNaming:DateTimePicker.kt$flatpickr</ID>
+    <ID>ConstructorParameterNaming:LoginViewController.kt$TokenDto$val access_token: String</ID>
+    <ID>ConstructorParameterNaming:PageSlide.kt$PageSlide$_backgroundWidth: Dimension</ID>
+    <ID>EmptyClassBlock:AdminRolesServerCaller.kt$AdminRolesServerCaller${ }</ID>
+    <ID>EmptyClassBlock:ServerCaller.kt$RemoteServerCaller.Companion${ }</ID>
+    <ID>EmptyFunctionBlock:MobileScrollableView.kt$MobileScrollableView${ }</ID>
+    <ID>EmptyFunctionBlock:PopupZIndex.kt$PopupZIndex${ }</ID>
+    <ID>EmptyFunctionBlock:RemoteCheckBoxList.kt$RemoteCheckBoxListViewController${ }</ID>
+    <ID>ForbiddenComment:DirectoryUploader.kt$DirectoryUploaderViewController$//Todo: figure out why I need to have this difference</ID>
+    <ID>FunctionNaming:LifecycleSubscriber.kt$inline fun &lt;reified P : Any&gt; LifecycleSubscriber(noinline onEvent: (P) -&gt; Unit)</ID>
+    <ID>InvalidPackageDeclaration:DynamicRoleDto.kt$package com.narbase.narcore.data.dto.roles</ID>
+    <ID>LongMethod:BasePageComponent.kt$BasePageComponent$private fun settingsDropDownMenu(): HTMLElement</ID>
+    <ID>LongMethod:CheckBoxList.kt$CheckBoxList$override fun View?.getView()</ID>
+    <ID>LongMethod:ConfirmationDialog.kt$fun showConfirmationDialogWithRemoteAction( title: String?, message: String, actionButtonText: String? = null, dismissButtonText: String? = null, actionButtonStyle: (RuleSet.() -&gt; Unit)?, uiState: Observable&lt;BasicUiState&gt;?, action: () -&gt; Unit, onConfirmed: () -&gt; Unit )</ID>
+    <ID>LongMethod:CustomCheckBoxList.kt$CustomCheckBoxList$override fun View?.getView()</ID>
+    <ID>LongMethod:CustomDropDownList.kt$CustomDropDownList$override fun View?.getView()</ID>
+    <ID>LongMethod:DatePicker.kt$DatePicker$fun createDarkThemeStyles()</ID>
+    <ID>LongMethod:DatePicker.kt$DatePicker$fun createLightThemeStyles()</ID>
+    <ID>LongMethod:FileUploader.kt$FileUploader$override fun View?.getView()</ID>
+    <ID>LongMethod:ImageUploader.kt$ImageUploader$override fun View?.getView()</ID>
+    <ID>LongMethod:LoginPageContent.kt$LoginPageContent$private fun LinearLayout.loginDialog()</ID>
+    <ID>LongMethod:MultiSelectionDropDownList.kt$RemoteMultiSelectionDropDownList$private fun updateItems()</ID>
+    <ID>LongMethod:PageSlide.kt$PageSlide$override fun View?.getView()</ID>
+    <ID>LongMethod:RemoteCheckBoxList.kt$RemoteCheckBoxList$private fun updateItems()</ID>
+    <ID>LongMethod:RemoteDropDownList.kt$RemoteDropDownList$private fun setupObservers()</ID>
+    <ID>LongMethod:RemoteDropDownList.kt$RemoteDropDownList$private fun updateItems()</ID>
+    <ID>LongMethod:RolesManagementComponent.kt$RolesManagementComponent$private fun upsertDialog(dto: DynamicRoleDto? = null)</ID>
+    <ID>LongMethod:ShowWarningMessage.kt$fun showPopupMessage( popupTitle: String, warning: String, image: String? = null, imageSize: Int = 200, positiveText: String, onPositiveClicked: () -&gt; Unit, addCancelButton: Boolean = true, cancelText: String = "Dismiss", onCancelClicked: (() -&gt; Unit)? = null ): PopUpDialog?</ID>
+    <ID>LongMethod:UpsertStaffMemberDialog.kt$UpsertStaffMemberDialog$private fun upsertDialog(staffDto: AdminStaffServerCaller.StaffDto? = null)</ID>
+    <ID>LongMethod:UserProfileComponent.kt$UserProfileComponent$override fun View?.getView()</ID>
+    <ID>LongParameterList:AdminStaffServerCaller.kt$AdminStaffServerCaller.StaffDto$( val clientId: String?, val userId: String?, val username: String, val password: String, val fullName: String, val callingCode: String, val localPhone: String, val dynamicRoles: Array&lt;DynamicRoleDto&gt; )</ID>
+    <ID>LongParameterList:ConfirmationDialog.kt$( message: String, actionButtonText: String, dismissButtonText: String? = null, uiState: Observable&lt;BasicUiState&gt;?, action: () -&gt; Unit, onConfirmed: () -&gt; Unit )</ID>
+    <ID>LongParameterList:ConfirmationDialog.kt$( title: String?, message: String, actionButtonText: String? = null, dismissButtonText: String? = null, actionButtonStyle: (RuleSet.() -&gt; Unit)?, onConfirmed: () -&gt; Unit )</ID>
+    <ID>LongParameterList:ConfirmationDialog.kt$( title: String?, message: String, actionButtonText: String? = null, dismissButtonText: String? = null, actionButtonStyle: (RuleSet.() -&gt; Unit)?, uiState: Observable&lt;BasicUiState&gt;?, action: () -&gt; Unit, onConfirmed: () -&gt; Unit )</ID>
+    <ID>LongParameterList:CustomCheckBoxList.kt$( list: List&lt;Items&lt;T&gt;&gt;, itemToString: (T) -&gt; String, onSelection: (T) -&gt; Unit, itemTextStyle: RuleSet? = null, customItemStyle: RuleSet? = null, isEditable: Boolean = true, itemId: ((T) -&gt; String)? = null )</ID>
+    <ID>LongParameterList:CustomCheckBoxList.kt$CustomCheckBoxList$( private var itemsList: List&lt;Items&lt;T&gt;&gt;, private var itemToString: (T) -&gt; String, private val onSelection: (T) -&gt; Unit, private val itemTextStyle: RuleSet? = null, private val customItemStyle: RuleSet? = null, private val isEditable: Boolean = true, private val itemId: ((T) -&gt; String)? = null )</ID>
+    <ID>LongParameterList:CustomDropDownList.kt$( name: String, list: Array&lt;T&gt;, itemToString: (T) -&gt; String, onItemSelected: (T?) -&gt; Unit, defaultItem: T? = null, showAutoComplete: Boolean = false )</ID>
+    <ID>LongParameterList:CustomDropDownList.kt$CustomDropDownList$( private val name: String, private val controller: DropDownListViewController, private var items: Array&lt;T&gt;, private var itemToString: (T) -&gt; String, private val onItemSelected: (T?) -&gt; Unit, private val defaultItem: T? = null, private val showAutoComplete: Boolean = false )</ID>
+    <ID>LongParameterList:DatePicker.kt$DatePicker$( field: HTMLInputElement? = null, trigger: HTMLElement? = null, container: HTMLElement? = null, onSelect: ((Date) -&gt; Unit)? = null, bound: Boolean = false, theme: String? = null, defaultDate: Date = Date(), i18n: I18n? = null )</ID>
+    <ID>LongParameterList:DateTimeUtils.kt$( year: Int? = null, month: Int? = null, day: Int? = null, hour: Int? = null, minute: Int? = null, second: Int? = null )</ID>
+    <ID>LongParameterList:DropDownList.kt$( name: String, list: Array&lt;T&gt;, itemToString: (T) -&gt; String, defaultValue: T? = null, customRuleSet: RuleSet? = null, onItemSelected: (T?) -&gt; Unit, listStyle: DropDownList.DropDownListStyle = DropDownList.DropDownListStyle(), viewWidth: Dimension = 300.px, slug: String? = null )</ID>
+    <ID>LongParameterList:DropDownList.kt$DropDownList$( private val name: String, private val controller: DropDownListViewController, private var items: Array&lt;T&gt;, private var itemToString: (T) -&gt; String, private val defaultValue: T? = null, private val customRuleSet: RuleSet? = null, var onItemSelected: (T?) -&gt; Unit, private val dropListStyle: DropDownListStyle, private val viewWidth: Dimension, private val slug: String? = null )</ID>
+    <ID>LongParameterList:DropDownWithCustomList.kt$( name: String, viewModel: DropDownWithCustomListViewModel&lt;T&gt;, selectedItems: List&lt;T&gt; = listOf(), rootStyle: RuleSet? = null, itemToString: (T) -&gt; String, slug: String? = null, onDeleteITem: () -&gt; Unit, block: LinearLayout.() -&gt; Unit )</ID>
+    <ID>LongParameterList:DropDownWithCustomList.kt$DropDownWithCustomList$( private val name: String, private val viewModel: DropDownWithCustomListViewModel&lt;T&gt;, private val selectedItems: List&lt;T&gt; = listOf(), private val rootStyle: RuleSet? = null, private var itemToString: (T) -&gt; String, private val slug: String? = null, private val onDeleteITem: () -&gt; Unit, private val block: LinearLayout.() -&gt; Unit )</ID>
+    <ID>LongParameterList:MultiSelectionDropDownList.kt$( name: String, viewModel: MultiSelectionDropDownListViewModel&lt;T&gt;, itemToString: (T) -&gt; String, onSelectedItemsUpdated: (RemoteMultiSelectionDropDownList&lt;T&gt;.(List&lt;T&gt;) -&gt; Unit)? = null, rootStyle: RuleSet? = null, defaultItems: List&lt;T&gt;? = null, showAutoComplete: Boolean = false, viewWidth: Dimension = 300.px, viewWidthFactory: (RuleSet.() -&gt; Dimension)? = null, slug: String? = null, isDisabled: Boolean = false )</ID>
+    <ID>LongParameterList:MultiSelectionDropDownList.kt$RemoteMultiSelectionDropDownList$( private val name: String, private val viewModel: MultiSelectionDropDownListViewModel&lt;T&gt;, private val defaultItems: List&lt;T&gt;? = null, private val rootStyle: RuleSet? = null, private var itemToString: (T) -&gt; String, private var itemToId: (T) -&gt; String, private val onSelectedItemsUpdatedCallback: (RemoteMultiSelectionDropDownList&lt;T&gt;.(List&lt;T&gt;) -&gt; Unit)?, private val showAutoComplete: Boolean = false, private val viewWidthFactory: (RuleSet.() -&gt; Dimension), private val slug: String? = null, private val isDisabledInitial: Boolean )</ID>
+    <ID>LongParameterList:MultiSelectionDropdownWithCustomList.kt$( name: String, viewModel: MultiSelectionDropDownWithCustomListViewModel&lt;T&gt;, selectedItems: List&lt;T&gt; = listOf(), rootStyle: RuleSet? = null, itemToString: (T) -&gt; String, slug: String? = null, onDeleteITem: (item: T) -&gt; Unit, block: LinearLayout.() -&gt; Unit )</ID>
+    <ID>LongParameterList:MultiSelectionDropdownWithCustomList.kt$MultiSelectionDropDownWithCustomList$( private val name: String, private val viewModel: MultiSelectionDropDownWithCustomListViewModel&lt;T&gt;, private val selectedItems: List&lt;T&gt; = listOf(), private val rootStyle: RuleSet? = null, private var itemToString: (T) -&gt; String, private val slug: String? = null, private val onDeleteITem: (item: T) -&gt; Unit, private val block: LinearLayout.() -&gt; Unit )</ID>
+    <ID>LongParameterList:NetworkAwareWrapper.kt$( uiState: Observable&lt;BasicUiState&gt;, startWithLoading: Boolean = false, errorTextViewStyle: RuleSet = NetworkAwareWrapper.Styles.errorTextViewStyle, loadingIndicatorStyle: RuleSet = NetworkAwareWrapper.Styles.loadingIndicatorStyle, onRetryClicked: () -&gt; Unit, onLoaded: () -&gt; Unit, retryOnError: Boolean = true, hideViewOnError: Boolean = true, getErrorMsg: (() -&gt; String?)? = null )</ID>
+    <ID>LongParameterList:RemoteDropDownList.kt$( name: String, endPoint: String, itemToString: (T) -&gt; String, onItemSelected: (T?) -&gt; Unit, itemsRequestFactory: ItemsRequestFactory&lt;*&gt; = ItemsRequestFactory&lt;Unit&gt;(), rootStyle: RuleSet? = null, defaultItem: T? = null, showAutoComplete: Boolean = false, viewWidth: Dimension = 300.px, viewWidthFactory: (RuleSet.() -&gt; Dimension)? = null, isMock: Boolean = false, mockList: Array&lt;T&gt; = arrayOf(), slug: String? = null, defaultItemBySearch: ((Array&lt;T&gt;) -&gt; T?)? = null, )</ID>
+    <ID>LongParameterList:RemoteDropDownList.kt$( name: String, getList: (pageNo: Int, pageSize: Int) -&gt; Deferred&lt;ItemList&lt;T&gt;&gt;, itemToString: (T) -&gt; String, onItemSelected: (T?) -&gt; Unit, rootStyle: RuleSet? = null, defaultItem: T? = null, showAutoComplete: Boolean = false, viewWidth: Dimension = 300.px, viewWidthFactory: (RuleSet.() -&gt; Dimension)? = null, isMock: Boolean = false, mockList: Array&lt;T&gt; = arrayOf(), slug: String? = null, defaultItemBySearch: ((Array&lt;T&gt;) -&gt; T?)? = null )</ID>
+    <ID>LongParameterList:RemoteDropDownList.kt$RemoteDropDownList$( private val name: String, private val controller: RemoteDropDownListViewController&lt;T&gt;, private val defaultItem: T? = null, private val defaultItemBySearch: ((Array&lt;T&gt;) -&gt; T?)? = null, private val rootStyle: RuleSet? = null, private var itemToString: (T) -&gt; String, private val onItemSelected: (T?) -&gt; Unit, private val showAutoComplete: Boolean = false, private val viewWidthFactory: (RuleSet.() -&gt; Dimension), private val slug: String? = null )</ID>
+    <ID>LongParameterList:ServerCaller.kt$RemoteServerCaller$( requestVerb: String, url: String, headers: Map&lt;String, String&gt;? = null, body: Any? = null, stringify: Boolean = true, setContentType: Boolean = true )</ID>
+    <ID>LongParameterList:ServerCaller.kt$RemoteServerCaller$( requestVerb: String, url: String, headers: Map&lt;String, String&gt;? = null, onSuccess: (XMLHttpRequest) -&gt; Unit, onError: () -&gt; Unit, body: String? = null )</ID>
+    <ID>LongParameterList:SessionInfo.kt$CurrentUserProfile$( val clientId: String, val userId: String, val fullName: String, val userName: String, val callingCode: String, val localPhone: String, val privileges: List&lt;Privilege&gt; )</ID>
+    <ID>LongParameterList:ShowWarningMessage.kt$( popupTitle: String, warning: String, image: String? = null, imageSize: Int = 200, positiveText: String, onPositiveClicked: () -&gt; Unit, addCancelButton: Boolean = true, cancelText: String = "Dismiss", onCancelClicked: (() -&gt; Unit)? = null )</ID>
+    <ID>LongParameterList:TableUtils.kt$( title: String, weight: Int, textFontSize: LinearDimension = 14.px, id: String = "", className: String = "", grey: Boolean = false )</ID>
+    <ID>LongParameterList:networkCall.kt$( before: () -&gt; Unit = {}, final: suspend CoroutineScope.() -&gt; Unit = { }, onConnectionError: suspend CoroutineScope.() -&gt; Unit = { }, onUnknownError: suspend CoroutineScope.() -&gt; Unit = onConnectionError, onUnauthorized: suspend CoroutineScope.() -&gt; Unit = onConnectionError, onInvalidRequest: suspend CoroutineScope.() -&gt; Unit = onConnectionError, onUserDisabled: suspend CoroutineScope.() -&gt; Unit = { logoutUser() }, call: suspend CoroutineScope.() -&gt; Unit )</ID>
+    <ID>MagicNumber:AdminPageComponent.kt$AdminPageComponent$0.7</ID>
+    <ID>MagicNumber:AdminPageComponent.kt$AdminPageComponent$5</ID>
+    <ID>MagicNumber:AppColors.kt$AppColors$114</ID>
+    <ID>MagicNumber:AppColors.kt$AppColors$157</ID>
+    <ID>MagicNumber:AppColors.kt$AppColors$160</ID>
+    <ID>MagicNumber:AppColors.kt$AppColors$176</ID>
+    <ID>MagicNumber:AppColors.kt$AppColors$231</ID>
+    <ID>MagicNumber:AppColors.kt$AppColors$26</ID>
+    <ID>MagicNumber:AppColors.kt$AppColors$70</ID>
+    <ID>MagicNumber:AppColors.kt$AppColors$80</ID>
+    <ID>MagicNumber:AppColors.kt$AppColors$82</ID>
+    <ID>MagicNumber:AppColors.kt$AppColors$86</ID>
+    <ID>MagicNumber:AppColors.kt$AppColors$90</ID>
+    <ID>MagicNumber:BasePageComponent.kt$BasePageComponent$0.8</ID>
+    <ID>MagicNumber:BasePageComponent.kt$BasePageComponent$0.98</ID>
+    <ID>MagicNumber:BasePageComponent.kt$BasePageComponent$220</ID>
+    <ID>MagicNumber:CollapsibleView.kt$CollapsibleView$0.2</ID>
+    <ID>MagicNumber:CollapsibleView.kt$CollapsibleView$1000</ID>
+    <ID>MagicNumber:ColorToDto.kt$16</ID>
+    <ID>MagicNumber:ColorToDto.kt$3</ID>
+    <ID>MagicNumber:Colors.kt$10</ID>
+    <ID>MagicNumber:Colors.kt$16</ID>
+    <ID>MagicNumber:Colors.kt$25.5</ID>
+    <ID>MagicNumber:Colors.kt$255</ID>
+    <ID>MagicNumber:Colors.kt$3</ID>
+    <ID>MagicNumber:Colors.kt$4</ID>
+    <ID>MagicNumber:Colors.kt$5</ID>
+    <ID>MagicNumber:CustomCheckBoxList.kt$CustomCheckBoxList$0.6</ID>
+    <ID>MagicNumber:CustomDropDownList.kt$CustomDropDownList$100</ID>
+    <ID>MagicNumber:CustomDropDownList.kt$CustomDropDownList$400</ID>
+    <ID>MagicNumber:CustomDropDownList.kt$CustomDropDownList$99</ID>
+    <ID>MagicNumber:DatePicker.kt$DatePicker$0.97</ID>
+    <ID>MagicNumber:DatePicker.kt$DatePicker$1900</ID>
+    <ID>MagicNumber:DatePicker.kt$DatePicker$2099</ID>
+    <ID>MagicNumber:DesktopScrollableView.kt$DesktopScrollableView$0.1</ID>
+    <ID>MagicNumber:DesktopScrollableView.kt$DesktopScrollableView$0.2</ID>
+    <ID>MagicNumber:DesktopScrollableView.kt$DesktopScrollableView$0.4</ID>
+    <ID>MagicNumber:DesktopScrollableView.kt$DesktopScrollableView$100</ID>
+    <ID>MagicNumber:DesktopScrollableView.kt$DesktopScrollableView$30</ID>
+    <ID>MagicNumber:DraggableComponent.kt$DraggableComponent$100</ID>
+    <ID>MagicNumber:DraggableComponent.kt$DraggableComponent$100.0</ID>
+    <ID>MagicNumber:DraggableComponent.kt$HorizontalDraggable$100</ID>
+    <ID>MagicNumber:DraggableComponent.kt$HorizontalDraggable$4</ID>
+    <ID>MagicNumber:DraggableComponent.kt$VerticalDraggable$100</ID>
+    <ID>MagicNumber:DraggableComponent.kt$VerticalDraggable$4</ID>
+    <ID>MagicNumber:DropDownList.kt$DropDownList$100</ID>
+    <ID>MagicNumber:DropDownList.kt$DropDownList$200.0</ID>
+    <ID>MagicNumber:DropDownList.kt$DropDownList$99</ID>
+    <ID>MagicNumber:DropDownWithCustomList.kt$DropDownWithCustomList$100</ID>
+    <ID>MagicNumber:DropDownWithCustomList.kt$DropDownWithCustomList$200.0</ID>
+    <ID>MagicNumber:DropDownWithCustomList.kt$DropDownWithCustomList$99</ID>
+    <ID>MagicNumber:DropDownWithCustomList.kt$DropDownWithCustomListViewModel$30</ID>
+    <ID>MagicNumber:EditablePhoneNumberView.kt$EditablePhoneNumberView$3</ID>
+    <ID>MagicNumber:ImageUploader.kt$ImageUploader$0.7</ID>
+    <ID>MagicNumber:LoginPageContent.kt$LoginPageContent$255</ID>
+    <ID>MagicNumber:Main.kt$Main$27</ID>
+    <ID>MagicNumber:MathUtils.kt$0.00001</ID>
+    <ID>MagicNumber:MathUtils.kt$100</ID>
+    <ID>MagicNumber:MultiImageUploader.kt$MultiImageUploader$5</ID>
+    <ID>MagicNumber:MultiSelectionDropDownList.kt$MultiSelectionDropDownListViewModel$30</ID>
+    <ID>MagicNumber:MultiSelectionDropDownList.kt$RemoteMultiSelectionDropDownList$100</ID>
+    <ID>MagicNumber:MultiSelectionDropDownList.kt$RemoteMultiSelectionDropDownList$200.0</ID>
+    <ID>MagicNumber:MultiSelectionDropDownList.kt$RemoteMultiSelectionDropDownList$400</ID>
+    <ID>MagicNumber:MultiSelectionDropdownWithCustomList.kt$MultiSelectionDropDownWithCustomList$100</ID>
+    <ID>MagicNumber:MultiSelectionDropdownWithCustomList.kt$MultiSelectionDropDownWithCustomList$200.0</ID>
+    <ID>MagicNumber:MultiSelectionDropdownWithCustomList.kt$MultiSelectionDropDownWithCustomList$99</ID>
+    <ID>MagicNumber:MultiSelectionDropdownWithCustomList.kt$MultiSelectionDropDownWithCustomListViewModel$30</ID>
+    <ID>MagicNumber:NotificationsController.kt$NotificationsController$5_000</ID>
+    <ID>MagicNumber:PageSlide.kt$PageSlide$0.4</ID>
+    <ID>MagicNumber:PageSlide.kt$PageSlide$0.7</ID>
+    <ID>MagicNumber:PageSlide.kt$PageSlide$1000</ID>
+    <ID>MagicNumber:PaginationControls.kt$PaginationControls$0.3</ID>
+    <ID>MagicNumber:PopUpDialog.kt$PopUpDialog$200</ID>
+    <ID>MagicNumber:PopUpDialog.kt$PopUpDialog.&lt;no name provided&gt;$0.7</ID>
+    <ID>MagicNumber:PopupZIndex.kt$PopupZIndex$100</ID>
+    <ID>MagicNumber:RemoteCheckBoxList.kt$RemoteCheckBoxListViewController$20</ID>
+    <ID>MagicNumber:RemoteDropDownList.kt$RemoteDropDownList$0.1</ID>
+    <ID>MagicNumber:RemoteDropDownList.kt$RemoteDropDownList$100</ID>
+    <ID>MagicNumber:RemoteDropDownList.kt$RemoteDropDownList$200.0</ID>
+    <ID>MagicNumber:RemoteDropDownList.kt$RemoteDropDownList$255</ID>
+    <ID>MagicNumber:RemoteDropDownList.kt$RemoteDropDownList$400</ID>
+    <ID>MagicNumber:RemoteDropDownList.kt$RemoteDropDownList$99</ID>
+    <ID>MagicNumber:RemoteDropDownList.kt$RemoteDropDownListViewController$30</ID>
+    <ID>MagicNumber:RolesManagementComponent.kt$RolesManagementComponent$3</ID>
+    <ID>MagicNumber:RolesManagementComponent.kt$RolesManagementComponent$8</ID>
+    <ID>MagicNumber:RolesManagementViewModel.kt$RolesManagementViewModel$20</ID>
+    <ID>MagicNumber:SearchTextInput.kt$300</ID>
+    <ID>MagicNumber:ShowWarningMessage.kt$Styles$0.97</ID>
+    <ID>MagicNumber:SideBar.kt$SideBar$0.8</ID>
+    <ID>MagicNumber:SideBar.kt$SideBar$0.9</ID>
+    <ID>MagicNumber:SnackBar.kt$SnackBar$0.3</ID>
+    <ID>MagicNumber:SnackBar.kt$SnackBar$1000</ID>
+    <ID>MagicNumber:StaffManagementComponent.kt$StaffManagementComponent$3</ID>
+    <ID>MagicNumber:StaffManagementViewModel.kt$StaffManagementViewModel$20</ID>
+    <ID>MagicNumber:StatusesListComponent.kt$StatusesListComponent$6</ID>
+    <ID>MagicNumber:TableUtils.kt$0.1</ID>
+    <ID>MagicNumber:TableUtils.kt$200</ID>
+    <ID>MagicNumber:ToggleSwitch.kt$ToggleSwitch$0.2</ID>
+    <ID>MagicNumber:ToggleSwitch.kt$ToggleSwitch$2</ID>
+    <ID>MagicNumber:UpsertStaffMemberDialog.kt$UpsertStaffMemberDialog$20</ID>
+    <ID>MagicNumber:UpsertStaffMemberDialog.kt$UpsertStaffMemberDialog$3</ID>
+    <ID>MagicNumber:ZeroPad.kt$9</ID>
+    <ID>MagicNumber:deleteButton.kt$20</ID>
+    <ID>MagicNumber:networkCall.kt$30_000</ID>
+    <ID>MatchingDeclarationName:App.kt$AppComponent : Component</ID>
+    <ID>MatchingDeclarationName:GetUserProfileDto.kt$UpdateUserProfileDto</ID>
+    <ID>MatchingDeclarationName:Grid.kt$GridLayout : View</ID>
+    <ID>MatchingDeclarationName:LoginDtos.kt$LoginResponseDto</ID>
+    <ID>MatchingDeclarationName:Time.kt$TimeFormats</ID>
+    <ID>MaxLineLength:Constants.kt$"url(\"data:Image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAABWCAYAAACEsWWHAAAGLElEQVR4AdXcA2xsXReH8f3Ztm3btm2br23btm3btm2rd257b835vVnJStL0sj3Tds6TrOTkzN5r/5925qgorQRPwQewDHbHebgXDQxlNXLfeTlmmZzzlNJOpMyXsA86TJ2O7PGl6DnbQr/CncYx1tNj4JzTde+0la5V/6/x+x+Z85Ov6/jWZ0TFduyL12JMjI05E4iev5pxQXwFV0lGOx7Xf/xRulb5n45vflrH1z4xqYo5MTd6RC9JrvGVmRB6C04dLzR/yw10fP2TGbJyRa/oOVHw1Fh7uqS+jAY0e3uaPXvupOM7n48w01LRO9aItSDX/nKrpf6FYRi85AJzfvy1WHxGKtaKNZPhyNIKoadjZ0nfIfvFYrNSsXYiMz2tilg00Bweas7fZO1YYFYrMkQWKVfl7ScadS7z12jcFhVZxsn9ayoHimHI71RbVWRKhiPrZA7pjZn+TFX4zDWW6lSAU/PoFw3auiJjcuqSryjyPJWH9LauyBhZEXxlcdd+VyFOjDGxFhVZk6vCoUwEv5KXSXlFUYuKrJE5+dXCvlt3Ia7TYkKtKjIndxr/XcOXIMzzgrZWFZkje/Kl8WL7QP/xR7Z0wWs/9X5HvutNdnjdq2z6qpdFxXbsi9daulZkT/YZ/zbsQNwTtWSRuz7/YXu9+bU2ePlLFlcxJsa2ZM3InnSEU8EH5J1v3iRWqhs+9QGbv+plS5TKirExp/K6kT0ckg8ULIO4RW/Jd2q81GTkWvGdC4dkmYLdoXvHLSs3zrffVCrmVl4/HJLdC86r/vmKA8X7ImCVqnxACYfkvIL7EE+OKjWNI11FsehRKUM4JPcVNBCPxSo1jcN4RbHoUSlDOCSNgiHEM79KTeMcVVEselTKEA7JUMEA4pqr9mLhkAwUPAqNX36n9m/Fxi+/K3mk4GaY+/df1/7gEQ7JzQUnwPwN16h8XTjbh/twSE4oWBf6jjio9ifocEjWLfgeDN14be0vqcIh+V7BCzFobKw556ffqO1FcGQPh3AJpxLgROjebrPa3rZE9uTEEgT4IwzffENtbzQje/LH8WLPRQPycXatKjInjXAp48GGMHjx+bUTi8zJhmUieAX60ez8359rIxVZ0czsrygLA9uM+6zVoiJrsnVZFHg55sP8jddqe6nImMyP7GVxYA0Yffyxtn4iHNkiY7J6WRJ4Fu6G3n13a1uxyJbcHZnL0oDvQHNwsJmPDNqqIlNkg8haJgOOgKGrL287sciUHFEmC16FTpi/2bptIxVZks7IWKYC/grN+fOa+bBnVisyRBaIbKUKOBsGzjp11sUiQ3J2qQreij7oWn3ZWZOKtZO+yFRaAVaAsSceb3Z874szLhVrxtoQWUqrwFNxeeWfoVX/2dflkaW0ErwPQ2h2Lvf3GZOKtdDMtd9XpgOsByMP3q/j25+bdqlYI9ZK1ivTBZ6JW6D3kH2nXSzWSG6Jtct0gs+iaWSkOfcvv5g2qehtdLSJqM+WmQC7wND110ybWPROdikzBV6Ih2H+5uu1XCp6Jg/HWmUmwa+gOa+rOedHX22ZVPSKngh+VWYDnAP9Jx3TMrHolZxTZgu8B8PxBHbun39eWSp6RC8MR+8ym2AbGLzo3Mpi0SPZpsw2eCm6oPP/f5myVMxNuqJnaQewKgzdMPXDf8xNVi3tAp6Nh2DemstPWirmJNHj2aWdwDIwfNstkxaLOckypd3Ac/AEdP73T0stFWOTJ6JHaUewBgycecpSi8XYZI3SruBlGGwODy/VT0djTIzFYMwt7QwOhZ69d16iWIxJDi3tDr5CPh/5xqcWKRWvxRgEX6mDWP5GOF0r/muRYl0r/ltyV8wpdQCbQ98xhy1SLF5LNi91AV+A0ccfXaRYvJZ8oU5iT0cXNP7wExOlYl/SFWNLncARMH+L9U0Ui33JEaVuYGXoP/lYE8ViX7JyHcW+uahrx9iXfLOOYq+Bse75JorFvuQ1pY6gE8b/kV1sJ52lruCuib+9GtvJXXUWu2ri72fFdnJVncXOhvgXFykmtpOz6yx2MMzfdB0pJraTg+sstiwM33mbxm9/qPG7H4ntZNk6iz0Hd5hA7ntOqTN4OfbDo1mx/fIyzTwJJedUPgRWtocAAAAASUVORK5CYII=\") no-repeat"</ID>
+    <ID>MaxLineLength:EndPointRemoteProcessors.kt$Authentication.Basic -&gt; mapOf("Authorization" to "Basic " + window.btoa("${/*ServerCaller.username*/ "admin"}:${/*ServerCaller.password*/"password"}"))</ID>
+    <ID>MaxLineLength:EndPointRemoteProcessors.kt$suspend</ID>
+    <ID>MaxLineLength:NetworkAwareWrapper.kt$NetworkAwareWrapper$?:</ID>
+    <ID>MaxLineLength:UpsertStaffMemberDialog.kt$UpsertStaffMemberDialog$if</ID>
+    <ID>MaxLineLength:UpsertStaffMemberDialog.kt$UpsertStaffMemberDialog.Companion$"The user will not be deleted but they will not be able to login to their account or perform any actions.".localized()</ID>
+    <ID>MayBeConst:AppColors.kt$AppColors$val borderColorHex = "#cecece"</ID>
+    <ID>MayBeConst:Colors.kt$private val blackToWhiteStep = 25.5</ID>
+    <ID>NewLineAtEndOfFile:AppConfig.kt$com.narbase.narcore.web.common.AppConfig.kt</ID>
+    <ID>NewLineAtEndOfFile:Arabic.kt$com.narbase.narcore.web.translations.Arabic.kt</ID>
+    <ID>NewLineAtEndOfFile:DisplayNames.kt$com.narbase.narcore.web.translations.display.DisplayNames.kt</ID>
+    <ID>NewLineAtEndOfFile:DynamicRole.kt$com.narbase.narcore.web.common.data.roles.DynamicRole.kt</ID>
+    <ID>NewLineAtEndOfFile:ItemList.kt$com.narbase.narcore.web.network.dto.ItemList.kt</ID>
+    <ID>NewLineAtEndOfFile:Language.kt$com.narbase.narcore.web.common.models.Language.kt</ID>
+    <ID>NewLineAtEndOfFile:MathUtils.kt$com.narbase.narcore.web.utils.MathUtils.kt</ID>
+    <ID>NewLineAtEndOfFile:MobileScrollableView.kt$com.narbase.narcore.web.utils.scrollable.MobileScrollableView.kt</ID>
+    <ID>NewLineAtEndOfFile:PasswordUpdateComponent.kt$com.narbase.narcore.web.views.user.profile.PasswordUpdateComponent.kt</ID>
+    <ID>NewLineAtEndOfFile:PopupZIndex.kt$com.narbase.narcore.web.utils.PopupZIndex.kt</ID>
+    <ID>NewLineAtEndOfFile:RolesManagementComponent.kt$com.narbase.narcore.web.views.admin.roles.RolesManagementComponent.kt</ID>
+    <ID>NewLineAtEndOfFile:StatusesListComponent.kt$com.narbase.narcore.web.utils.views.StatusesListComponent.kt</ID>
+    <ID>NewLineAtEndOfFile:StoredValue.kt$com.narbase.narcore.web.storage.StoredValue.kt</ID>
+    <ID>NewLineAtEndOfFile:Tippy.kt$.Tippy.kt</ID>
+    <ID>NewLineAtEndOfFile:ZeroPad.kt$com.narbase.narcore.web.utils.ZeroPad.kt</ID>
+    <ID>NewLineAtEndOfFile:addClass.kt$com.narbase.narcore.web.utils.views.addClass.kt</ID>
+    <ID>SpreadOperator:MultiSelectionDropDownList.kt$MultiSelectionDropDownListViewModel$(*items, *newItemsAsSelectableItems)</ID>
+    <ID>SwallowedException:networkCall.kt$e: ConnectionErrorException</ID>
+    <ID>SwallowedException:networkCall.kt$e: DisabledUserException</ID>
+    <ID>SwallowedException:networkCall.kt$e: InvalidRequestException</ID>
+    <ID>SwallowedException:networkCall.kt$e: Throwable</ID>
+    <ID>SwallowedException:networkCall.kt$e: TimeoutCancellationException</ID>
+    <ID>SwallowedException:networkCall.kt$e: UnauthorizedException</ID>
+    <ID>SwallowedException:networkCall.kt$e: UnknownErrorException</ID>
+    <ID>ThrowsCount:PasswordUpdateComponent.kt$PasswordUpdateViewModel$fun updatePassword()</ID>
+    <ID>ThrowsCount:ServerCaller.kt$RemoteServerCaller$private suspend fun &lt;T : BasicResponse&gt; validateResponse(httpResponse: Response): T</ID>
+    <ID>TooGenericExceptionCaught:ColorToDto.kt$e: Throwable</ID>
+    <ID>TooGenericExceptionCaught:NetworkAwareWrapper.kt$NetworkAwareWrapper$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:basicNetworkCall.kt$t: Throwable</ID>
+    <ID>TooGenericExceptionCaught:networkCall.kt$e: Throwable</ID>
+    <ID>TooGenericExceptionThrown:DraggableComponent.kt$DraggableComponent$throw RuntimeException("firstViewInitialPercentage in DraggableContent should be between 0 to 100")</ID>
+    <ID>TooGenericExceptionThrown:SessionInfo.kt$SessionInfo$throw RuntimeException("loggedInUser can only be accessed when user is logged in")</ID>
+    <ID>TooManyFunctions:BasePageComponent.kt$BasePageComponent : Component</ID>
+    <ID>TooManyFunctions:DesktopScrollableView.kt$DesktopScrollableView : ScrollableView</ID>
+    <ID>TooManyFunctions:MultiSelectionDropDownList.kt$MultiSelectionDropDownListViewModel&lt;T&gt;</ID>
+    <ID>TooManyFunctions:MultiSelectionDropDownList.kt$RemoteMultiSelectionDropDownList&lt;T&gt; : Component</ID>
+    <ID>TooManyFunctions:RemoteDropDownList.kt$RemoteDropDownList&lt;T&gt; : Component</ID>
+    <ID>TooManyFunctions:ServerCaller.kt$RemoteServerCaller</ID>
+    <ID>TooManyFunctions:SnackBar.kt$SnackBar</ID>
+    <ID>TooManyFunctions:UpsertStaffMemberDialog.kt$UpsertStaffMemberDialog : Component</ID>
+    <ID>TooManyFunctions:UserProfileComponent.kt$UserProfileComponent : Component</ID>
+    <ID>UnusedPrivateMember:CustomDropDownList.kt$CustomDropDownList$private var scrollableList: ScrollableView? = null</ID>
+    <ID>UnusedPrivateMember:DateTimePicker.kt$flatpickr$element: HTMLInputElement</ID>
+    <ID>UnusedPrivateMember:DirectoryUploader.kt$DirectoryUploader$private var progressBar: ImageView? = null</ID>
+    <ID>UnusedPrivateMember:DirectoryUploader.kt$DirectoryUploader$private var uploadButton: LinearLayout? = null</ID>
+    <ID>UnusedPrivateMember:DropDownWithCustomList.kt$DropDownWithCustomList$private val selectedItemsViews = mutableMapOf&lt;String, LinearLayout&gt;()</ID>
+    <ID>UnusedPrivateMember:FileUploader.kt$FileUploader$private var uploadedImage: ImageView? = null</ID>
+    <ID>UnusedPrivateMember:FileUploader.kt$FileUploader$private var uploadedView: LinearLayout? = null</ID>
+    <ID>UnusedPrivateMember:MultiSelectionDropdownWithCustomList.kt$MultiSelectionDropDownWithCustomListViewModel$private var getItemsJob: Job? = null</ID>
+    <ID>UnusedPrivateMember:RemoteCheckBoxList.kt$RemoteCheckBoxList$private var dropDownAndButtonLayout: LinearLayout? = null</ID>
+    <ID>UnusedPrivateMember:RemoteCheckBoxList.kt$RemoteCheckBoxList$private var listLayoutTextView: LinearLayout? = null</ID>
+    <ID>UnusedPrivateMember:ServerCaller.kt$RemoteServerCaller$private fun binaryPost( url: String, headers: Map&lt;String, String&gt;? = null, onSuccess: (XMLHttpRequest) -&gt; Unit, onError: () -&gt; Unit, body: String? = null )</ID>
+    <ID>UnusedPrivateMember:ServerCaller.kt$RemoteServerCaller$private fun get( url: String, headers: Map&lt;String, String&gt;? = null, onSuccess: (XMLHttpRequest) -&gt; Unit, onError: () -&gt; Unit )</ID>
+    <ID>UnusedPrivateMember:SnackBar.kt$SnackBar$private val fadein = keyframes("fadein") { from { bottom = 0.px opacity = 0.0 } to { bottom = 30.px opacity = 1.0 } }</ID>
+    <ID>UnusedPrivateMember:SnackBar.kt$SnackBar$private val fadeout = keyframes("fadeout") { from { bottom = 30.px opacity = 1.0 } to { bottom = 0.px opacity = 0.0 } }</ID>
+    <ID>UnusedPrivateMember:SnackBar.kt$SnackBar$private val hideStyle by lazy { classRuleSet { visibility = "hidden !important" animationName = "fadein, fadeout" animationDuration = "${DEFAULT_ANIMATION_DURATION}s, ${DEFAULT_ANIMATION_DURATION}s" } }</ID>
+    <ID>UnusedPrivateMember:Tippy.kt$TippyModule$element: HTMLElement</ID>
+    <ID>UnusedPrivateMember:Tippy.kt$TippyModule$option: dynamic</ID>
+    <ID>UnusedPrivateMember:Tippy.kt$private fun getTippyOptions(content: HTMLElement)</ID>
+    <ID>VariableNaming:ServerCaller.kt$RemoteServerCaller$private val HTTP_GET_VERB = "GET"</ID>
+    <ID>VariableNaming:ServerCaller.kt$RemoteServerCaller$val BASE_URL = if (AppConfig.isDev) "http://localhost:8010" else ""</ID>
+    <ID>VariableNaming:ServerCaller.kt$RemoteServerCaller$val HTTP_POST_VERB = "POST"</ID>
+    <ID>WildcardImport:AddButton.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:AdminPageComponent.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:AdminPageComponent.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:App.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:BasePageComponent.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:BasePageComponent.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:ButtonWithImage.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:Buttons.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:CheckBoxList.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:CheckBoxList.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:ConfirmationDialog.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:CustomCheckBox.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:CustomCheckBox.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:CustomCheckBoxList.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:CustomCheckBoxList.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:CustomDropDownList.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:CustomDropDownList.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:DatePicker.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:DesktopScrollableView.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:DirectoryUploader.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:DirectoryUploader.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:DraggableComponent.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:DraggableComponent.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:DropDownList.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:DropDownList.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:DropDownWithCustomList.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:DropDownWithCustomList.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:EditablePhoneNumberView.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:EditablePhoneNumberView.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:EditableTextView.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:EmptyList.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:EndPointRemoteProcessors.kt$import com.narbase.narcore.router.*</ID>
+    <ID>WildcardImport:FileUploader.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:FileUploader.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:ImageUploader.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:ImageUploader.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:LabeldTextInput.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:LinkDatePicker.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:LinkDatePicker.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:LoadingIndicator.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:LoginPageContent.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:LoginPageContent.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:MobileScrollableView.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:MultiImageUploader.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:MultiImageUploader.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:MultiSelectionDropDownList.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:MultiSelectionDropDownList.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:MultiSelectionDropdownWithCustomList.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:MultiSelectionDropdownWithCustomList.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:NetworkAwareWrapper.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:NetworkAwareWrapper.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:PageSlide.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:PageSlide.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:PaginationControls.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:PasswordUpdateComponent.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:PasswordUpdateComponent.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:PointerCursor.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:PopUpDialog.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:RemoteCheckBoxList.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:RemoteCheckBoxList.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:RemoteDropDownList.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:RemoteDropDownList.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:RemoteDropDownList.kt$import com.narbase.narcore.web.network.*</ID>
+    <ID>WildcardImport:RolesManagementComponent.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:RolesManagementComponent.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:RolesManagementComponent.kt$import com.narbase.narcore.web.utils.views.*</ID>
+    <ID>WildcardImport:SearchTextInput.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:Separators.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:ShowWarningMessage.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:SideBar.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:SideBar.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:SimpleFileUploader.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:SimpleFileUploader.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:SingleImageUploader.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:SingleImageUploader.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:SnackBar.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:StaffManagementComponent.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:StaffManagementComponent.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:StaffManagementComponent.kt$import com.narbase.narcore.web.utils.views.*</ID>
+    <ID>WildcardImport:StartupComponent.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:StartupComponent.kt$import com.narbase.narcore.web.utils.views.*</ID>
+    <ID>WildcardImport:StatusesListComponent.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:StatusesListComponent.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:TableUtils.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:TableUtils.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:TextInput.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:TextInputWithIcon.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:ToggleSwitch.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:UpsertStaffMemberDialog.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:UpsertStaffMemberDialog.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:UpsertStaffMemberDialog.kt$import com.narbase.narcore.web.utils.views.*</ID>
+    <ID>WildcardImport:UserProfileComponent.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:UserProfileComponent.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:ViewLoadingErrorComponent.kt$import com.narbase.kunafa.core.components.*</ID>
+    <ID>WildcardImport:ViewLoadingErrorComponent.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:deleteButton.kt$import com.narbase.kunafa.core.css.*</ID>
+    <ID>WildcardImport:networkCall.kt$import kotlinx.coroutines.*</ID>
+  </CurrentIssues>
+</SmellBaseline>

@@ -9,7 +9,8 @@ import java.io.File
  */
 
 object LaunchConfig {
-    var environment: Environment = appConf.propertyOrNull("launchConfig.environment")?.getString()
+    var environment: Environment = if (System.getenv("IS_TEST")?.toBoolean() == true) Environment.Testing
+    else appConf.propertyOrNull("launchConfig.environment")?.getString()
         ?.let { value -> Environment.values().firstOrNull { it.name == value } } ?: Environment.Dev
 }
 

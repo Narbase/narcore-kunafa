@@ -14,11 +14,14 @@ import com.narbase.kunafa.core.routing.Router
 import com.narbase.kunafa.core.routing.redirect
 import com.narbase.kunafa.core.routing.route
 import com.narbase.kunafa.core.routing.routeComponent
+import com.narbase.narcore.dto.domain.hello_world.HelloWorldEndPoint
 import com.narbase.narcore.dto.models.roles.Privilege
 import com.narbase.narcore.web.common.AppColors
 import com.narbase.narcore.web.common.AppFontSizes
 import com.narbase.narcore.web.common.models.Language
 import com.narbase.narcore.web.events.ServerConnectionEvent
+import com.narbase.narcore.web.network.networkCall
+import com.narbase.narcore.web.network.remoteProcess
 import com.narbase.narcore.web.storage.SessionInfo
 import com.narbase.narcore.web.storage.StorageManager
 import com.narbase.narcore.web.storage.bidirectional
@@ -318,10 +321,20 @@ class BasePageComponent(
                     }
                     text = "Hello, world"
                 }
+                testRouting()
             }
         }
         routeComponent(AdminPageComponent.routeDetails.href, isExact = false) { adminPageComponent }
         routeComponent(UserProfileComponent.routeDetails.href, isExact = false) { userProfileComponent }
+    }
+
+    private fun testRouting(){
+        console.log("Testing Routing")
+        networkCall {
+            val response = HelloWorldEndPoint.remoteProcess(HelloWorldEndPoint.Request(data = "Hi!"))
+            console.log(response.data.data)
+            //output: "Hi! :Hehe"
+        }
     }
 
 }

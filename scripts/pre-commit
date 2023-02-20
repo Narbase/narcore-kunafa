@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+echo "Running detekt check..."
+OUTPUT="/tmp/detekt-$(date +%s)"
+./gradlew detekt > $OUTPUT
+EXIT_CODE1=$?
+if [ $EXIT_CODE1 -ne 0 ]; then
+  cat $OUTPUT
+  rm $OUTPUT
+  echo "***********************************************"
+  echo "                 Detekt failed                 "
+  echo " Please fix the above issues before committing "
+  echo "***********************************************"
+fi
+rm $OUTPUT
+
+echo "Running detekt check on web-dto..."
+OUTPUT="/tmp/detekt-$(date +%s)"
+./gradlew :dto-web:detekt > $OUTPUT
+EXIT_CODE2=$?
+if [ $EXIT_CODE2 -ne 0 ]; then
+  cat $OUTPUT
+  rm $OUTPUT
+  echo "***********************************************"
+  echo "                 Detekt failed                 "
+  echo " Please fix the above issues before committing "
+  echo "***********************************************"
+fi
+rm $OUTPUT
+
+echo "Running detekt check on narcore-web..."
+OUTPUT="/tmp/detekt-$(date +%s)"
+./gradlew :narcore-web:detekt > $OUTPUT
+EXIT_CODE3=$?
+EXIT_CODE=$EXIT_CODE1 && $EXIT_CODE2 && $EXIT_CODE3
+if [ $EXIT_CODE3 -ne 0 ]; then
+  cat $OUTPUT
+  rm $OUTPUT
+  echo "***********************************************"
+  echo "                 Detekt failed                 "
+  echo " Please fix the above issues before committing "
+  echo "***********************************************"
+  exit $EXIT_CODE
+fi
+exit $EXIT_CODE
+rm $OUTPUT
+
+
+

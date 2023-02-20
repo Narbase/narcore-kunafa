@@ -3,32 +3,39 @@ package com.narbase.narcore.common
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.narbase.narcore.common.auth.loggedin.AuthorizedClientData
-
-
-
-
-import io.ktor.server.response.*
 import io.ktor.server.application.*
 import io.ktor.server.auth.*
 import io.ktor.server.plugins.*
-
-
+import io.ktor.server.response.*
+import com.narbase.narcore.common.auth.loggedin.AuthorizedClientData
 import kotlin.reflect.KClass
 
 /*
  * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
-
-abstract class Handler<V : Any, out D : Any>(
-    private val requestDtoClass: KClass<V>
+abstract class BasicHandler<out D : Any>(
 ) {
 
     suspend fun handle(call: ApplicationCall) {
-        val requestDto = call.extractDto()
         val clientData = call.principal<AuthorizedClientData>()
-        val dataResponse = process(requestDto, clientData)
+        val dataResponse = process(call, clientData)
         call.respond(dataResponse)
+    }
+
+    abstract suspend fun process(call: ApplicationCall, clientData: AuthorizedClientData?): DataResponse<D>
+
+
+}
+
+
+abstract class Handler<V : Any, out D : Any>(
+    private val requestDtoClass: KClass<V>,
+) : BasicHandler<D>() {
+
+    override suspend fun process(call: ApplicationCall, clientData: AuthorizedClientData?): DataResponse<D> {
+        val requestDto = call.extractDto()
+        return process(requestDto, clientData)
+
     }
 
     abstract fun process(requestDto: V, clientData: AuthorizedClientData?): DataResponse<D>
@@ -60,3 +67,4 @@ abstract class Handler<V : Any, out D : Any>(
     class GsonParsingContentTransformationException :
         ContentTransformationException("Cannot transform this request's content to the desired type")
 }
+

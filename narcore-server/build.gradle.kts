@@ -60,6 +60,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.8.0")
     implementation("com.sun.mail:javax.mail:1.5.5")
 
+    implementation("org.reflections:reflections:0.10.2")
+
     testImplementation("io.ktor:ktor-server-test-host:$ktor_version")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
     testImplementation("org.assertj:assertj-core:3.23.1")
@@ -76,6 +78,7 @@ configure<SourceSetContainer> {
     }
 }
 tasks.test {
+    environment["IS_TEST"] = true
     useJUnitPlatform()
 }
 
