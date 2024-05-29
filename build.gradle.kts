@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_1_8
 
 allprojects {
-    version = "0.0.2"
+    version = "0.0.1"
 
     tasks
         .withType<org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile>()
@@ -9,7 +9,7 @@ allprojects {
             compilerOptions {
                 jvmTarget.set(JVM_1_8)
                 freeCompilerArgs.add("-Xcontext-receivers")
-
+                optIn.add("kotlin.js.ExperimentalJsExport")
             }
         }
 }
