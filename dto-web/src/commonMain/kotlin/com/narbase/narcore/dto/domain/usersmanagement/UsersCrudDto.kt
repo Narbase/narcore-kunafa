@@ -2,10 +2,12 @@ package com.narbase.narcore.dto.domain.usersmanagement
 
 import com.narbase.narcore.dto.common.IdDto
 import com.narbase.narcore.dto.models.roles.RoleDto
+import kotlin.js.JsExport
 
 /*
  * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
+@JsExport
 object UsersCrudDto {
 
     class Filters(

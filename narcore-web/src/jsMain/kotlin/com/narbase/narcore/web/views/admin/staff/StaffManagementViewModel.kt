@@ -4,6 +4,7 @@ import com.narbase.kunafa.core.lifecycle.Observable
 import com.narbase.narcore.web.network.UnknownErrorException
 import com.narbase.narcore.web.network.basicNetworkCall
 import com.narbase.narcore.web.network.calls.settings.AdminStaffServerCaller
+import com.narbase.narcore.web.network.calls.settings.AdminStaffServerCallerDtos
 import com.narbase.narcore.web.network.calls.settings.EnableUserDto
 import com.narbase.narcore.web.network.crud.CrudDto
 import com.narbase.narcore.web.utils.BasicUiState
@@ -18,7 +19,7 @@ class StaffManagementViewModel(private val showCurrent: Boolean) {
     val uiState = Observable<BasicUiState>()
     val upsertUiState = Observable<BasicUiState>()
     val userActiveUiState = Observable<BasicUiState>()
-    var data: List<AdminStaffServerCaller.StaffDto> = listOf()
+    var data: List<AdminStaffServerCallerDtos.StaffDto> = listOf()
 
     var pageNo = 0
     var pageSize = 20
@@ -30,7 +31,7 @@ class StaffManagementViewModel(private val showCurrent: Boolean) {
             val dto = CrudDto.GetList.Request(
                 pageNo, pageSize,
                 searchTerm = searchTerm,
-                data = AdminStaffServerCaller.Filters(
+                data = AdminStaffServerCallerDtos.Filters(
                     getInactive = showCurrent.not(),
                     clientId = null
                 )
@@ -58,7 +59,7 @@ class StaffManagementViewModel(private val showCurrent: Boolean) {
         getStaff()
     }
 
-    fun addStaffMember(dto: AdminStaffServerCaller.StaffDto) {
+    fun addStaffMember(dto: AdminStaffServerCallerDtos.StaffDto) {
         basicNetworkCall(upsertUiState) {
             val response = AdminStaffServerCaller.add(dto)
             if (response.status != "${DataResponse.BASIC_SUCCESS}") {
@@ -68,7 +69,7 @@ class StaffManagementViewModel(private val showCurrent: Boolean) {
 
     }
 
-    fun editStaffMember(dto: AdminStaffServerCaller.StaffDto) {
+    fun editStaffMember(dto: AdminStaffServerCallerDtos.StaffDto) {
         basicNetworkCall(upsertUiState) {
             val response = AdminStaffServerCaller.update(dto)
             if (response.status != "${DataResponse.BASIC_SUCCESS}") {

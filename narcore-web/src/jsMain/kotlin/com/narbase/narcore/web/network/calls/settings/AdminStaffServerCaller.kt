@@ -9,7 +9,7 @@ import com.narbase.narcore.web.utils.DataResponse
  * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 object AdminStaffServerCaller :
-    CrudServerCaller<AdminStaffServerCaller.StaffDto, AdminStaffServerCaller.Filters>("/api/admin/v1/settings/users") {
+    CrudServerCaller<AdminStaffServerCallerDtos.StaffDto, AdminStaffServerCallerDtos.Filters>("/api/admin/v1/settings/users") {
 
     suspend fun setUserActive(dto: EnableUserDto.RequestDto) =
         ServerCaller.synchronousPost<DataResponse<Unit>>(
@@ -19,6 +19,10 @@ object AdminStaffServerCaller :
         )
 
 
+}
+
+@JsExport
+object AdminStaffServerCallerDtos {
     @Suppress("unused")
     class Filters(
         val getInactive: Boolean?,
@@ -37,5 +41,4 @@ object AdminStaffServerCaller :
         val localPhone: String,
         val dynamicRoles: Array<DynamicRoleDto>
     )
-
 }

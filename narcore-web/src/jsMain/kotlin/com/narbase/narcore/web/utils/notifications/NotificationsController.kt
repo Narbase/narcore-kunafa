@@ -9,7 +9,7 @@ import com.narbase.narcore.web.utils.eventbus.EventBus
 import com.narbase.narcore.web.utils.views.SnackBar
 import kotlinx.browser.window
 import org.w3c.dom.WebSocket
-
+@JsExport
 object NotificationsController {
     var isConnectedToServer = false
 

@@ -253,6 +253,7 @@ class ImageUploaderViewController {
     }
 }
 
+@JsExport
 class UploadFileResponseDto(
     val url: String,
     val fileName: String

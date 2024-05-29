@@ -1,5 +1,6 @@
 package com.narbase.narcore.web.network.crud
 
+import com.narbase.narcore.data.dto.roles.DynamicRoleDto
 import com.narbase.narcore.web.network.ServerCaller
 import com.narbase.narcore.web.storage.StorageManager
 import com.narbase.narcore.web.utils.DataResponse

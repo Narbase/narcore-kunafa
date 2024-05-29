@@ -134,12 +134,13 @@ class LoginViewController(
     }
 
 }
-
+@JsExport
 data class TokenResponse(
     val status: Int,
     val data: TokenDto?
 )
 
+@JsExport
 data class TokenDto(
     val access_token: String
 )

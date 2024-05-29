@@ -6,7 +6,7 @@ import com.narbase.narcore.web.network.BasicResponse
  * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
-
+@JsExport
 class DataResponse<T>(
     val data: T
 ) : BasicResponse() {

@@ -18,6 +18,7 @@ import com.narbase.narcore.web.network.makeVisible
 import com.narbase.narcore.web.translations.localized
 import com.narbase.narcore.web.utils.horizontalFiller
 import com.narbase.narcore.web.utils.scrollable.scrollable
+import com.narbase.narcore.web.utils.uploaders.imageUploader
 import com.narbase.narcore.web.utils.verticalFiller
 import com.narbase.narcore.web.utils.views.customViews.EditableTextView
 import com.narbase.narcore.web.utils.views.matchParentDimensions

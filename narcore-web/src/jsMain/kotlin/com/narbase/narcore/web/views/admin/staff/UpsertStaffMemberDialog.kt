@@ -16,6 +16,7 @@ import com.narbase.narcore.web.common.AppColors
 import com.narbase.narcore.web.network.basicNetworkCall
 import com.narbase.narcore.web.network.calls.settings.AdminRolesServerCaller
 import com.narbase.narcore.web.network.calls.settings.AdminStaffServerCaller
+import com.narbase.narcore.web.network.calls.settings.AdminStaffServerCallerDtos
 import com.narbase.narcore.web.network.crud.CrudDto
 import com.narbase.narcore.web.storage.SessionInfo
 import com.narbase.narcore.web.translations.localized
@@ -52,7 +53,7 @@ class UpsertStaffMemberDialog(val viewModel: StaffManagementViewModel, private v
     }
 
 
-    private fun upsertDialog(staffDto: AdminStaffServerCaller.StaffDto? = null) {
+    private fun upsertDialog(staffDto: AdminStaffServerCallerDtos.StaffDto? = null) {
         popUp?.showDialog {
             verticalLayout {
                 id = "upsertMemberRootView"
@@ -231,7 +232,7 @@ class UpsertStaffMemberDialog(val viewModel: StaffManagementViewModel, private v
         updateDoctorVisibilityWithDynamicRoles()
     }
 
-    private fun onSaveButtonClicked(staffDto: AdminStaffServerCaller.StaffDto? = null) {
+    private fun onSaveButtonClicked(staffDto: AdminStaffServerCallerDtos.StaffDto? = null) {
         isDataValid = true
         val username = usernameTextInput.validateAndGetText().trim()
         val password = if (staffDto == null) passwordTextInput.validateAndGetText() else passwordTextInput?.text ?: ""
@@ -242,7 +243,7 @@ class UpsertStaffMemberDialog(val viewModel: StaffManagementViewModel, private v
         errorTextView?.isVisible = isDataValid.not()
         if (isDataValid.not()) return
 
-        val dto = AdminStaffServerCaller.StaffDto(
+        val dto = AdminStaffServerCallerDtos.StaffDto(
             staffDto?.clientId,
             staffDto?.userId,
             username,
@@ -436,7 +437,7 @@ class UpsertStaffMemberDialog(val viewModel: StaffManagementViewModel, private v
         upsertDialog()
     }
 
-    fun edit(dto: AdminStaffServerCaller.StaffDto) {
+    fun edit(dto: AdminStaffServerCallerDtos.StaffDto) {
         upsertDialog(dto)
         fullNameTextInput?.text = dto.fullName
         usernameTextInput?.text = dto.username

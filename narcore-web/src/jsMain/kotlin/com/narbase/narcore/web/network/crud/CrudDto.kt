@@ -4,11 +4,10 @@ package com.narbase.narcore.web.network.crud
  * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
-
+@JsExport
 object CrudDto {
 
     open class GetList {
-
         @Suppress("unused")
         open class Request<D>(
             val pageNo: Int = 0,
