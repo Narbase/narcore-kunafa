@@ -12,7 +12,7 @@ kotlin {
                 sourceMaps = false
                 devServerProperty = KotlinWebpackConfig.DevServer(
                     open = false,
-                    port = 3000,
+                    port = 8080,
                     static = mutableListOf("${layout.buildDirectory.asFile.get()}/processedResources/js/main"),
                 )
             })
