@@ -56,7 +56,8 @@ dependencies {
     testRuntimeOnly(libs.junit.jupiter.engine)
     testImplementation(libs.assertj.core)
     testImplementation(libs.mockk)
-    testImplementation("com.h2database:h2:2.2.224")
+
+    testImplementation(libs.h2)
 }
 configure<SourceSetContainer> {
     main {
