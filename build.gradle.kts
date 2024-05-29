@@ -9,6 +9,7 @@ allprojects {
             compilerOptions {
                 jvmTarget.set(JVM_1_8)
                 freeCompilerArgs.add("-Xcontext-receivers")
+                freeCompilerArgs.add("-Xexpect-actual-classes")
                 optIn.add("kotlin.js.ExperimentalJsExport")
             }
         }
