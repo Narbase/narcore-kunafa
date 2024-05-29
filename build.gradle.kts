@@ -1,47 +1,37 @@
 allprojects {
-    version = "1.0.0"
-
-    repositories {
-        maven(url = "https://dl.bintray.com/kotlin/kotlin-dev/")
-        maven(url = "https://dl.bintray.com/kotlin/kotlinx/")
-        maven(url = "https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven/")
-        mavenCentral()
-    }
-    apply(plugin = "io.gitlab.arturbosch.detekt")
-
+    version = "0.0.1"
 }
 
+
 plugins {
-    kotlin("jvm") version "1.7.10" apply false
-    kotlin("js") version "1.7.10" apply false
-    kotlin("multiplatform") version "1.7.10" apply false
-    id("io.gitlab.arturbosch.detekt").version("1.22.0")
+    // this is necessary to avoid the plugins to be loaded multiple times
+    // in each subproject's classloader
+    alias(libs.plugins.kotlinJvm) apply false
+    alias(libs.plugins.kotlinMultiplatform) apply false
+    alias(libs.plugins.kotlinSerialization) apply false
 }
 
 tasks.register("buildRelease") {
-    val outputJarName = "narcore"
-    val serverProjectName = "narcore-server"
-    val webProjectName = "narcore-web"
+    val webAppProject = projects.narcoreWeb
+
+    val outputJarName = project.name
+    val serverProjectName = projects.narcoreServer.name
+    val webProjectName = webAppProject.name
     dependsOn(":$serverProjectName:jar")
-    dependsOn(":$webProjectName:build")
+    dependsOn(":$webProjectName:assemble")
     doLast {
         println("Building release")
         val releaseDir = File("./releases/$version/")
         val webReleaseDir = File("./releases/$version/web/")
         releaseDir.deleteRecursively()
         releaseDir.mkdirs()
-        webReleaseDir.mkdirs()
-        File("./$webProjectName/build/distributions/").copyRecursively(webReleaseDir, overwrite = true)
-        File("./$serverProjectName/build/libs/$serverProjectName-$version.jar").copyTo(
+        webReleaseDir.mkdirs()//fixme: Doesn't work!
+        File("${webAppProject.dependencyProject.layout.buildDirectory.asFile.get()}/dist/js/productionExecutable").copyRecursively(webReleaseDir, overwrite = true)
+        File("${projects.narcoreServer.dependencyProject.layout.buildDirectory.asFile.get()}/libs/$serverProjectName-$version.jar").copyTo(
             File("${releaseDir.path}/$outputJarName.jar"),
             overwrite = true
         )
     }
-}
-
-
-repositories {
-    mavenCentral()
 }
 
 tasks.register("copyHook") {

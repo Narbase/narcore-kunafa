@@ -1,39 +1,50 @@
+import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
-    kotlin("multiplatform")
+    alias(libs.plugins.kotlinMultiplatform)
 }
 kotlin {
-    jvm {
-        compilations.all {
-            kotlinOptions.jvmTarget = "1.8"
-        }
-        withJava()
-        testRuns["test"].executionTask.configure {
-            useJUnitPlatform()
-        }
-    }
-    js(LEGACY) {
+    jvm()
+    js(IR) {
         browser {
+            runTask(Action {
+                mainOutputFileName = "main.bundle.js"
+                sourceMaps = false
+                devServerProperty = KotlinWebpackConfig.DevServer(
+                    open = false,
+                    port = 3000,
+                    static = mutableListOf("${layout.buildDirectory.asFile.get()}/processedResources/js/main"),
+                )
+            })
+            webpackTask(Action {
+                mainOutputFileName = "main.bundle.js"
+            })
+            testTask(Action {
+                useKarma {
+                    useChromeHeadless()
+                }
+            })
+        }
+        binaries.executable()
+    }
+
+    sourceSets.all {
+        languageSettings {
+            optIn("kotlin.js.ExperimentalJsExport")
         }
     }
     sourceSets {
-        val commonMain by getting
-        val commonTest by getting {
+        commonMain.dependencies {
+            implementation(libs.narbase.kunafa.core)
+        }
+        val jsMain by getting {
             dependencies {
-                implementation(kotlin("test"))
             }
         }
         val jvmMain by getting {
             dependencies {
-                implementation("com.narbase.kunafa:core:0.3.0")
             }
         }
-        val jvmTest by getting
-        val jsMain by getting {
-            dependencies {
-                implementation("com.narbase.kunafa:core:0.3.0")
-            }
-        }
-        val jsTest by getting
+
     }
 }

@@ -60,7 +60,7 @@ object AppsConfigTable : UUIDTable("app_config") {
 
 object SmsRecordTable : LoggedTable, UUIDTable("sms_record") {
     val message = text("message")
-    val phones = array("phones")
+    val phones = array<String>("phones")
     val status = enum("status", SmsMessageStatus::class)
     override val createdOn = createdOnColumn()
 }

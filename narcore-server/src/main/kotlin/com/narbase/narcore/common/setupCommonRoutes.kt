@@ -17,6 +17,7 @@ import com.narbase.narcore.data.tables.UsersTable
 import com.narbase.narcore.deployment.Environment
 import com.narbase.narcore.deployment.LaunchConfig
 import com.narbase.narcore.domain.user.crud.*
+import com.narbase.narcore.domain.user.profile.HelloWorldController
 import com.narbase.narcore.domain.utils.addPrivilegeVerificationInterceptor
 import com.narbase.narcore.dto.models.roles.Privilege
 import com.narbase.narcore.router.CrudEndPoint
@@ -39,6 +40,9 @@ fun KtorRouting.setupCommonRoutes() {
     reflections.getSubTypesOf(EndpointHandler::class.java).forEach {
         logger.info("Registering controller: ${it.simpleName}")
         val defaultConstructors = it.constructors.first { it.parameterCount == 0 }
+        println("HelloWorldController::class.java.classLoader = ${HelloWorldController::class.java.classLoader}")
+        println("EndpointHandler::class.java.classLoader = ${EndpointHandler::class.java.classLoader}")
+        println("defaultConstructors::class.java.classLoader = ${defaultConstructors::class.java.classLoader}")
         val handler = defaultConstructors.newInstance() as EndpointHandler<*, *>
         registeredEndpointPathes.add(handler.endPoint.path)
         registerRoute(handler, handler.endPoint)

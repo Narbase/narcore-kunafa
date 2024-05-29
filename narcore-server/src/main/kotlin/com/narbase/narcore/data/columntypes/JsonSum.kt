@@ -38,7 +38,7 @@ class JsonStringColumn(
     val table: Table,
     val name: String
 ) : ExpressionWithColumnType<String>() {
-    override val columnType: IColumnType = JsonStringColumnType()
+    override val columnType: IColumnType<String> = JsonStringColumnType()
 
     override fun toQueryBuilder(queryBuilder: QueryBuilder) = queryBuilder {
         append(table.tableName)

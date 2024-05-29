@@ -5,6 +5,7 @@ import com.narbase.narcore.data.tables.ClientsTable
 import com.narbase.narcore.data.tables.roles.ClientsRolesTable
 import com.narbase.narcore.data.tables.roles.RolesTable
 import com.narbase.narcore.data.tables.utils.toEntityId
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.batchInsert
 import org.jetbrains.exposed.sql.deleteWhere
 import org.jetbrains.exposed.sql.leftJoin

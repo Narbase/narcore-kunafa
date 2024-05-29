@@ -21,7 +21,7 @@ fun <T : Any> String.execAndMap(transform: (ResultSet) -> T): List<T> {
 
 private fun <T : Any> Transaction.preparedExecAndMap(
     sql: String,
-    args: Iterable<Pair<IColumnType, Any?>>,
+    args: Iterable<Pair<IColumnType<T>, Any?>>,
     transform: (ResultSet) -> T
 ): List<T> {
     val result = arrayListOf<T>()
@@ -42,7 +42,7 @@ private fun <T : Any> Transaction.preparedExecAndMap(
     return result
 }
 
-fun <T : Any> String.preparedExecAndMap(args: Iterable<Pair<IColumnType, Any?>>, transform: (ResultSet) -> T): List<T> {
+fun <T : Any> String.preparedExecAndMap(args: Iterable<Pair<IColumnType<T>, Any?>>, transform: (ResultSet) -> T): List<T> {
     return TransactionManager.current().preparedExecAndMap(this, args, transform)
 }
 

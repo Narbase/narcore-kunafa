@@ -10,6 +10,7 @@ import com.narbase.narcore.data.tables.DeviceTokensTable
 import com.narbase.narcore.domain.client.token.RemoveTokenController.RequestDto
 import com.narbase.narcore.domain.client.token.RemoveTokenController.ResponseDto
 import com.narbase.narcore.domain.utils.client
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.and
 import org.jetbrains.exposed.sql.deleteWhere
 import org.jetbrains.exposed.sql.transactions.transaction

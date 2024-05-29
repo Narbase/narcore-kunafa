@@ -9,9 +9,9 @@ import org.jetbrains.exposed.sql.vendors.currentDialect
 @Suppress("UNREACHABLE_CODE")
 class Union(vararg val queries: Query) : Query(queries[0].set, null) {
     var count_: Boolean = false
-    override fun arguments(): List<ArrayList<Pair<IColumnType, Any?>>> {
+    override fun arguments(): List<ArrayList<Pair<IColumnType<*>, Any?>>> {
         val allArgs = queries.map { it.arguments() }
-        var answer: List<ArrayList<Pair<IColumnType, Any?>>> = listOf()
+        var answer: List<ArrayList<Pair<IColumnType<*>, Any?>>> = listOf()
         allArgs.forEach {
             answer = answer.zipLongest(it) { a, b ->
                 a + b
@@ -25,7 +25,7 @@ class Union(vararg val queries: Query) : Query(queries[0].set, null) {
         return super.count()
     }
 
-    override fun prepareSQL(transaction: Transaction): String {
+    override fun prepareSQL(transaction: Transaction, prepared: Boolean): String {
         val joinedQueriesWithUnion = queries.joinToString(" UNION ")
         {
             it.prepareSQL(QueryBuilder(true))
