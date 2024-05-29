@@ -5,10 +5,8 @@ import com.narbase.narcore.data.models.users.UserId
 import com.narbase.narcore.data.tables.ClientsTable
 import com.narbase.narcore.data.tables.UsersTable
 import com.narbase.narcore.data.tables.utils.toEntityId
-import org.jetbrains.exposed.sql.ResultRow
-import org.jetbrains.exposed.sql.insert
-import org.jetbrains.exposed.sql.select
-import org.jetbrains.exposed.sql.update
+import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import java.util.*
 
 /*
@@ -43,12 +41,12 @@ object UsersDao {
     }
 
     fun get(id: UserId) = UsersTable
-        .select { UsersTable.id eq id.value }
+        .selectAll().where { UsersTable.id eq id.value }
         .map(::toModel)
         .first()
 
     fun get(clientId: UUID) = UsersTable
-        .select { UsersTable.clientId eq clientId }
+        .selectAll().where { UsersTable.clientId eq clientId }
         .map(::toModel)
         .first()
 

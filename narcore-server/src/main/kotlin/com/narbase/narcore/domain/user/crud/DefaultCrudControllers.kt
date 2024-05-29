@@ -7,6 +7,7 @@ import com.narbase.narcore.data.models.utils.ListAndTotal
 import com.narbase.narcore.data.tables.DeletableTable
 import org.jetbrains.exposed.dao.id.UUIDTable
 import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.statements.UpdateBuilder
 import org.jetbrains.exposed.sql.statements.UpdateStatement
 import org.jetbrains.exposed.sql.transactions.transaction
@@ -78,7 +79,7 @@ abstract class DefaultCrudController<D : DefaultCrudController.UUIDItem>(
             val itemId = dbTable.insertAndGetId {
                 insertValuesInFields(item, it, clientData)
             }
-            dbToDto(dbTable.select { dbTable.id eq itemId }.first())
+            dbToDto(dbTable.selectAll().where { dbTable.id eq itemId }.first())
         }
     }
 
@@ -95,7 +96,7 @@ abstract class DefaultCrudController<D : DefaultCrudController.UUIDItem>(
                 updateValuesInFields(item, it, clientData)
             }
             if (updatedRows == 0) throw InvalidRequestException("No rows match the id sent by the request, nothing was updated")
-            dbToDto(dbTable.select { dbTable.id eq item.id }.first())
+            dbToDto(dbTable.selectAll().where { dbTable.id eq item.id }.first())
         }
     }
 

@@ -6,7 +6,11 @@ import com.narbase.narcore.data.tables.UsersTable
 import io.ktor.server.application.*
 import io.ktor.server.auth.*
 import io.ktor.server.routing.*
+import org.jetbrains.exposed.sql.Op
+import org.jetbrains.exposed.sql.SqlExpressionBuilder
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.select
+import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.util.*
 
@@ -20,7 +24,7 @@ fun Route.addInactiveUserInterceptor() {
         val authorizedClientData = call.principal<AuthorizedClientData>()
         val isInactive = transaction {
             authorizedClientData?.id?.let { clientId ->
-                UsersTable.select { UsersTable.clientId eq UUID.fromString(clientId) }.firstOrNull()
+                UsersTable.selectAll().where { UsersTable.clientId eq UUID.fromString(clientId) }.firstOrNull()
                     ?.get(UsersTable.isInactive)
             }
         }

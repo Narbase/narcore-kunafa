@@ -4,6 +4,7 @@ import com.narbase.narcore.common.auth.basic.PasswordEncoder
 import com.narbase.narcore.data.models.clients.Client
 import com.narbase.narcore.data.tables.ClientsTable
 import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.joda.time.DateTime
 import java.util.*
 
@@ -35,12 +36,12 @@ object ClientsDao {
     }
 
     fun get(id: UUID) = ClientsTable
-        .select { ClientsTable.id eq id }
+        .selectAll().where { ClientsTable.id eq id }
         .map(::toModel)
         .first()
 
     fun getByUsername(username: String) = ClientsTable
-        .select { ClientsTable.username eq username }
+        .selectAll().where { ClientsTable.username eq username }
         .map(::toModel)
         .first()
 

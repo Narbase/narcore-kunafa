@@ -23,6 +23,10 @@ import com.narbase.narcore.dto.models.roles.Privilege
 import com.narbase.narcore.router.CrudEndPoint
 import com.narbase.narcore.router.EndPoint
 import com.narbase.narcore.router.newSubEndPoint
+import org.jetbrains.exposed.sql.Op
+import org.jetbrains.exposed.sql.SqlExpressionBuilder
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
+import org.jetbrains.exposed.sql.selectAll
 import java.util.*
 import java.util.logging.Logger
 import io.ktor.server.routing.Route as KtorRoute
@@ -157,10 +161,10 @@ private fun KtorRoute.addDisableAccountInterceptor(privileges: List<Privilege>) 
         val authorizedClientData = call.principal<AuthorizedClientData>()
         val isInactive = transaction {
             authorizedClientData?.id?.let { clientId ->
-                            UsersTable.select { UsersTable.clientId eq UUID.fromString(clientId) }
-                                .firstOrNull()
-                                ?.let { it[UsersTable.isInactive] || it[UsersTable.isDeleted] }
-                                ?: true
+                UsersTable.selectAll().where { UsersTable.clientId eq UUID.fromString(clientId) }
+                    .firstOrNull()
+                    ?.let { it[UsersTable.isInactive] || it[UsersTable.isDeleted] }
+                    ?: true
             }
         }
         if (isInactive == true)

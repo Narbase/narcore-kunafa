@@ -11,6 +11,7 @@ import com.narbase.narcore.data.tables.ClientsTable
 import com.narbase.narcore.data.tables.UsersTable
 import com.narbase.narcore.dto.domain.usersmanagement.UsersCrudDto
 import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.util.*
 
@@ -78,9 +79,7 @@ object UsersRepository {
         return transaction {
             val query = ClientsTable
                 .innerJoin(UsersTable)
-                .select {
-                    (UsersTable.isInactive eq (data?.getInactive ?: false))
-                }
+                .selectAll().where { (UsersTable.isInactive eq (data?.getInactive ?: false)) }
             if (data?.clientId != null) {
                 query.andWhere { ClientsTable.id eq data.clientId?.toModel() }
             }
