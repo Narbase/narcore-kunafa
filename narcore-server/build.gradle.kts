@@ -100,8 +100,8 @@ tasks.jar {
     })
 }
 tasks.register("createProperties") {
-    doLast {
-        val charset = Charset.forName("UTF-8")
+    dependsOn(tasks.processResources)
+    val charset = Charset.forName("UTF-8")
         val path = "${projects.narcoreServer.dependencyProject.layout.buildDirectory.asFile.get()}/resources/main/version.properties"
         File(path).parentFile.mkdirs()
         val fileOutputStream = FileOutputStream(path)
@@ -114,7 +114,6 @@ tasks.register("createProperties") {
         } finally {
             IoActions.closeQuietly(out)
         }
-    }
 }
 tasks.classes {
     dependsOn("createProperties")
