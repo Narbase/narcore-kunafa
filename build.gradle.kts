@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_1_8
 
 allprojects {
-    version = "0.0.1"
+    version = "0.0.2"
 
     tasks
         .withType<org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile>()
@@ -33,11 +33,13 @@ tasks.register("buildRelease") {
     dependsOn(":$webProjectName:assemble")
     doLast {
         println("Building release")
-        val releaseDir = File("./releases/$version/")
-        val webReleaseDir = File("./releases/$version/web/")
+        val releasePath = "./releases"
+        File(releasePath).mkdirs()
+        val releaseDir = File("$releasePath/$version/")
+        val webReleaseDir = File("$releasePath/$version/web/")
         releaseDir.deleteRecursively()
         releaseDir.mkdirs()
-        webReleaseDir.mkdirs()//fixme: Doesn't work!
+        webReleaseDir.mkdirs()
         File("${webAppProject.dependencyProject.layout.buildDirectory.asFile.get()}/dist/js/productionExecutable").copyRecursively(
             webReleaseDir,
             overwrite = true
