@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 allprojects {
     version = "0.0.1"
@@ -6,10 +7,9 @@ allprojects {
     val javaVersion = JavaVersion.VERSION_1_8
     val jvmTargetValue = JvmTarget.fromTarget("$javaVersion")
 
-
     tasks.withType<JavaCompile>().configureEach {
         sourceCompatibility = "$javaVersion"
-        targetCompatibility = "${JavaVersion.VERSION_17}"
+        targetCompatibility = "$javaVersion"
 
     }
 
