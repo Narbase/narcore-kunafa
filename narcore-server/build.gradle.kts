@@ -73,11 +73,6 @@ tasks.test {
 }
 
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-}
-
 application {
     mainClass.set("com.narbase.narcore.main.MainKt")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=${extra["io.ktor.development"] ?: "false"}")
