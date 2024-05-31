@@ -36,11 +36,7 @@ kotlin {
 
 
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-
-            }
-        }
+        @Suppress("UNUSED_VARIABLE")
         val jsMain by getting {
             dependencies {
                 implementation(projects.dtoWeb)
