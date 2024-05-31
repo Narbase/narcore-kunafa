@@ -10,3 +10,4 @@ temp_err.log
 /web/
 remoteClinicsBackups/
 log/
+/.kotlin/
