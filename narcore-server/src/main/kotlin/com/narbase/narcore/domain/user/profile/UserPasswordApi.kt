@@ -33,7 +33,7 @@ class UserPasswordController :
 
         val passwordEncoder = PasswordEncoder()
         val existingPasswordHash = transaction {
-            ClientsTable.slice(ClientsTable.passwordHash).selectAll().where { ClientsTable.id eq clientId }.limit(1)
+            ClientsTable.select(ClientsTable.passwordHash).where { ClientsTable.id eq clientId }.limit(1)
                 .firstOrNull()?.get(ClientsTable.passwordHash)
         } ?: ""
         if (passwordEncoder.checkPassword(oldPassword, existingPasswordHash).not()) {
