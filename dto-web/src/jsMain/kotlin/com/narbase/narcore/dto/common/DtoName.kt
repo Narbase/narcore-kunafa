@@ -8,7 +8,7 @@ fun <E> E.dto(): DtoName<E> where E : EnumDtoName, E : Enum<E> {
     return DtoName(this)
 }
 
-actual inline class DtoName<E> constructor(private val name: String) where E : EnumDtoName, E : Enum<E> {
+actual value class DtoName<E> constructor(private val name: String) where E : EnumDtoName, E : Enum<E> {
     @Suppress("CAST_NEVER_SUCCEEDS")
     @Deprecated("Use .enum() instead")
     fun getName() = this as? String ?: this.name
@@ -19,7 +19,7 @@ actual inline class DtoName<E> constructor(private val name: String) where E : E
     fun toJSON() = name
 }
 
-@Suppress("CAST_NEVER_SUCCEEDS")
+@Suppress("CAST_NEVER_SUCCEEDS", "DEPRECATION")
 inline fun <reified E> DtoName<E>.enum(): E where E : EnumDtoName, E : Enum<E> {
     val dtoName = this as? String ?: getName()
     return enumValues<E>().first { it.dtoName == dtoName }

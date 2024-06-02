@@ -8,6 +8,7 @@ import com.narbase.narcore.data.tables.utils.ilike
 import com.narbase.narcore.domain.user.crud.andWhere
 import com.narbase.narcore.dto.models.roles.Privilege
 import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import java.util.*
 
 /*
@@ -15,7 +16,7 @@ import java.util.*
  */
 object RolesDao {
     fun getList(pageNo: Long, pageSize: Int, searchTerm: String): ListAndTotal<Role> {
-        val query = RolesTable.select { RolesTable.isDeleted eq false }
+        val query = RolesTable.selectAll().where { RolesTable.isDeleted eq false }
         if (searchTerm.isNotBlank()) {
             query.andWhere {
                 (RolesTable.name ilike "%$searchTerm%")
@@ -30,7 +31,7 @@ object RolesDao {
     }
 
     fun get(id: UUID) = RolesTable
-        .select { RolesTable.id eq id }
+        .selectAll().where { RolesTable.id eq id }
         .map(::toModel)
         .first()
 

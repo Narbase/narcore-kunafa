@@ -1,73 +1,63 @@
 import org.gradle.internal.IoActions
 import org.gradle.internal.util.PropertiesUtils
-import org.jetbrains.kotlin.com.intellij.util.SystemProperties.getLineSeparator
 import java.io.BufferedOutputStream
 import java.io.FileOutputStream
 import java.io.OutputStream
 import java.nio.charset.Charset
 import java.util.*
 
-
-val kotlin_version: String by project
-val ktor_version: String by project
-val mokk_version: String by project
-
 plugins {
-    kotlin("jvm")
+    alias(libs.plugins.kotlinJvm)
+    alias(libs.plugins.ktor)
     application
+    alias(libs.plugins.kotlinSerialization)
 }
 
 val versionNumber = 1
 
 
 dependencies {
-    implementation(project(":dto-web"))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version")
-    implementation("org.jetbrains.exposed:exposed-core:0.39.2")
-    implementation("org.jetbrains.exposed:exposed-dao:0.39.2")
-    implementation("org.jetbrains.exposed:exposed-jdbc:0.39.2")
-    implementation("org.jetbrains.exposed:exposed-jodatime:0.39.2")
-    implementation("org.postgresql:postgresql:42.5.0")
-    implementation("com.zaxxer:HikariCP:5.0.1")
+    implementation(projects.dtoWeb)
+    implementation(libs.kotlin.stdlib.jdk8)
+    implementation(libs.exposed.core)
+    implementation(libs.exposed.dao)
+    implementation(libs.exposed.jdbc)
+    implementation(libs.exposed.jodatime)
+    implementation(libs.postgresql)
+    implementation(libs.hikariCP)
 
-    implementation("io.ktor:ktor-server-auth:$ktor_version")
-    implementation("io.ktor:ktor-server-auth-jwt:$ktor_version")
+    implementation(libs.ktor.server.auth)
+    implementation(libs.ktor.server.auth.jwt)
 
+    implementation(libs.ktor.server.content.negotiation)
+    implementation(libs.ktor.serialization.gson)
 
-    implementation("io.ktor:ktor-server-content-negotiation:$ktor_version")
-    implementation("io.ktor:ktor-serialization-gson:$ktor_version")
+    implementation(libs.ktor.server.websockets)
+    implementation(libs.ktor.server.status.pages)
 
+    implementation(libs.ktor.server.cors)
+    implementation(libs.ktor.server.forwarded.header)
+    implementation(libs.ktor.server.call.id)
+    implementation(libs.ktor.server.call.logging)
+    implementation(libs.ktor.server.partial.content)
+    implementation(libs.ktor.server.compression)
 
-//    implementation("io.ktor:ktor-network:$ktor_version")
-    implementation("io.ktor:ktor-server-websockets:$ktor_version")
+    implementation(libs.ktor.server.jetty)
+    implementation(libs.ktor.client.gson)
+    implementation(libs.ktor.client.apache)
+    implementation(libs.ktor.server.double.receive)
+    implementation(libs.logback.classic)
+    implementation(libs.kotlinx.html.jvm)
+    implementation(libs.javax.mail)
+    implementation(libs.reflections)
 
-    implementation("io.ktor:ktor-server-status-pages:$ktor_version")
-    implementation("io.ktor:ktor-server-cors:$ktor_version")
-    implementation("io.ktor:ktor-server-forwarded-header:$ktor_version")
-    implementation("io.ktor:ktor-server-call-id:$ktor_version")
-    implementation("io.ktor:ktor-server-call-logging:$ktor_version")
-    implementation("io.ktor:ktor-server-partial-content:$ktor_version")
-    implementation("io.ktor:ktor-server-compression:$ktor_version")
+    testImplementation(libs.ktor.server.test.host)
+    testImplementation(libs.junit.jupiter.api)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testImplementation(libs.assertj.core)
+    testImplementation(libs.mockk)
 
-
-    implementation("io.ktor:ktor-server-jetty:$ktor_version")
-    implementation("io.ktor:ktor-client-apache:$ktor_version")
-    implementation("io.ktor:ktor-client-gson:$ktor_version")
-    implementation("io.ktor:ktor-serialization:$ktor_version")
-    implementation("io.ktor:ktor-server-double-receive:$ktor_version")
-    implementation("ch.qos.logback:logback-classic:1.4.0")
-
-    implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.8.0")
-    implementation("com.sun.mail:javax.mail:1.5.5")
-
-    implementation("org.reflections:reflections:0.10.2")
-
-    testImplementation("io.ktor:ktor-server-test-host:$ktor_version")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
-    testImplementation("org.assertj:assertj-core:3.23.1")
-    testImplementation("org.junit.jupiter:junit-jupiter-params:5.9.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
-    testImplementation("io.mockk:mockk:$mokk_version")
+    testImplementation(libs.h2)
 }
 configure<SourceSetContainer> {
     main {
@@ -82,17 +72,10 @@ tasks.test {
     useJUnitPlatform()
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
-}
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-}
 
 application {
     mainClass.set("com.narbase.narcore.main.MainKt")
+    applicationDefaultJvmArgs = listOf("-Dio.ktor.development=${extra["io.ktor.development"] ?: "false"}")
 }
 
 
@@ -101,22 +84,31 @@ tasks.jar {
         attributes("Main-Class" to "com.narbase.narcore.main.MainKt")
         attributes("Class-Path" to ".")
     }
-    from(configurations.compileClasspath.map { config -> config.map { if (it.isDirectory) it else zipTree(it) } })
+
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+
+    from(configurations.compileClasspath.get().map {
+        if (it.isDirectory) it else zipTree(it)
+    })
+    from(configurations.runtimeClasspath.get().map {
+        if (it.isDirectory) it else zipTree(it)
+    })
 }
 tasks.register("createProperties") {
-    dependsOn("processResources")
-    doLast {
-        val charset = Charset.forName("UTF-8")
-        val out: OutputStream = BufferedOutputStream(FileOutputStream("$buildDir/resources/main/version.properties"))
+    dependsOn(tasks.processResources)
+    val charset = Charset.forName("UTF-8")
+        val path = "${projects.narcoreServer.dependencyProject.layout.buildDirectory.asFile.get()}/resources/main/version.properties"
+        File(path).parentFile.mkdirs()
+        val fileOutputStream = FileOutputStream(path)
+        val out: OutputStream = BufferedOutputStream(fileOutputStream)
         try {
             val propertiesToWrite: Properties = Properties()
             propertiesToWrite["versionName"] = project.version.toString()
             propertiesToWrite["versionNumber"] = versionNumber.toString()
-            PropertiesUtils.store(propertiesToWrite, out, "Version and name of project", charset, getLineSeparator())
+            PropertiesUtils.store(propertiesToWrite, out, "Version and name of project", charset, System.lineSeparator())
         } finally {
             IoActions.closeQuietly(out)
         }
-    }
 }
 tasks.classes {
     dependsOn("createProperties")

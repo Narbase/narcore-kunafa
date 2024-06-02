@@ -8,7 +8,7 @@ In the terminal, run `./gradlew narcore-server:run`
 
 ### Running the frontend
 
-In the terminal, run `./gradlew :narcore-web:run -t`
+In the terminal, run `./gradlew :narcore-web:jsBrowserDevelopmentRun -t`
 
 ## Understanding the codebase
 

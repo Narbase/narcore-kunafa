@@ -17,11 +17,16 @@ import com.narbase.narcore.data.tables.UsersTable
 import com.narbase.narcore.deployment.Environment
 import com.narbase.narcore.deployment.LaunchConfig
 import com.narbase.narcore.domain.user.crud.*
+import com.narbase.narcore.domain.user.profile.HelloWorldController
 import com.narbase.narcore.domain.utils.addPrivilegeVerificationInterceptor
 import com.narbase.narcore.dto.models.roles.Privilege
 import com.narbase.narcore.router.CrudEndPoint
 import com.narbase.narcore.router.EndPoint
 import com.narbase.narcore.router.newSubEndPoint
+import org.jetbrains.exposed.sql.Op
+import org.jetbrains.exposed.sql.SqlExpressionBuilder
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
+import org.jetbrains.exposed.sql.selectAll
 import java.util.*
 import java.util.logging.Logger
 import io.ktor.server.routing.Route as KtorRoute
@@ -39,6 +44,9 @@ fun KtorRouting.setupCommonRoutes() {
     reflections.getSubTypesOf(EndpointHandler::class.java).forEach {
         logger.info("Registering controller: ${it.simpleName}")
         val defaultConstructors = it.constructors.first { it.parameterCount == 0 }
+        println("HelloWorldController::class.java.classLoader = ${HelloWorldController::class.java.classLoader}")
+        println("EndpointHandler::class.java.classLoader = ${EndpointHandler::class.java.classLoader}")
+        println("defaultConstructors::class.java.classLoader = ${defaultConstructors::class.java.classLoader}")
         val handler = defaultConstructors.newInstance() as EndpointHandler<*, *>
         registeredEndpointPathes.add(handler.endPoint.path)
         registerRoute(handler, handler.endPoint)
@@ -153,10 +161,10 @@ private fun KtorRoute.addDisableAccountInterceptor(privileges: List<Privilege>) 
         val authorizedClientData = call.principal<AuthorizedClientData>()
         val isInactive = transaction {
             authorizedClientData?.id?.let { clientId ->
-                            UsersTable.select { UsersTable.clientId eq UUID.fromString(clientId) }
-                                .firstOrNull()
-                                ?.let { it[UsersTable.isInactive] || it[UsersTable.isDeleted] }
-                                ?: true
+                UsersTable.selectAll().where { UsersTable.clientId eq UUID.fromString(clientId) }
+                    .firstOrNull()
+                    ?.let { it[UsersTable.isInactive] || it[UsersTable.isDeleted] }
+                    ?: true
             }
         }
         if (isInactive == true)

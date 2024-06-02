@@ -7,9 +7,9 @@ import com.narbase.narcore.common.auth.loggedin.AuthorizedClientData
 import com.narbase.narcore.common.exceptions.UnauthenticatedException
 import com.narbase.narcore.data.tables.ClientsTable
 import com.narbase.narcore.dto.domain.user.profile.UpdatePasswordDto
-import org.jetbrains.exposed.sql.select
+import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.transactions.transaction
-import org.jetbrains.exposed.sql.update
 import java.util.*
 
 /*
@@ -33,7 +33,7 @@ class UserPasswordController :
 
         val passwordEncoder = PasswordEncoder()
         val existingPasswordHash = transaction {
-            ClientsTable.slice(ClientsTable.passwordHash).select { ClientsTable.id eq clientId }.limit(1)
+            ClientsTable.select(ClientsTable.passwordHash).where { ClientsTable.id eq clientId }.limit(1)
                 .firstOrNull()?.get(ClientsTable.passwordHash)
         } ?: ""
         if (passwordEncoder.checkPassword(oldPassword, existingPasswordHash).not()) {

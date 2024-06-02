@@ -1,39 +1,23 @@
-
 plugins {
-    kotlin("multiplatform")
+    alias(libs.plugins.kotlinMultiplatform)
 }
 kotlin {
-    jvm {
-        compilations.all {
-            kotlinOptions.jvmTarget = "1.8"
-        }
-        withJava()
-        testRuns["test"].executionTask.configure {
-            useJUnitPlatform()
-        }
-    }
-    js(LEGACY) {
-        browser {
-        }
+    jvm()
+    js(IR) {
+        browser()
     }
     sourceSets {
-        val commonMain by getting
-        val commonTest by getting {
+        commonMain.dependencies {
+            implementation(libs.narbase.kunafa.core)
+        }
+        val jsMain by getting {
             dependencies {
-                implementation(kotlin("test"))
             }
         }
         val jvmMain by getting {
             dependencies {
-                implementation("com.narbase.kunafa:core:0.3.0")
             }
         }
-        val jvmTest by getting
-        val jsMain by getting {
-            dependencies {
-                implementation("com.narbase.kunafa:core:0.3.0")
-            }
-        }
-        val jsTest by getting
+
     }
 }

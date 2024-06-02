@@ -17,12 +17,12 @@ import java.lang.reflect.Type
 
 
 inline fun <reified T : Any> JsonColumn() = JsonColumn<T>(T::class.java)
-class JsonColumn<T : Any>(val type: Type) : ColumnType() {
+class JsonColumn<T : Any>(val type: Type) : ColumnType<T>() {
     val gson = createGson()
     override fun sqlType(): String = "jsonb"
 
 
-    override fun notNullValueToDB(value: Any): Any {
+    override fun notNullValueToDB(value: T): Any {
         if (value is String) {
             return value
         }

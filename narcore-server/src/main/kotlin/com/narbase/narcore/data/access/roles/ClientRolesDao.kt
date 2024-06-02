@@ -5,10 +5,8 @@ import com.narbase.narcore.data.tables.ClientsTable
 import com.narbase.narcore.data.tables.roles.ClientsRolesTable
 import com.narbase.narcore.data.tables.roles.RolesTable
 import com.narbase.narcore.data.tables.utils.toEntityId
-import org.jetbrains.exposed.sql.batchInsert
-import org.jetbrains.exposed.sql.deleteWhere
-import org.jetbrains.exposed.sql.leftJoin
-import org.jetbrains.exposed.sql.select
+import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import java.util.*
 
 /*
@@ -19,9 +17,7 @@ object ClientRolesDao {
         val dynamicRolesDao = RolesDao
         return ClientsRolesTable
             .leftJoin(RolesTable, { dynamicRoleId }, { RolesTable.id })
-            .select {
-                ClientsRolesTable.clientId eq clientId
-            }.map(dynamicRolesDao::toModel)
+            .selectAll().where { ClientsRolesTable.clientId eq clientId }.map(dynamicRolesDao::toModel)
     }
 
     fun saveClientRoles(clientId: UUID, rolesIds: List<UUID>) {
