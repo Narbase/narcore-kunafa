@@ -1,13 +1,13 @@
 package com.narbase.narcore.web.views.admin.roles
 
 import com.narbase.kunafa.core.lifecycle.Observable
-import com.narbase.narcore.data.dto.roles.DynamicRoleDto
+import com.narbase.narcore.dto.models.roles.DynamicRoleDto
 import com.narbase.narcore.web.network.UnknownErrorException
 import com.narbase.narcore.web.network.basicNetworkCall
 import com.narbase.narcore.web.network.calls.settings.AdminRolesServerCaller
-import com.narbase.narcore.web.network.crud.CrudDto
+import com.narbase.narcore.dto.common.network.crud.CrudDto
 import com.narbase.narcore.web.utils.BasicUiState
-import com.narbase.narcore.web.utils.DataResponse
+import com.narbase.narcore.dto.common.network.DataResponse
 
 /*
  * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.

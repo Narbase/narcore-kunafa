@@ -253,12 +253,6 @@ class ImageUploaderViewController {
     }
 }
 
-@JsExport
-class UploadFileResponseDto(
-    val url: String,
-    val fileName: String
-)
-
 fun View?.imageUploader(defaultImageUrl: String? = null, imageStyle: (RuleSet.() -> Unit)? = null): ImageUploader {
 
     return ImageUploader(defaultImageUrl, imageStyle).apply {

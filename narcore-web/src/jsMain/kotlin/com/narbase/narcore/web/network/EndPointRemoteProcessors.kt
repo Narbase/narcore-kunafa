@@ -14,8 +14,8 @@ import kotlinx.browser.window
 import org.w3c.xhr.FormData
 import com.narbase.narcore.dto.models.RequestType
 import com.narbase.narcore.router.*
-import com.narbase.narcore.web.network.crud.CrudDto
-import com.narbase.narcore.web.utils.DataResponse
+import com.narbase.narcore.dto.common.network.crud.CrudDto
+import com.narbase.narcore.dto.common.network.DataResponse
 
 suspend fun <V : Any, D : Any> EndPoint<V, D>.remoteProcess(dto: V): DataResponse<D> {
     val endPoint = this

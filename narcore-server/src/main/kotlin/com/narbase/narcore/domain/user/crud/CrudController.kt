@@ -6,8 +6,10 @@ import com.narbase.narcore.common.DataResponse
 import com.narbase.narcore.common.Handler
 import com.narbase.narcore.common.auth.loggedin.AuthorizedClientData
 import com.narbase.narcore.common.exceptions.InvalidRequestException
+import com.narbase.narcore.common.toUUID
 import com.narbase.narcore.data.models.utils.ListAndTotal
 import com.narbase.narcore.domain.utils.addPrivilegeVerificationInterceptor
+import com.narbase.narcore.dto.common.network.crud.CrudDto
 import com.narbase.narcore.dto.models.roles.Privilege
 import io.ktor.server.application.*
 import io.ktor.server.plugins.*
@@ -126,34 +128,23 @@ class GetListController<DtoType, ListRequestDtoType : Any>(
 }
 
 class GetItemController<T>(private val getItem: (UUID?, clientData: AuthorizedClientData?) -> T) :
-    Handler<GetItemController.RequestDto, GetItemController<T>.ResponseDto>(RequestDto::class) {
-    override fun process(requestDto: RequestDto, clientData: AuthorizedClientData?): DataResponse<ResponseDto> {
-        val item = getItem(requestDto.id, clientData)
-        return DataResponse(ResponseDto(item = item))
+    Handler<CrudDto.GetItem.Request, CrudDto.GetItem<T>.Response>(CrudDto.GetItem.Request::class) {
+
+    override fun process(requestDto: CrudDto.GetItem.Request, clientData: AuthorizedClientData?): DataResponse<CrudDto.GetItem<T>.Response> {
+        val item = getItem(requestDto.id?.toUUID(), clientData)
+        return DataResponse(CrudDto.GetItem<T>().Response(item = item))
     }
-
-    @Suppress("unused")
-    class RequestDto(val id: UUID?)
-
-    @Suppress("unused")
-    inner class ResponseDto(val item: T)
-
 }
 
 class DeleteController(private val deleteItem: (UUID?, AuthorizedClientData?) -> Unit) :
-    Handler<DeleteController.RequestDto, Unit>(RequestDto::class) {
-    @Suppress("unused")
-    class RequestDto(
-        val id: UUID?
-    )
+    Handler<CrudDto.Delete.Request, Unit>(CrudDto.Delete.Request::class) {
 
-    override fun process(requestDto: RequestDto, clientData: AuthorizedClientData?): DataResponse<Unit> {
+    override fun process(requestDto: CrudDto.Delete.Request, clientData: AuthorizedClientData?): DataResponse<Unit> {
         if (requestDto.id != null) {
-            deleteItem(requestDto.id, clientData)
+            deleteItem(requestDto.id?.toUUID(), clientData)
         }
         return DataResponse()
     }
-
 }
 
 

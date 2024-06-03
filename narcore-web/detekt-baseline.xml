@@ -181,7 +181,7 @@
     <ID>NewLineAtEndOfFile:Arabic.kt$com.narbase.narcore.web.translations.Arabic.kt</ID>
     <ID>NewLineAtEndOfFile:DisplayNames.kt$com.narbase.narcore.web.translations.display.DisplayNames.kt</ID>
     <ID>NewLineAtEndOfFile:DynamicRole.kt$com.narbase.narcore.web.common.data.roles.DynamicRole.kt</ID>
-    <ID>NewLineAtEndOfFile:ItemList.kt$com.narbase.narcore.web.network.dto.ItemList.kt</ID>
+    <ID>NewLineAtEndOfFile:ItemList.kt$com.narbase.narcore.dto.common.network.ItemList.kt</ID>
     <ID>NewLineAtEndOfFile:Language.kt$com.narbase.narcore.web.common.models.Language.kt</ID>
     <ID>NewLineAtEndOfFile:MathUtils.kt$com.narbase.narcore.web.utils.MathUtils.kt</ID>
     <ID>NewLineAtEndOfFile:MobileScrollableView.kt$com.narbase.narcore.web.utils.scrollable.MobileScrollableView.kt</ID>

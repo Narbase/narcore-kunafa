@@ -4,7 +4,7 @@ import com.narbase.narcore.web.common.AppConfig
 import com.narbase.narcore.web.events.ServerConnectionEvent
 import com.narbase.narcore.web.network.ServerCaller
 import com.narbase.narcore.web.storage.StorageManager
-import com.narbase.narcore.web.utils.DataResponse
+import com.narbase.narcore.dto.common.network.DataResponse
 import com.narbase.narcore.web.utils.eventbus.EventBus
 import com.narbase.narcore.web.utils.views.SnackBar
 import kotlinx.browser.window

@@ -11,7 +11,7 @@ import com.narbase.kunafa.core.dimensions.px
 import com.narbase.kunafa.core.dimensions.vw
 import com.narbase.kunafa.core.drawable.Color
 import com.narbase.kunafa.core.lifecycle.LifecycleOwner
-import com.narbase.narcore.data.dto.roles.DynamicRoleDto
+import com.narbase.narcore.dto.models.roles.DynamicRoleDto
 import com.narbase.narcore.data.dto.roles.privilegesEnums
 import com.narbase.narcore.dto.models.roles.Privilege
 import com.narbase.narcore.web.common.AppColors

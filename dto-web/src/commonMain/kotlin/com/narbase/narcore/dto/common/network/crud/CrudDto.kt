@@ -1,8 +1,7 @@
-package com.narbase.narcore.web.network.crud
+package com.narbase.narcore.dto.common.network.crud
 
-/*
- * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
- */
+import com.narbase.narcore.dto.common.StringUUID
+import kotlin.js.JsExport
 
 @JsExport
 object CrudDto {
@@ -27,7 +26,7 @@ object CrudDto {
     class GetItem<T> {
 
         @Suppress("unused")
-        class Request(val id: String?)
+        class Request(val id: StringUUID?)
 
         @Suppress("unused")
         inner class Response(val item: T)
@@ -36,7 +35,7 @@ object CrudDto {
 
     class Delete {
         @Suppress("unused")
-        class Request(val id: String?)
+        class Request(val id: StringUUID?)
 
     }
 

@@ -18,7 +18,7 @@ import com.narbase.narcore.web.network.makeVisible
 import com.narbase.narcore.web.network.networkCall
 import com.narbase.narcore.web.translations.localized
 import com.narbase.narcore.web.utils.BasicUiState
-import com.narbase.narcore.web.utils.DataResponse.Companion.BASIC_SUCCESS
+import com.narbase.narcore.dto.common.network.DataResponse.Companion.BASIC_SUCCESS
 
 /*
  * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.

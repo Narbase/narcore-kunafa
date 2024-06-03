@@ -10,7 +10,7 @@ import com.narbase.narcore.web.common.AppColors
 import com.narbase.narcore.web.network.ServerCaller
 import com.narbase.narcore.web.network.networkCall
 import com.narbase.narcore.web.storage.StorageManager
-import com.narbase.narcore.web.utils.DataResponse.Companion.BASIC_SUCCESS
+import com.narbase.narcore.dto.common.network.DataResponse.Companion.BASIC_SUCCESS
 import org.w3c.xhr.XMLHttpRequest
 
 

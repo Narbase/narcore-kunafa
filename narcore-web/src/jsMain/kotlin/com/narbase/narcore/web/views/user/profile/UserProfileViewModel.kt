@@ -2,6 +2,7 @@ package com.narbase.narcore.web.views.user.profile
 
 import com.narbase.kunafa.core.lifecycle.Observable
 import com.narbase.narcore.dto.domain.user.profile.GetProfileDto
+import com.narbase.narcore.dto.domain.user.profile.UpdateUserProfileDto
 import com.narbase.narcore.web.network.ServerCaller
 import com.narbase.narcore.web.network.basicNetworkCall
 import com.narbase.narcore.web.utils.BasicUiState

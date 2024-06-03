@@ -1,6 +1,6 @@
-package com.narbase.narcore.web.utils
+package com.narbase.narcore.dto.common.network
 
-import com.narbase.narcore.web.network.BasicResponse
+import kotlin.js.JsExport
 
 /*
  * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
