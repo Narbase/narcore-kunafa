@@ -5,4 +5,4 @@ package com.narbase.narcore.data.models.utils
  */
 
 
-class ListAndTotal<T>(val list: List<T>, val total: Long)
+data class ListAndTotal<T>(val list: List<T>, val total: Long)

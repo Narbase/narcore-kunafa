@@ -6,11 +6,12 @@ import com.narbase.kunafa.core.components.TextInput
 import com.narbase.kunafa.core.components.TextView
 import com.narbase.kunafa.core.css.classRuleSet
 import com.narbase.kunafa.core.css.color
+import com.narbase.narcore.dto.common.auth.TokenDtos
+import com.narbase.narcore.dto.common.network.CommonCodes.BASIC_SUCCESS
 import com.narbase.narcore.web.common.AppColors
 import com.narbase.narcore.web.network.ServerCaller
 import com.narbase.narcore.web.network.networkCall
 import com.narbase.narcore.web.storage.StorageManager
-import com.narbase.narcore.dto.common.network.DataResponse.Companion.BASIC_SUCCESS
 import org.w3c.xhr.XMLHttpRequest
 
 
@@ -102,7 +103,7 @@ class LoginViewController(
             onUnknownError = { onErrorWithMessage("Unknown error occurred. Try again or contact support.") },
             onUnauthorized = { onErrorWithMessage("You don't have the required authorization") },
             onUserDisabled = { onUserDisabled() }) {
-            val accessToken = (JSON.parse<TokenResponse>(xmlHttp.responseText)).data?.access_token
+            val accessToken = (JSON.parse<TokenDtos.TokenResponse>(xmlHttp.responseText)).data?.access_token
             StorageManager.accessToken = accessToken
             val response = ServerCaller.login()
             if (response.status == "$BASIC_SUCCESS") {
@@ -134,13 +135,4 @@ class LoginViewController(
     }
 
 }
-@JsExport
-data class TokenResponse(
-    val status: Int,
-    val data: TokenDto?
-)
 
-@JsExport
-data class TokenDto(
-    val access_token: String
-)

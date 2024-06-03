@@ -5,6 +5,7 @@ import kotlin.js.JsExport
 
 @JsExport
 object EnableStaffDtos {
+
     class RequestDto(
         val userId: StringUUID,
         val isActive: Boolean

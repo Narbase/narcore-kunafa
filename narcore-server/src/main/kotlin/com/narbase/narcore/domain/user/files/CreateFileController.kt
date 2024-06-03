@@ -1,6 +1,6 @@
 package com.narbase.narcore.domain.user.files
 
-import com.narbase.narcore.common.DataResponse
+import com.narbase.narcore.dto.common.network.DataResponse
 import com.narbase.narcore.common.auth.loggedin.AuthorizedClientData
 import com.narbase.narcore.common.exceptions.InvalidRequestException
 import com.narbase.narcore.dto.common.utils.files.CreateFileDtos

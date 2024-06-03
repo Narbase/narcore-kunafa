@@ -1,6 +1,7 @@
 package com.narbase.narcore.web.views.admin.staff
 
 import com.narbase.kunafa.core.lifecycle.Observable
+import com.narbase.narcore.dto.common.network.CommonCodes.BASIC_SUCCESS
 import com.narbase.narcore.web.network.UnknownErrorException
 import com.narbase.narcore.web.network.basicNetworkCall
 import com.narbase.narcore.web.network.calls.settings.AdminStaffServerCaller
@@ -62,7 +63,7 @@ class StaffManagementViewModel(private val showCurrent: Boolean) {
     fun addStaffMember(dto: AdminStaffServerCallerDtos.StaffDto) {
         basicNetworkCall(upsertUiState) {
             val response = AdminStaffServerCaller.add(dto)
-            if (response.status != "${DataResponse.BASIC_SUCCESS}") {
+            if (response.status != BASIC_SUCCESS) {
                 throw UnknownErrorException()
             }
         }
@@ -72,7 +73,7 @@ class StaffManagementViewModel(private val showCurrent: Boolean) {
     fun editStaffMember(dto: AdminStaffServerCallerDtos.StaffDto) {
         basicNetworkCall(upsertUiState) {
             val response = AdminStaffServerCaller.update(dto)
-            if (response.status != "${DataResponse.BASIC_SUCCESS}") {
+            if (response.status != BASIC_SUCCESS) {
                 throw UnknownErrorException()
             }
         }
@@ -83,7 +84,7 @@ class StaffManagementViewModel(private val showCurrent: Boolean) {
         basicNetworkCall(userActiveUiState) {
             val dto = EnableUserDto.RequestDto(userId, isActive)
             val response = AdminStaffServerCaller.setUserActive(dto)
-            if (response.status != "${DataResponse.BASIC_SUCCESS}") {
+            if (response.status != BASIC_SUCCESS) {
                 throw UnknownErrorException()
             }
         }

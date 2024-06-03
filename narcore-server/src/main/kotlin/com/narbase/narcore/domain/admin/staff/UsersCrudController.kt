@@ -5,6 +5,7 @@ import com.narbase.narcore.data.access.clients.ClientsDao
 import com.narbase.narcore.data.access.common.ListFilter
 import com.narbase.narcore.data.access.users.UsersRepository
 import com.narbase.narcore.data.conversions.common.toDto
+import com.narbase.narcore.data.conversions.common.toDtoForCrud
 import com.narbase.narcore.data.conversions.id.toModel
 import com.narbase.narcore.data.conversions.users.toCrudDto
 import com.narbase.narcore.data.models.utils.ListAndTotal
@@ -30,7 +31,7 @@ class UsersCrudController : CrudController<UsersCrudDto.User, UsersCrudDto.Filte
     ): ListAndTotal<UsersCrudDto.User> {
         val list = UsersRepository.getList(ListFilter(pageNo, pageSize, searchTerm, data))
 
-        return list.toDto { it.toCrudDto() }
+        return list.toDtoForCrud { it.toCrudDto() }
     }
 
     override fun createItem(item: UsersCrudDto.User, clientData: AuthorizedClientData?): UsersCrudDto.User {

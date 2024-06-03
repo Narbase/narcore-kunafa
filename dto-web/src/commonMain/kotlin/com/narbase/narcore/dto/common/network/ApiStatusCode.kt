@@ -1,4 +1,4 @@
-package com.narbase.narcore.common
+package com.narbase.narcore.dto.common.network
 
 
 /*

@@ -1,7 +1,7 @@
 package com.narbase.narcore.common.exceptions
 
 import com.narbase.narcore.common.BasicResponse
-import com.narbase.narcore.common.CommonCodes
+import com.narbase.narcore.dto.common.network.CommonCodes
 
 open class InvalidRequestException(message: String = "") : Exception(message)
 

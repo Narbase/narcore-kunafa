@@ -24,7 +24,7 @@ class EnableStaffController :
                 it[isInactive] = requestDto.isActive.not()
             }
         }
-        return DataResponse()
+        return DataResponse(EnableStaffDtos.ResponseDto())
     }
 
 }

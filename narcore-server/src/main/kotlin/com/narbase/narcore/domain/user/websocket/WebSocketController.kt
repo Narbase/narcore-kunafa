@@ -1,10 +1,11 @@
 package com.narbase.narcore.domain.user.websocket
 
 import com.google.gson.Gson
-import com.narbase.narcore.common.DataResponse
+import com.narbase.narcore.dto.common.network.DataResponse
 import com.narbase.narcore.common.auth.myJwtVerifier
 import com.narbase.narcore.common.exceptions.UnauthenticatedException
 import com.narbase.narcore.domain.user.myWsCustomAuthHeader
+import com.narbase.narcore.dto.domain.user.websocket.WebSocketDtos
 import com.narbase.narcore.dto.models.roles.Privilege
 import io.ktor.server.request.*
 import io.ktor.server.websocket.*
@@ -61,13 +62,6 @@ object WebSocketController {
         }
     */
 
-    enum class MessageTypes {
-        Greeting,
-    }
-
-    open class Message(val type: String)
-    class Greeting(val greeting: String) : Message(MessageTypes.Greeting.toString())
-
     class ClientSessionData(
         val session: DefaultWebSocketServerSession, val clientId: UUID,
         val privileges: List<Privilege>
@@ -81,11 +75,11 @@ object WebSocketController {
         val privileges =
             myJwtVerifier?.verify(token)?.claims?.get("privileges")?.asArray(String::class.java)
                 ?.mapNotNull { privilegeString ->
-                    Privilege.values().firstOrNull { it.name == privilegeString }
+                    Privilege.entries.firstOrNull { it.name == privilegeString }
                 } ?: listOf()
         clientId?.let { clientSessions.add(ClientSessionData(session, clientId, privileges)) }
         logger.info("New client connected: $clientId")
-        send(DataResponse(Greeting("Hello")))
+        send(DataResponse(WebSocketDtos.Greeting("Hello")))
 
         listenForIncoming(session, clientId)
     }
@@ -116,13 +110,13 @@ object WebSocketController {
     }
 
     fun send(
-        msg: DataResponse<Message>,
+        msg: DataResponse<WebSocketDtos.Message>,
         clientId: UUID? = null,
         excludedId: Array<UUID?> = arrayOf(),
-        privileges: List<Privilege> = Privilege.values().toList()
+        privileges: List<Privilege> = Privilege.entries
     ) {
         catchAndLog {
-            logger.info("Sending ${msg.dto?.type}. Sessions: ${clientSessions.size}")
+            logger.info("Sending ${msg.data.type}. Sessions: ${clientSessions.size}")
             if (executor.poolSize > 20) {
                 logger.severe("Thread pool size is 20. Will not accept further requests.")
                 return
@@ -148,12 +142,12 @@ object WebSocketController {
     }
 
     private suspend fun sendAsync(
-        msg: DataResponse<Message>,
+        msg: DataResponse<WebSocketDtos.Message>,
         clientId: UUID?,
         excludedId: Array<UUID?>,
         privileges: List<Privilege>
     ) {
-        logger.info("Sending ${msg.dto?.type}. Sessions: ${clientSessions.size}")
+        logger.info("Sending ${msg.data.type}. Sessions: ${clientSessions.size}")
         clientSessions.filter { client ->
             (client.privileges.any { it in privileges } or (client.clientId == clientId)) && client.clientId !in excludedId
         }.forEach {
@@ -161,7 +155,7 @@ object WebSocketController {
                 val jsonMessage = gson.toJson(msg)
                 logger.info("Sending to ${it.clientId}: $jsonMessage")
                 it.session.send(Frame.Text(jsonMessage))
-                logger.info("Sending ${msg.dto?.type} successful")
+                logger.info("Sending ${msg.data.type} successful")
             } catch (e: Exception) { //Assume session has been closed
                 logger.info("Session closed: ${it.clientId}")
                 e.printStackTrace()

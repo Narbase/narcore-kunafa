@@ -1,10 +1,9 @@
 package com.narbase.narcore.data.columntypes
 
+import com.narbase.narcore.dto.common.enums.EnumPersistenceName
 import org.jetbrains.exposed.sql.Column
 import org.jetbrains.exposed.sql.Table
-import org.jetbrains.exposed.sql.VarCharColumnType
 import kotlin.reflect.KClass
-import kotlin.reflect.full.safeCast
 
 /*
  * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
@@ -20,10 +19,6 @@ fun <E> Table.enum(name: String, enumClass: KClass<E>): Column<E> where E : Enum
                 ?: throw DbEnumCorruptedException()
         }
     )
-
-interface EnumPersistenceName {
-    val persistenceName: String
-}
 
 class InvalidPersistedEnumValueException(message: String) : Exception(message)
 

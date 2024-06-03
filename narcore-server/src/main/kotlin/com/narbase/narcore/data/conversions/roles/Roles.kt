@@ -1,8 +1,8 @@
 package com.narbase.narcore.data.conversions.roles
 
-import com.narbase.narcore.core.valueOfDto
 import com.narbase.narcore.data.conversions.id.toDto
 import com.narbase.narcore.data.models.roles.Role
+import com.narbase.narcore.dto.common.valueOfDto
 import com.narbase.narcore.dto.models.roles.Privilege
 import com.narbase.narcore.dto.models.roles.RoleDto
 

@@ -1,6 +1,7 @@
 package com.narbase.narcore.web.views.admin.roles
 
 import com.narbase.kunafa.core.lifecycle.Observable
+import com.narbase.narcore.dto.common.network.CommonCodes.BASIC_SUCCESS
 import com.narbase.narcore.dto.models.roles.DynamicRoleDto
 import com.narbase.narcore.web.network.UnknownErrorException
 import com.narbase.narcore.web.network.basicNetworkCall
@@ -57,7 +58,7 @@ class RolesManagementViewModel {
     fun addItem(dto: DynamicRoleDto) {
         basicNetworkCall(upsertUiState) {
             val response = AdminRolesServerCaller.add(dto)
-            if (response.status != "${DataResponse.BASIC_SUCCESS}") {
+            if (response.status != BASIC_SUCCESS) {
                 throw UnknownErrorException()
             }
         }
@@ -67,7 +68,7 @@ class RolesManagementViewModel {
     fun editItem(dto: DynamicRoleDto) {
         basicNetworkCall(upsertUiState) {
             val response = AdminRolesServerCaller.update(dto)
-            if (response.status != "${DataResponse.BASIC_SUCCESS}") {
+            if (response.status != BASIC_SUCCESS) {
                 throw UnknownErrorException()
             }
         }

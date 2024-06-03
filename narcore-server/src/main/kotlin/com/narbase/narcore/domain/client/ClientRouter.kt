@@ -1,14 +1,14 @@
 package com.narbase.narcore.domain.client
 
 import com.auth0.jwt.JWT
-import com.narbase.narcore.common.DataResponse
+import com.narbase.narcore.dto.common.network.DataResponse
 import com.narbase.narcore.common.auth.AuthenticationConstants
 import com.narbase.narcore.common.auth.algorithm
-import com.narbase.narcore.common.auth.jwt.JwtTokenDto
 import com.narbase.narcore.common.auth.loggedin.AuthorizedClientData
 import com.narbase.narcore.common.exceptions.UnauthenticatedException
 import com.narbase.narcore.domain.client.token.AddTokenController
 import com.narbase.narcore.domain.client.token.RemoveTokenController
+import com.narbase.narcore.dto.common.auth.TokenDtos
 import io.ktor.server.application.*
 import io.ktor.server.auth.*
 import io.ktor.server.response.*
@@ -21,7 +21,7 @@ fun Routing.setupClientRoutes(jwtIssuer: String, jwtAudience: String) {
             val privileges = principal.privileges.map { it.name }.toTypedArray()
             val token = generateJwtToken(jwtIssuer, jwtAudience, principal, privileges)
 
-            val dataResponse = DataResponse(JwtTokenDto(token))
+            val dataResponse = DataResponse(TokenDtos.JwtTokenDto(token))
             call.respond(dataResponse)
         }
     }

@@ -1,8 +1,8 @@
 package com.narbase.narcore.common.exceptions
 
 import com.narbase.narcore.common.BasicResponse
-import com.narbase.narcore.common.CommonCodes
 import com.narbase.narcore.data.columntypes.DbEnumCorruptedException
+import com.narbase.narcore.dto.common.network.CommonCodes
 import io.ktor.server.application.*
 import io.ktor.server.plugins.*
 import io.ktor.http.*

@@ -1,10 +1,12 @@
 package com.narbase.narcore.web.utils.notifications
 
+import com.narbase.narcore.dto.common.enums.MessageTypes
 import com.narbase.narcore.web.common.AppConfig
 import com.narbase.narcore.web.events.ServerConnectionEvent
 import com.narbase.narcore.web.network.ServerCaller
 import com.narbase.narcore.web.storage.StorageManager
 import com.narbase.narcore.dto.common.network.DataResponse
+import com.narbase.narcore.dto.domain.user.websocket.WebSocketDtos
 import com.narbase.narcore.web.utils.eventbus.EventBus
 import com.narbase.narcore.web.utils.views.SnackBar
 import kotlinx.browser.window
@@ -12,13 +14,6 @@ import org.w3c.dom.WebSocket
 @JsExport
 object NotificationsController {
     var isConnectedToServer = false
-
-    enum class MessageTypes {
-        Greeting,
-
-    }
-
-    open class Message(val type: String)
 
     /**
      * Call initializedWebSocket before using
@@ -56,7 +51,7 @@ object NotificationsController {
 
         webSocket?.onmessage = { messageEvent ->
             messageEvent.data?.toString()?.let { data ->
-                val message = JSON.parse<DataResponse<Message>>(data).data
+                val message = JSON.parse<DataResponse<WebSocketDtos.Message>>(data).data
                 when (message.type) {
                     MessageTypes.Greeting.toString() -> {
                         SnackBar.showText("Greetings")
