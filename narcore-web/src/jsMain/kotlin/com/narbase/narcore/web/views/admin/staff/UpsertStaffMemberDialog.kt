@@ -11,13 +11,12 @@ import com.narbase.kunafa.core.dimensions.dimen
 import com.narbase.kunafa.core.dimensions.px
 import com.narbase.kunafa.core.dimensions.vh
 import com.narbase.kunafa.core.drawable.Color
-import com.narbase.narcore.data.dto.roles.DynamicRoleDto
+import com.narbase.narcore.dto.models.roles.DynamicRoleDto
 import com.narbase.narcore.web.common.AppColors
 import com.narbase.narcore.web.network.basicNetworkCall
 import com.narbase.narcore.web.network.calls.settings.AdminRolesServerCaller
-import com.narbase.narcore.web.network.calls.settings.AdminStaffServerCaller
-import com.narbase.narcore.web.network.calls.settings.AdminStaffServerCallerDtos
-import com.narbase.narcore.web.network.crud.CrudDto
+import com.narbase.narcore.dto.domain.admin.AdminStaffServerCallerDtos
+import com.narbase.narcore.dto.common.network.crud.CrudDto
 import com.narbase.narcore.web.storage.SessionInfo
 import com.narbase.narcore.web.translations.localized
 import com.narbase.narcore.web.utils.dialog.labeledTextInput

@@ -1,6 +1,6 @@
 package com.narbase.narcore.web.network.calls.settings
 
-import com.narbase.narcore.data.dto.roles.DynamicRoleDto
+import com.narbase.narcore.dto.models.roles.DynamicRoleDto
 import com.narbase.narcore.web.network.crud.CrudServerCaller
 
 /*

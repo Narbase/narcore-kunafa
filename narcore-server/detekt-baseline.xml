@@ -92,14 +92,13 @@
     <ID>NewLineAtEndOfFile:EmailSender.kt$com.narbase.narcore.notification.email.EmailSender.kt</ID>
     <ID>NewLineAtEndOfFile:EnableStaffController.kt$com.narbase.narcore.domain.admin.staff.EnableStaffController.kt</ID>
     <ID>NewLineAtEndOfFile:EndpointHandler.kt$com.narbase.narcore.common.EndpointHandler.kt</ID>
-    <ID>NewLineAtEndOfFile:Gender.kt$com.narbase.narcore.data.enums.Gender.kt</ID>
+    <ID>NewLineAtEndOfFile:Gender.kt$com.narbase.narcore.dto.common.enums.Gender.kt</ID>
     <ID>NewLineAtEndOfFile:GenreateSqlForTables.kt$com.narbase.narcore.main.utils.GenreateSqlForTables.kt</ID>
     <ID>NewLineAtEndOfFile:GetProfileController.kt$com.narbase.narcore.domain.user.profile.GetProfileController.kt</ID>
     <ID>NewLineAtEndOfFile:Id.kt$com.narbase.narcore.data.conversions.id.Id.kt</ID>
     <ID>NewLineAtEndOfFile:InactiveUserInterceptor.kt$com.narbase.narcore.domain.utils.InactiveUserInterceptor.kt</ID>
     <ID>NewLineAtEndOfFile:InitialMigration.kt$com.narbase.narcore.common.db.migrations.usermigrations.InitialMigration.kt</ID>
     <ID>NewLineAtEndOfFile:JsonSum.kt$com.narbase.narcore.data.columntypes.JsonSum.kt</ID>
-    <ID>NewLineAtEndOfFile:JwtTokenDto.kt$com.narbase.narcore.common.auth.jwt.JwtTokenDto.kt</ID>
     <ID>NewLineAtEndOfFile:LaunchConfig.kt$com.narbase.narcore.deployment.LaunchConfig.kt</ID>
     <ID>NewLineAtEndOfFile:ListAndTotal.kt$com.narbase.narcore.data.conversions.common.ListAndTotal.kt</ID>
     <ID>NewLineAtEndOfFile:ListFilter.kt$com.narbase.narcore.data.access.common.ListFilter.kt</ID>
@@ -113,7 +112,7 @@
     <ID>NewLineAtEndOfFile:RolePrivilegesColumn.kt$com.narbase.narcore.data.columntypes.RolePrivilegesColumn.kt</ID>
     <ID>NewLineAtEndOfFile:RolesCurdController.kt$com.narbase.narcore.domain.admin.staff.roles.RolesCurdController.kt</ID>
     <ID>NewLineAtEndOfFile:RolesDao.kt$com.narbase.narcore.data.access.roles.RolesDao.kt</ID>
-    <ID>NewLineAtEndOfFile:SmsMessageStatus.kt$com.narbase.narcore.data.enums.SmsMessageStatus.kt</ID>
+    <ID>NewLineAtEndOfFile:SmsMessageStatus.kt$com.narbase.narcore.dto.common.enums.SmsMessageStatus.kt</ID>
     <ID>NewLineAtEndOfFile:SmsSender.kt$com.narbase.narcore.main.sms.SmsSender.kt</ID>
     <ID>NewLineAtEndOfFile:SoftDeleteTable.kt$com.narbase.narcore.domain.user.crud.SoftDeleteTable.kt</ID>
     <ID>NewLineAtEndOfFile:Union.kt$com.narbase.narcore.data.tables.utils.Union.kt</ID>

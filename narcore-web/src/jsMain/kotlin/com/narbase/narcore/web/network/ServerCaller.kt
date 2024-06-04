@@ -1,14 +1,15 @@
 package com.narbase.narcore.web.network
 
+import com.narbase.narcore.dto.common.network.BasicResponse
 import com.narbase.narcore.dto.domain.user.profile.GetProfileDto
 import com.narbase.narcore.dto.domain.user.profile.UpdatePasswordDto
 import com.narbase.narcore.web.common.AppConfig
-import com.narbase.narcore.web.login.LoginResponseDto
 import com.narbase.narcore.web.storage.StorageManager
-import com.narbase.narcore.web.utils.DataResponse
+import com.narbase.narcore.dto.common.network.DataResponse
 import com.narbase.narcore.web.utils.json
-import com.narbase.narcore.web.utils.uploaders.UploadFileResponseDto
-import com.narbase.narcore.web.views.user.profile.UpdateUserProfileDto
+import com.narbase.narcore.dto.common.utils.uploaders.UploadFileResponseDto
+import com.narbase.narcore.dto.domain.user.login.LoginDto
+import com.narbase.narcore.dto.domain.user.profile.UpdateUserProfileDto
 import kotlinx.browser.window
 import kotlinx.coroutines.await
 import org.w3c.fetch.RequestInit
@@ -43,7 +44,7 @@ open class RemoteServerCaller {
     }
 
     suspend fun login() =
-        synchronousPost<DataResponse<LoginResponseDto>>(
+        synchronousPost<DataResponse<LoginDto.Response>>(
             url = "/api/user/v1/login",
             headers = mapOf("Authorization" to "Bearer $accessToken")
         )

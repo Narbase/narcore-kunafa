@@ -12,15 +12,15 @@ import com.narbase.kunafa.core.dimensions.px
 import com.narbase.kunafa.core.drawable.Color
 import com.narbase.kunafa.core.lifecycle.LifecycleOwner
 import com.narbase.kunafa.core.lifecycle.Observable
+import com.narbase.narcore.dto.common.network.CommonCodes.BASIC_SUCCESS
 import com.narbase.narcore.web.common.AppColors
 import com.narbase.narcore.web.events.EscapeClickedEvent
 import com.narbase.narcore.web.network.*
-import com.narbase.narcore.web.network.dto.ItemList
+import com.narbase.narcore.dto.common.network.ItemList
 import com.narbase.narcore.web.storage.bidirectional
 import com.narbase.narcore.web.translations.localized
 import com.narbase.narcore.web.utils.BasicUiState
-import com.narbase.narcore.web.utils.DataResponse
-import com.narbase.narcore.web.utils.DataResponse.Companion.BASIC_SUCCESS
+import com.narbase.narcore.dto.common.network.DataResponse
 import com.narbase.narcore.web.utils.PopupZIndex
 import com.narbase.narcore.web.utils.eventbus.LifecycleSubscriber
 import kotlinx.browser.document
@@ -514,7 +514,7 @@ open class RemoteDropDownListViewController<T>(
                         loadingListState.value = BasicUiState.Loaded
                     }
 
-                    responseDto.status == DataResponse.INVALID_REQUEST -> loadingListState.value = BasicUiState.Loaded
+                    responseDto.status == INVALID_REQUEST -> loadingListState.value = BasicUiState.Loaded
                     else -> loadingListState.value = BasicUiState.Error
                 }
             }

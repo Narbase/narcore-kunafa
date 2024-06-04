@@ -3,34 +3,28 @@ package com.narbase.narcore.domain.admin.staff
 import com.narbase.narcore.common.DataResponse
 import com.narbase.narcore.common.Handler
 import com.narbase.narcore.common.auth.loggedin.AuthorizedClientData
+import com.narbase.narcore.common.toUUID
 import com.narbase.narcore.data.tables.UsersTable
+import com.narbase.narcore.dto.domain.admin.EnableStaffDtos
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.update
-import java.util.*
 
 /*
  * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
  */
 
 class EnableStaffController :
-    Handler<EnableStaffController.RequestDto, EnableStaffController.ResponseDto>(RequestDto::class) {
-    override fun process(requestDto: RequestDto, clientData: AuthorizedClientData?): DataResponse<ResponseDto> {
+    Handler<EnableStaffDtos.RequestDto, EnableStaffDtos.ResponseDto>(EnableStaffDtos.RequestDto::class) {
+    override fun process(requestDto: EnableStaffDtos.RequestDto, clientData: AuthorizedClientData?): DataResponse<EnableStaffDtos.ResponseDto> {
 
         transaction {
             UsersTable.update({
-                (UsersTable.id eq requestDto.userId)
+                (UsersTable.id eq requestDto.userId.toUUID())
             }) {
                 it[isInactive] = requestDto.isActive.not()
             }
         }
-        return DataResponse()
+        return DataResponse(EnableStaffDtos.ResponseDto())
     }
 
-    class RequestDto(
-        val userId: UUID,
-        val isActive: Boolean
-
-    )
-
-    class ResponseDto()
 }

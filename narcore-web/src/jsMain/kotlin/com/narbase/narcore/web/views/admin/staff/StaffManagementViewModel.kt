@@ -1,14 +1,15 @@
 package com.narbase.narcore.web.views.admin.staff
 
 import com.narbase.kunafa.core.lifecycle.Observable
+import com.narbase.narcore.dto.common.network.CommonCodes.BASIC_SUCCESS
 import com.narbase.narcore.web.network.UnknownErrorException
 import com.narbase.narcore.web.network.basicNetworkCall
 import com.narbase.narcore.web.network.calls.settings.AdminStaffServerCaller
-import com.narbase.narcore.web.network.calls.settings.AdminStaffServerCallerDtos
+import com.narbase.narcore.dto.domain.admin.AdminStaffServerCallerDtos
 import com.narbase.narcore.web.network.calls.settings.EnableUserDto
-import com.narbase.narcore.web.network.crud.CrudDto
+import com.narbase.narcore.dto.common.network.crud.CrudDto
 import com.narbase.narcore.web.utils.BasicUiState
-import com.narbase.narcore.web.utils.DataResponse
+import com.narbase.narcore.dto.common.network.DataResponse
 
 /*
  * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.
@@ -62,7 +63,7 @@ class StaffManagementViewModel(private val showCurrent: Boolean) {
     fun addStaffMember(dto: AdminStaffServerCallerDtos.StaffDto) {
         basicNetworkCall(upsertUiState) {
             val response = AdminStaffServerCaller.add(dto)
-            if (response.status != "${DataResponse.BASIC_SUCCESS}") {
+            if (response.status != BASIC_SUCCESS) {
                 throw UnknownErrorException()
             }
         }
@@ -72,7 +73,7 @@ class StaffManagementViewModel(private val showCurrent: Boolean) {
     fun editStaffMember(dto: AdminStaffServerCallerDtos.StaffDto) {
         basicNetworkCall(upsertUiState) {
             val response = AdminStaffServerCaller.update(dto)
-            if (response.status != "${DataResponse.BASIC_SUCCESS}") {
+            if (response.status != BASIC_SUCCESS) {
                 throw UnknownErrorException()
             }
         }
@@ -83,7 +84,7 @@ class StaffManagementViewModel(private val showCurrent: Boolean) {
         basicNetworkCall(userActiveUiState) {
             val dto = EnableUserDto.RequestDto(userId, isActive)
             val response = AdminStaffServerCaller.setUserActive(dto)
-            if (response.status != "${DataResponse.BASIC_SUCCESS}") {
+            if (response.status != BASIC_SUCCESS) {
                 throw UnknownErrorException()
             }
         }

@@ -1,8 +1,9 @@
 package com.narbase.narcore.web.network.crud
 
+import com.narbase.narcore.dto.common.network.crud.CrudDto
 import com.narbase.narcore.web.network.ServerCaller
 import com.narbase.narcore.web.storage.StorageManager
-import com.narbase.narcore.web.utils.DataResponse
+import com.narbase.narcore.dto.common.network.DataResponse
 
 /*
  * Copyright 2017-2020 Narbase technologies and contributors. Use of this source code is governed by the MIT License.

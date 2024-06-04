@@ -1,10 +1,9 @@
 package com.narbase.narcore.data.tables
 
 
-import com.narbase.narcore.data.columntypes.array
 import com.narbase.narcore.data.columntypes.dateTimeWithoutTimezone
 import com.narbase.narcore.data.columntypes.enum
-import com.narbase.narcore.data.enums.SmsMessageStatus
+import com.narbase.narcore.dto.common.enums.SmsMessageStatus
 import org.jetbrains.exposed.dao.id.UUIDTable
 import org.jetbrains.exposed.sql.Column
 import org.jetbrains.exposed.sql.Function

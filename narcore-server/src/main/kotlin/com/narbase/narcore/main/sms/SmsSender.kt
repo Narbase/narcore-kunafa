@@ -1,6 +1,6 @@
 package com.narbase.narcore.main.sms
 
-import com.narbase.narcore.data.enums.SmsMessageStatus
+import com.narbase.narcore.dto.common.enums.SmsMessageStatus
 import com.narbase.narcore.data.tables.SmsRecordTable
 import io.ktor.client.*
 import io.ktor.client.engine.apache.*

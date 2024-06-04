@@ -1,6 +1,6 @@
 package com.narbase.narcore.common.db.migrations
 
-import com.narbase.narcore.data.columntypes.EnumPersistenceName
+import com.narbase.narcore.dto.common.enums.EnumPersistenceName
 import com.narbase.narcore.data.columntypes.InvalidPersistedEnumValueException
 import org.jetbrains.exposed.sql.Transaction
 import org.jetbrains.exposed.sql.transactions.transaction

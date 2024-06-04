@@ -1,8 +1,9 @@
 package com.narbase.narcore.domain.user.files
 
-import com.narbase.narcore.common.DataResponse
+import com.narbase.narcore.dto.common.network.DataResponse
 import com.narbase.narcore.common.auth.loggedin.AuthorizedClientData
 import com.narbase.narcore.common.exceptions.InvalidRequestException
+import com.narbase.narcore.dto.common.utils.files.CreateFileDtos
 import io.ktor.http.content.*
 import io.ktor.server.application.*
 import io.ktor.server.auth.*
@@ -19,11 +20,6 @@ class CreateFileController(
     private val shouldCompress: Boolean
 ) {
 
-    class ResponseDto(
-        val url: String,
-        val fileName: String
-    )
-
     suspend fun handle(call: ApplicationCall) {
         val clientData = call.principal<AuthorizedClientData>()
         val multipart = call.receiveMultipart()
@@ -37,7 +33,7 @@ class CreateFileController(
         val photoUrl = writeFile(image, directoryName, imageType, fileName)
         println(photoUrl)
         image.dispose()
-        call.respond(DataResponse(ResponseDto(photoUrl, fileName ?: "")))
+        call.respond(DataResponse(CreateFileDtos.ResponseDto(photoUrl, fileName ?: "")))
     }
 
     private fun writeFile(
